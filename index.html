@@ -542,7 +542,7 @@ document.getElementById('btn-reload').onclick = async () => {
 };
 
 document.getElementById('btn-claude').onclick = () => {
-  const prompt = "Actualise le répertoire horloger : recherche les dernières actualités, vérifie les prix (neuf + fourchette occasion) et les caractéristiques (mouvement, diamètre, bracelet, année) pour Omega, Tissot, LIP et Orient sur les modèles déjà suivis dans data.json du repo Lapepite792/repertoire-horloger, actualise aussi l'onglet tendances, puis mets à jour ce fichier directement (nouveautés en premier, dates au format AAAA-MM-JJ).";
+  const prompt = "Actualise le répertoire horloger (repo Lapepite792/repertoire-horloger, fichier data.json) : pour Omega, Tissot, LIP et Orient sur les modèles déjà suivis, recherche 1) les dernières actualités avec leur lien source, 2) les prix neuf + fourchette occasion, 3) les caractéristiques (mouvement, diamètre, bracelet, année), 4) les variantes disponibles classées par tailles/couleurs/matières, 5) des bons plans sur sites tiers fiables (avec lien) pour chaque modèle si possible. Actualise aussi l'onglet tendances. Mets à jour data.json directement (nouveautés triées les plus récentes en premier, dates au format AAAA-MM-JJ).";
   navigator.clipboard.writeText(prompt).then(() => {
     toast('Prompt copié — colle-le à Claude');
   }).catch(() => {

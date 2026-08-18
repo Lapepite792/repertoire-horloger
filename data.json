@@ -1,0 +1,101 @@
+{
+  "updated": "2026-08-18",
+  "brands": {
+    "omega": {
+      "label": "Omega",
+      "watches": [
+        {
+          "id": "omega-speedmaster-moonwatch-hesalite",
+          "model": "Speedmaster Professional Moonwatch Hésalite",
+          "reference": "310.30.42.50.01.001",
+          "priceNew": "8 500 – 8 800 €",
+          "priceUsed": "4 000 – 6 500 €",
+          "priceDate": "août 2026",
+          "link": "https://www.omegawatches.com",
+          "note": "Boutique officielle, acier/hésalite 42mm.",
+          "estimated": true
+        },
+        {
+          "id": "omega-speedmaster-milano-cortina",
+          "model": "Speedmaster 38mm Milano Cortina 2026",
+          "reference": "—",
+          "priceNew": "à préciser",
+          "priceUsed": "—",
+          "priceDate": "mars 2026",
+          "link": "https://www.omegawatches.com",
+          "note": "Édition liée aux JO d'hiver, cadran bleu ciel.",
+          "estimated": true
+        }
+      ],
+      "news": [
+        { "date": "2026-03-17", "text": "Omega dévoile deux Speedmaster Moonwatch Professional « Black & White » à cadran inversé (acier ~10 200 €, or Moonshine ~48 200 €)." },
+        { "date": "2026-02-14", "text": "Speedmaster 38mm « Milano Cortina 2026 » lancée en lien avec les Jeux Olympiques d'hiver." }
+      ]
+    },
+    "tissot": {
+      "label": "Tissot",
+      "watches": [
+        {
+          "id": "tissot-prx-quartz",
+          "model": "PRX Quartz 35/40mm",
+          "reference": "T137.410.11.031.00",
+          "priceNew": "350 – 450 €",
+          "priceUsed": "180 – 280 €",
+          "priceDate": "août 2026",
+          "link": "https://www.tissotwatches.com",
+          "note": "Modèle d'entrée de la gamme PRX, acier intégral.",
+          "estimated": true
+        },
+        {
+          "id": "tissot-prx-automatic",
+          "model": "PRX Powermatic 80",
+          "reference": "T137.407.11.041.00",
+          "priceNew": "750 – 900 €",
+          "priceUsed": "400 – 600 €",
+          "priceDate": "août 2026",
+          "link": "https://www.tissotwatches.com",
+          "note": "Mouvement Powermatic 80, réserve de marche 80h.",
+          "estimated": true
+        }
+      ],
+      "news": [
+        { "date": "2026-04-09", "text": "Tissot étend l'univers PRX avec de nouvelles finitions et coloris, ainsi qu'une collaboration cyclisme Tour de France." },
+        { "date": "2026-03-16", "text": "Nouveau Tissot Visodate présenté — relecture d'un classique de la marque." }
+      ]
+    },
+    "lip": {
+      "label": "LIP",
+      "watches": [
+        {
+          "id": "lip-himalaya",
+          "model": "Himalaya (réédition)",
+          "reference": "à préciser",
+          "priceNew": "à vérifier",
+          "priceUsed": "—",
+          "priceDate": "—",
+          "link": "https://www.lip.fr",
+          "note": "Marque française historique (Besançon) — à compléter avec les références exactes à suivre.",
+          "estimated": true
+        }
+      ],
+      "news": []
+    },
+    "orient": {
+      "label": "Orient",
+      "watches": [
+        {
+          "id": "orient-bambino",
+          "model": "Bambino (v1/v2)",
+          "reference": "à préciser",
+          "priceNew": "à vérifier",
+          "priceUsed": "—",
+          "priceDate": "—",
+          "link": "https://www.orientwatch.com",
+          "note": "Gamme dress-watch automatique accessible — à compléter avec les références exactes.",
+          "estimated": true
+        }
+      ],
+      "news": []
+    }
+  }
+}

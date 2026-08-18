@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Répertoire Horloger</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#10141a">
+<style>
+  :root{
+    --bg: #10141a;
+    --bg-panel: #161b23;
+    --bg-card: #1b212b;
+    --line: #2a323e;
+    --steel: #8fa0b3;
+    --steel-dim: #5b6b7d;
+    --brass: #c9a24a;
+    --brass-dim: #9c7f3d;
+    --text: #e8ecf1;
+    --text-dim: #a6b1bf;
+    --red: #c1584a;
+    --green: #5c9c7a;
+  }
+  *{ box-sizing: border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    background: radial-gradient(ellipse at top, #161d26 0%, #0d1116 65%);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, 'Segoe UI', sans-serif;
+    min-height: 100vh;
+    padding-bottom: 60px;
+  }
+  .mono{ font-family: 'JetBrains Mono', 'Courier New', monospace; }
+
+  header{
+    padding: 24px 20px 18px;
+    border-bottom: 1px solid var(--line);
+    position: relative;
+    overflow: hidden;
+  }
+  header::before{ content:""; position:absolute; top:-40px; right:-40px; width:160px; height:160px; border-radius:50%; border: 1px solid var(--line); }
+  header::after{ content:""; position:absolute; top:-20px; right:-20px; width:120px; height:120px; border-radius:50%; border: 1px solid var(--line); }
+  h1{ font-family: Georgia, 'Times New Roman', serif; font-weight: 600; font-size: 25px; letter-spacing: 0.5px; margin: 0 0 4px; }
+  .tagline{ color: var(--text-dim); font-size: 12.5px; max-width: 480px; line-height: 1.5; }
+  .eyebrow{ text-transform: uppercase; letter-spacing: 2px; font-size: 10.5px; color: var(--brass); font-weight: 600; margin-bottom: 6px; }
+
+  .header-actions{ display:flex; gap:10px; margin-top:14px; flex-wrap:wrap; }
+  .hbtn{
+    background:none; border:1px solid var(--line); color: var(--steel);
+    font-size: 11px; padding: 7px 13px; border-radius:7px; cursor:pointer;
+    display:flex; align-items:center; gap:6px;
+  }
+  .hbtn:active{ border-color: var(--brass); color: var(--brass); }
+  .sync-line{ font-size: 10px; color: var(--steel-dim); margin-top: 8px; }
+
+  nav.tabs{ display:flex; gap:6px; padding: 14px 20px 0; overflow-x:auto; border-bottom: 1px solid var(--line); }
+  nav.tabs::-webkit-scrollbar{ display:none; }
+  .tab-btn{
+    background:none; border:none; color: var(--text-dim);
+    font-family: Georgia, serif; font-size: 14px;
+    padding: 10px 14px; cursor:pointer; white-space:nowrap;
+    border-bottom: 2px solid transparent;
+  }
+  .tab-btn.active{ color: var(--brass); border-bottom-color: var(--brass); }
+
+  main{ padding: 18px 16px 0; max-width: 640px; margin: 0 auto; }
+  .panel{ animation: fade .25s ease; }
+  @keyframes fade{ from{opacity:0; transform:translateY(4px);} to{opacity:1; transform:none;} }
+
+  .section-title{ display:flex; align-items:baseline; justify-content:space-between; margin: 18px 0 10px; }
+  .section-title h2{ font-family: Georgia, serif; font-size: 16px; font-weight:600; margin:0; }
+  .section-title .count{ color: var(--steel-dim); font-size: 12px; }
+
+  .brand-news{ background: var(--bg-panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px 4px; margin-bottom: 16px; }
+  .brand-news .news-item{ border-left: 2px solid var(--brass-dim); padding: 2px 0 2px 12px; margin-bottom: 12px; }
+  .news-date{ font-size: 10.5px; color: var(--steel-dim); letter-spacing:0.5px; }
+  .news-text{ font-size: 12.5px; color: var(--text-dim); margin-top: 3px; line-height:1.5; }
+
+  .card{ background: var(--bg-card); border: 1px solid var(--line); border-radius: 10px; padding: 14px 14px 12px; margin-bottom: 10px; }
+  .card-top{ display:flex; justify-content:space-between; align-items:flex-start; gap:10px; }
+  .card-model{ font-family: Georgia, serif; font-size: 15px; }
+  .card-ref{ color: var(--steel-dim); font-size: 11px; margin-top:2px; }
+  .card-price{ text-align:right; flex-shrink:0; }
+  .flag{ display:inline-block; font-size: 9px; letter-spacing:1px; text-transform:uppercase; color: var(--brass-dim); border:1px solid var(--brass-dim); padding: 1px 6px; border-radius:20px; margin-bottom: 5px; }
+  .price-new{ font-size: clamp(13px, 4vw, 17px); font-weight:600; color: var(--brass); line-height:1.25; white-space:nowrap; }
+  .price-new-label{ font-size: 9px; color: var(--steel-dim); text-transform:uppercase; letter-spacing:0.5px; }
+  .price-used{ font-size: clamp(11px, 3.2vw, 12.5px); color: var(--steel); margin-top:4px; white-space:nowrap; }
+  .price-used-label{ font-size: 9px; color: var(--steel-dim); text-transform:uppercase; letter-spacing:0.5px; }
+  .price-date{ font-size: 10px; color: var(--steel-dim); margin-top:4px; }
+  .card-note{ font-size: 12.5px; color: var(--text-dim); margin-top:8px; line-height:1.5; }
+  .card-actions{ margin-top:10px; }
+  .card-actions a{ font-size: 11.5px; color: var(--steel); text-decoration:none; }
+
+  .empty{ text-align:center; color: var(--steel-dim); font-size:12.5px; padding: 24px 10px; border: 1px dashed var(--line); border-radius:10px; }
+  .footer-note{ text-align:center; font-size: 11px; color: var(--steel-dim); padding: 24px 20px 10px; }
+
+  #toast{
+    position:fixed; bottom:20px; left:50%; transform:translateX(-50%);
+    background: var(--brass); color:#14100a; font-size:12.5px; font-weight:600;
+    padding:9px 16px; border-radius:8px; opacity:0; pointer-events:none;
+    transition: opacity .2s;
+  }
+  #toast.show{ opacity:1; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">Suivi personnel</div>
+  <h1>Répertoire Horloger</h1>
+  <div class="tagline">Prix et nouveautés pour les marques suivies. Les données proviennent d'un fichier distant mis à jour à la demande.</div>
+  <div class="header-actions">
+    <button class="hbtn" id="btn-reload">↻ Recharger les données</button>
+    <button class="hbtn" id="btn-claude">✎ Demander à Claude</button>
+  </div>
+  <div class="sync-line mono" id="sync-line"></div>
+</header>
+
+<nav class="tabs" id="tabs"></nav>
+<main id="main"></main>
+<div class="footer-note">Répertoire personnel — actualisation manuelle via Claude, aucun scraping automatique en arrière-plan.</div>
+<div id="toast"></div>
+
+<script>
+const DATA_URL = 'data.json';
+const BRAND_ORDER = ["omega", "tissot", "lip", "orient"];
+let DATA = null;
+let activeBrand = "omega";
+
+function toast(msg){
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2200);
+}
+
+async function loadData(forceFresh){
+  try {
+    const url = forceFresh ? DATA_URL + '?t=' + Date.now() : DATA_URL;
+    const res = await fetch(url, { cache: forceFresh ? 'no-store' : 'default' });
+    DATA = await res.json();
+    localStorage.setItem('watch-tracker:cache', JSON.stringify(DATA));
+    return true;
+  } catch(e){
+    const cached = localStorage.getItem('watch-tracker:cache');
+    if (cached){ DATA = JSON.parse(cached); return false; }
+    DATA = { updated: null, brands: {} };
+    return false;
+  }
+}
+
+function renderTabs(){
+  const tabs = document.getElementById('tabs');
+  tabs.innerHTML = "";
+  BRAND_ORDER.forEach(key => {
+    if (!DATA.brands[key]) return;
+    const btn = document.createElement('button');
+    btn.className = 'tab-btn' + (key === activeBrand ? ' active' : '');
+    btn.textContent = DATA.brands[key].label;
+    btn.onclick = () => { activeBrand = key; render(); };
+    tabs.appendChild(btn);
+  });
+  const newsBtn = document.createElement('button');
+  newsBtn.className = 'tab-btn' + (activeBrand === 'news' ? ' active' : '');
+  newsBtn.textContent = 'Nouveautés';
+  newsBtn.onclick = () => { activeBrand = 'news'; render(); };
+  tabs.appendChild(newsBtn);
+}
+
+function escapeHtml(s){ return String(s==null?'':s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+function allNewsSorted(){
+  let all = [];
+  BRAND_ORDER.forEach(key => {
+    const b = DATA.brands[key];
+    if (!b) return;
+    (b.news||[]).forEach(n => all.push({ ...n, brand: b.label }));
+  });
+  return all.sort((a,b) => (b.date||'').localeCompare(a.date||''));
+}
+
+function watchCard(w){
+  const div = document.createElement('div');
+  div.className = 'card';
+  div.innerHTML = `
+    <div class="card-top">
+      <div>
+        <div class="card-model">${escapeHtml(w.model)}</div>
+        <div class="card-ref mono">${escapeHtml(w.reference || '—')}</div>
+      </div>
+      <div class="card-price">
+        ${w.estimated ? '<div class="flag">estimation</div>' : ''}
+        <div class="price-new-label">Neuf</div>
+        <div class="price-new mono">${escapeHtml(w.priceNew || '—')}</div>
+        ${w.priceUsed && w.priceUsed !== '—' ? `<div class="price-used-label">Occasion</div><div class="price-used mono">${escapeHtml(w.priceUsed)}</div>` : ''}
+        <div class="price-date">${escapeHtml(w.priceDate || '')}</div>
+      </div>
+    </div>
+    ${w.note ? `<div class="card-note">${escapeHtml(w.note)}</div>` : ''}
+    ${w.link ? `<div class="card-actions"><a href="${escapeHtml(w.link)}" target="_blank" rel="noopener">Voir la source ↗</a></div>` : ''}
+  `;
+  return div;
+}
+
+function render(){
+  renderTabs();
+  const main = document.getElementById('main');
+  main.innerHTML = "";
+  const syncLine = document.getElementById('sync-line');
+  syncLine.textContent = DATA.updated ? `Données du ${DATA.updated}` : '';
+
+  if (activeBrand === 'news'){
+    const panel = document.createElement('div');
+    panel.className = 'panel';
+    panel.innerHTML = `<div class="section-title"><h2>Toutes les nouveautés</h2></div>`;
+    const all = allNewsSorted();
+    if (all.length === 0){
+      panel.innerHTML += `<div class="empty">Rien pour l'instant.</div>`;
+    } else {
+      all.forEach(n => {
+        const item = document.createElement('div');
+        item.className = 'news-item';
+        item.style.marginBottom = '14px';
+        item.innerHTML = `<div class="news-date mono">${escapeHtml(n.date)} · ${escapeHtml(n.brand)}</div><div class="news-text">${escapeHtml(n.text)}</div>`;
+        panel.appendChild(item);
+      });
+    }
+    main.appendChild(panel);
+    return;
+  }
+
+  const brandData = DATA.brands[activeBrand];
+  if (!brandData) return;
+  const panel = document.createElement('div');
+  panel.className = 'panel';
+  panel.innerHTML = `<div class="section-title"><h2>${escapeHtml(brandData.label)}</h2><span class="count mono">${(brandData.watches||[]).length} suivie${(brandData.watches||[]).length>1?'s':''}</span></div>`;
+
+  const news = (brandData.news||[]).slice().sort((a,b) => (b.date||'').localeCompare(a.date||''));
+  const newsBox = document.createElement('div');
+  newsBox.className = 'brand-news';
+  let newsHtml = `<div class="eyebrow">Actus ${escapeHtml(brandData.label)}</div>`;
+  if (news.length === 0){
+    newsHtml += `<div class="news-text" style="padding-bottom:10px;">Rien pour l'instant.</div>`;
+  } else {
+    news.forEach(n => {
+      newsHtml += `<div class="news-item"><div class="news-date mono">${escapeHtml(n.date)}</div><div class="news-text">${escapeHtml(n.text)}</div></div>`;
+    });
+  }
+  newsBox.innerHTML = newsHtml;
+  panel.appendChild(newsBox);
+
+  const watches = brandData.watches || [];
+  if (watches.length === 0){
+    panel.innerHTML += `<div class="empty">Aucune montre suivie pour cette marque pour l'instant.</div>`;
+  } else {
+    watches.forEach(w => panel.appendChild(watchCard(w)));
+  }
+  main.appendChild(panel);
+}
+
+document.getElementById('btn-reload').onclick = async () => {
+  toast('Rechargement…');
+  const ok = await loadData(true);
+  render();
+  toast(ok ? 'Données rechargées' : 'Hors ligne — dernière version en cache');
+};
+
+document.getElementById('btn-claude').onclick = () => {
+  const prompt = "Actualise le répertoire horloger : recherche les dernières actualités et vérifie les prix (neuf + fourchette occasion) pour Omega, Tissot, LIP et Orient sur les modèles déjà suivis dans data.json du repo Lapepite792/repertoire-horloger, puis mets à jour ce fichier directement (nouveautés en premier, dates au format AAAA-MM-JJ).";
+  navigator.clipboard.writeText(prompt).then(() => {
+    toast('Prompt copié — colle-le à Claude');
+  }).catch(() => {
+    toast('Copie impossible sur ce navigateur');
+  });
+};
+
+(async function init(){
+  await loadData(false);
+  render();
+})();
+</script>
+</body>
+</html>

@@ -355,7 +355,7 @@ function render(){
     const panel = document.createElement('div');
     panel.className = 'panel';
     panel.innerHTML = `<div class="section-title"><h2>À la mode en ce moment</h2></div>
-      <div style="font-size:12px;color:var(--ink-faint);font-family:-apple-system,sans-serif;margin-bottom:14px;line-height:1.5;">Sélection pour découvrir d'autres marques et modèles très demandés — indépendamment de ta liste suivie.</div>`;
+      <div style="font-size:12px;color:var(--ink-faint);font-family:-apple-system,sans-serif;margin-bottom:14px;line-height:1.5;">Micro-marques, indépendants et maisons méconnues qui font parler d'elles — pour découvrir autre chose que les grands noms.</div>`;
     const trending = (DATA.trending || []).slice().sort((a,b) => (b.date||'').localeCompare(a.date||''));
     if (trending.length === 0){
       panel.innerHTML += `<div class="empty">Rien pour l'instant.</div>`;
@@ -556,7 +556,7 @@ document.getElementById('btn-reload').onclick = async () => {
 };
 
 document.getElementById('btn-claude').onclick = () => {
-  const prompt = "Actualise le répertoire horloger (repo Lapepite792/repertoire-horloger, fichier data.json) : pour Omega, Tissot, LIP et Orient sur les modèles déjà suivis, recherche 1) les dernières actualités avec leur lien source, 2) les prix neuf + fourchette occasion — si un prix neuf est inconnu, renseigne le champ priceNewReason avec la raison (tarif non publié, modèle discontinué, etc.), 3) les caractéristiques (mouvement, diamètre, bracelet, année), 4) les variantes disponibles classées par tailles/couleurs/matières, 5) des bons plans sur sites tiers fiables (avec lien) pour chaque modèle si possible. Actualise aussi l'onglet tendances. Mets à jour data.json directement (nouveautés triées les plus récentes en premier, dates stockées au format AAAA-MM-JJ).";
+  const prompt = "Actualise le répertoire horloger (repo Lapepite792/repertoire-horloger, fichier data.json) : pour Omega, Tissot, LIP et Orient sur les modèles déjà suivis, recherche 1) les dernières actualités avec leur lien source, 2) les prix neuf + fourchette occasion — si un prix neuf est inconnu, renseigne le champ priceNewReason avec la raison (tarif non publié, modèle discontinué, etc.), 3) les caractéristiques (mouvement, diamètre, bracelet, année), 4) les variantes disponibles classées par tailles/couleurs/matières, 5) des bons plans sur sites tiers fiables (avec lien) pour chaque modèle si possible. Actualise aussi l'onglet tendances — il doit servir à DÉCOUVRIR : privilégie les micro-marques, marques indépendantes et maisons méconnues ou relancées (pas Rolex/Patek/AP/Cartier ni les grandes maisons déjà connues de tous). Mets à jour data.json directement (nouveautés triées les plus récentes en premier, dates stockées au format AAAA-MM-JJ).";
   navigator.clipboard.writeText(prompt).then(() => {
     toast('Prompt copié — colle-le à Claude');
   }).catch(() => {

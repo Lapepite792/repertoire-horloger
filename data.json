@@ -9,27 +9,39 @@
           "model": "Speedmaster Professional Moonwatch Hésalite",
           "reference": "310.30.42.50.01.001",
           "priceNew": "8 500 – 8 800 €",
-          "priceUsed": "4 000 – 6 500 €",
+          "priceUsed": "4 500 – 8 500 €",
           "priceDate": "août 2026",
           "link": "https://www.omegawatches.com",
-          "note": "Boutique officielle, acier/hésalite 42mm.",
+          "note": "Boutique officielle, acier/hésalite 42mm. Marché de l'occasion large selon état/complétude.",
+          "estimated": true
+        },
+        {
+          "id": "omega-speedmaster-reverse-panda",
+          "model": "Speedmaster Moonwatch \"Reverse Panda\"",
+          "reference": "310.60.42.50.01.002",
+          "priceNew": "à préciser (acier + version Moonshine gold)",
+          "priceUsed": "—",
+          "priceDate": "mai 2026",
+          "link": "https://www.omegawatches.com",
+          "note": "Cadran noir + sous-compteurs blancs (inverse du panda classique), 42mm, bracelet à ajustement confort.",
           "estimated": true
         },
         {
           "id": "omega-speedmaster-milano-cortina",
           "model": "Speedmaster 38mm Milano Cortina 2026",
-          "reference": "—",
+          "reference": "522.30.38.50.04.001",
           "priceNew": "à préciser",
           "priceUsed": "—",
           "priceDate": "mars 2026",
           "link": "https://www.omegawatches.com",
-          "note": "Édition liée aux JO d'hiver, cadran bleu ciel.",
+          "note": "Édition liée aux JO d'hiver, cadran bleu ciel effet neige.",
           "estimated": true
         }
       ],
       "news": [
+        { "date": "2026-05-21", "text": "Omega lance la Speedmaster Moonwatch « Reverse Panda » (cadran noir, sous-compteurs blancs), en acier et en version Moonshine gold." },
         { "date": "2026-03-17", "text": "Omega dévoile deux Speedmaster Moonwatch Professional « Black & White » à cadran inversé (acier ~10 200 €, or Moonshine ~48 200 €)." },
-        { "date": "2026-02-14", "text": "Speedmaster 38mm « Milano Cortina 2026 » lancée en lien avec les Jeux Olympiques d'hiver." }
+        { "date": "2026-02-14", "text": "Speedmaster 38mm « Milano Cortina 2026 » lancée en lien avec les Jeux Olympiques d'hiver, cadran bleu ciel façon piste enneigée." }
       ]
     },
     "tissot": {
@@ -39,8 +51,8 @@
           "id": "tissot-prx-quartz",
           "model": "PRX Quartz 35/40mm",
           "reference": "T137.410.11.031.00",
-          "priceNew": "350 – 450 €",
-          "priceUsed": "180 – 280 €",
+          "priceNew": "340 – 400 €",
+          "priceUsed": "170 – 260 €",
           "priceDate": "août 2026",
           "link": "https://www.tissotwatches.com",
           "note": "Modèle d'entrée de la gamme PRX, acier intégral.",
@@ -50,16 +62,16 @@
           "id": "tissot-prx-automatic",
           "model": "PRX Powermatic 80",
           "reference": "T137.407.11.041.00",
-          "priceNew": "750 – 900 €",
-          "priceUsed": "400 – 600 €",
+          "priceNew": "600 – 700 €",
+          "priceUsed": "370 – 510 €",
           "priceDate": "août 2026",
           "link": "https://www.tissotwatches.com",
-          "note": "Mouvement Powermatic 80, réserve de marche 80h.",
+          "note": "Mouvement Powermatic 80, réserve de marche 80h, fond saphir.",
           "estimated": true
         }
       ],
       "news": [
-        { "date": "2026-04-09", "text": "Tissot étend l'univers PRX avec de nouvelles finitions et coloris, ainsi qu'une collaboration cyclisme Tour de France." },
+        { "date": "2026-04-09", "text": "Tissot étend l'univers PRX avec de nouvelles finitions et coloris, ainsi qu'une collaboration cyclisme Tour de France (PR 100)." },
         { "date": "2026-03-16", "text": "Nouveau Tissot Visodate présenté — relecture d'un classique de la marque." }
       ]
     },
@@ -67,35 +79,50 @@
       "label": "LIP",
       "watches": [
         {
-          "id": "lip-himalaya",
-          "model": "Himalaya (réédition)",
-          "reference": "à préciser",
-          "priceNew": "à vérifier",
+          "id": "lip-himalaya-squelette",
+          "model": "Himalaya Squelette Automatique",
+          "reference": "à préciser (bracelet cuir bleu gris)",
+          "priceNew": "428 €",
           "priceUsed": "—",
-          "priceDate": "—",
+          "priceDate": "août 2026",
           "link": "https://www.lip.fr",
-          "note": "Marque française historique (Besançon) — à compléter avec les références exactes à suivre.",
+          "note": "Mouvement squelette visible, l'une des rares montres squelettes automatiques françaises à ce prix. Modèle historique porté par Charles de Gaulle dans sa version originale.",
           "estimated": true
         }
       ],
-      "news": []
+      "news": [
+        { "date": "2026-06-24", "text": "Soldes d'été LIP jusqu'à -50% (24 juin – 21 juillet 2026, dans la limite des stocks)." }
+      ]
     },
     "orient": {
       "label": "Orient",
       "watches": [
         {
-          "id": "orient-bambino",
-          "model": "Bambino (v1/v2)",
-          "reference": "à préciser",
-          "priceNew": "à vérifier",
+          "id": "orient-bambino-nodate-38",
+          "model": "Bambino 38 sans date (nouveauté)",
+          "reference": "F6524",
+          "priceNew": "340 €",
           "priceUsed": "—",
-          "priceDate": "—",
+          "priceDate": "février 2026",
           "link": "https://www.orientwatch.com",
-          "note": "Gamme dress-watch automatique accessible — à compléter avec les références exactes.",
+          "note": "Première Bambino sans affichage de date, design symétrique, boîtier 38,4mm, bracelet cuir interchangeable sans outil.",
+          "estimated": true
+        },
+        {
+          "id": "orient-bambino-date-classic",
+          "model": "Bambino Date Classic",
+          "reference": "F6724 (acier 340€ / doré 370€)",
+          "priceNew": "340 – 370 €",
+          "priceUsed": "150 – 280 €",
+          "priceDate": "février 2026",
+          "link": "https://www.orientwatch.com",
+          "note": "Boîtier 40,5mm, nouveaux coloris et cadrans dégradés en 2026.",
           "estimated": true
         }
       ],
-      "news": []
+      "news": [
+        { "date": "2026-02-16", "text": "Orient dévoile sa première Bambino sans date (38mm) et de nouveaux coloris/cadrans dégradés pour les modèles à date, dès 340 €." }
+      ]
     }
   }
 }

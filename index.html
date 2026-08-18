@@ -5,101 +5,103 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Répertoire Horloger</title>
 <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#10141a">
+<meta name="theme-color" content="#efe9dc">
 <style>
   :root{
-    --bg: #10141a;
-    --bg-panel: #161b23;
-    --bg-card: #1b212b;
-    --line: #2a323e;
-    --steel: #8fa0b3;
-    --steel-dim: #5b6b7d;
-    --brass: #c9a24a;
-    --brass-dim: #9c7f3d;
-    --text: #e8ecf1;
-    --text-dim: #a6b1bf;
-    --red: #c1584a;
-    --green: #5c9c7a;
+    --paper: #efe9dc;
+    --paper-raised: #f7f3ea;
+    --ink: #26241f;
+    --ink-soft: #5a564a;
+    --ink-faint: #928c7a;
+    --rule: #cfc6ac;
+    --copper: #9a5b32;
+    --copper-deep: #7a4726;
+    --sage: #5f7259;
+    --card-shadow: 0 1px 0 rgba(38,36,31,0.06);
   }
   *{ box-sizing: border-box; }
   html,body{ margin:0; padding:0; }
   body{
-    background: radial-gradient(ellipse at top, #161d26 0%, #0d1116 65%);
-    color: var(--text);
-    font-family: 'Inter', -apple-system, 'Segoe UI', sans-serif;
+    background:
+      repeating-linear-gradient(0deg, rgba(38,36,31,0.015) 0px, rgba(38,36,31,0.015) 1px, transparent 1px, transparent 34px),
+      var(--paper);
+    color: var(--ink);
+    font-family: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
     min-height: 100vh;
-    padding-bottom: 60px;
+    padding-bottom: 50px;
   }
   .mono{ font-family: 'JetBrains Mono', 'Courier New', monospace; }
+  .sans{ font-family: -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; }
 
-  header{
-    padding: 24px 20px 18px;
-    border-bottom: 1px solid var(--line);
-    position: relative;
-    overflow: hidden;
-  }
-  header::before{ content:""; position:absolute; top:-40px; right:-40px; width:160px; height:160px; border-radius:50%; border: 1px solid var(--line); }
-  header::after{ content:""; position:absolute; top:-20px; right:-20px; width:120px; height:120px; border-radius:50%; border: 1px solid var(--line); }
-  h1{ font-family: Georgia, 'Times New Roman', serif; font-weight: 600; font-size: 25px; letter-spacing: 0.5px; margin: 0 0 4px; }
-  .tagline{ color: var(--text-dim); font-size: 12.5px; max-width: 480px; line-height: 1.5; }
-  .eyebrow{ text-transform: uppercase; letter-spacing: 2px; font-size: 10.5px; color: var(--brass); font-weight: 600; margin-bottom: 6px; }
+  header{ padding: 26px 20px 18px; border-bottom: 2px solid var(--ink); }
+  .eyebrow{ text-transform: uppercase; letter-spacing: 3px; font-size: 10px; color: var(--copper); font-weight: 600; margin-bottom: 6px; font-family: -apple-system, 'Segoe UI', sans-serif; }
+  h1{ font-size: 27px; font-weight: 400; letter-spacing: 0.3px; margin: 0 0 5px; font-style: italic; }
+  .tagline{ color: var(--ink-soft); font-size: 12.5px; max-width: 480px; line-height: 1.55; font-family: -apple-system, 'Segoe UI', sans-serif; }
 
-  .header-actions{ display:flex; gap:10px; margin-top:14px; flex-wrap:wrap; }
-  .hbtn{
-    background:none; border:1px solid var(--line); color: var(--steel);
-    font-size: 11px; padding: 7px 13px; border-radius:7px; cursor:pointer;
-    display:flex; align-items:center; gap:6px;
-  }
-  .hbtn:active{ border-color: var(--brass); color: var(--brass); }
-  .sync-line{ font-size: 10px; color: var(--steel-dim); margin-top: 8px; }
+  .header-actions{ display:flex; gap:8px; margin-top:14px; flex-wrap:wrap; font-family: -apple-system, 'Segoe UI', sans-serif; }
+  .hbtn{ background: var(--paper-raised); border:1px solid var(--ink); color: var(--ink); font-size: 11px; padding: 7px 13px; cursor:pointer; letter-spacing:0.2px; }
+  .hbtn:active{ background: var(--ink); color: var(--paper); }
+  .sync-line{ font-size: 10px; color: var(--ink-faint); margin-top: 9px; font-family: -apple-system, sans-serif; letter-spacing:0.3px; }
 
-  nav.tabs{ display:flex; gap:6px; padding: 14px 20px 0; overflow-x:auto; border-bottom: 1px solid var(--line); }
+  nav.tabs{ display:flex; gap:2px; padding: 0 20px; overflow-x:auto; border-bottom: 1px solid var(--rule); background: var(--paper-raised); }
   nav.tabs::-webkit-scrollbar{ display:none; }
-  .tab-btn{
-    background:none; border:none; color: var(--text-dim);
-    font-family: Georgia, serif; font-size: 14px;
-    padding: 10px 14px; cursor:pointer; white-space:nowrap;
-    border-bottom: 2px solid transparent;
-  }
-  .tab-btn.active{ color: var(--brass); border-bottom-color: var(--brass); }
+  .tab-btn{ background:none; border:none; color: var(--ink-soft); font-family: Georgia, serif; font-style: italic; font-size: 14.5px; padding: 12px 13px; cursor:pointer; white-space:nowrap; border-bottom: 3px solid transparent; }
+  .tab-btn.active{ color: var(--copper-deep); border-bottom-color: var(--copper-deep); font-style: normal; font-weight:600; }
 
   main{ padding: 18px 16px 0; max-width: 640px; margin: 0 auto; }
-  .panel{ animation: fade .25s ease; }
-  @keyframes fade{ from{opacity:0; transform:translateY(4px);} to{opacity:1; transform:none;} }
+  .panel{ animation: fade .2s ease; }
+  @keyframes fade{ from{opacity:0;} to{opacity:1;} }
 
-  .section-title{ display:flex; align-items:baseline; justify-content:space-between; margin: 18px 0 10px; }
-  .section-title h2{ font-family: Georgia, serif; font-size: 16px; font-weight:600; margin:0; }
-  .section-title .count{ color: var(--steel-dim); font-size: 12px; }
+  .section-title{ display:flex; align-items:baseline; justify-content:space-between; margin: 16px 0 10px; }
+  .section-title h2{ font-size: 17px; font-weight:400; font-style:italic; margin:0; }
+  .section-title .count{ color: var(--ink-faint); font-size: 11px; font-family: -apple-system, sans-serif; }
 
-  .brand-news{ background: var(--bg-panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px 4px; margin-bottom: 16px; }
-  .brand-news .news-item{ border-left: 2px solid var(--brass-dim); padding: 2px 0 2px 12px; margin-bottom: 12px; }
-  .news-date{ font-size: 10.5px; color: var(--steel-dim); letter-spacing:0.5px; }
-  .news-text{ font-size: 12.5px; color: var(--text-dim); margin-top: 3px; line-height:1.5; }
+  .brand-news{ border-top: 1px solid var(--ink); border-bottom: 1px solid var(--rule); padding: 10px 0 6px; margin-bottom: 18px; }
+  .brand-news .eyebrow{ margin-bottom:8px; }
+  .news-item{ padding: 2px 0 2px 0; margin-bottom: 11px; font-family: -apple-system, sans-serif; }
+  .news-date{ font-size: 10px; color: var(--copper-deep); letter-spacing:0.5px; font-weight:600; }
+  .news-text{ font-size: 12.5px; color: var(--ink-soft); margin-top: 3px; line-height:1.5; }
 
-  .card{ background: var(--bg-card); border: 1px solid var(--line); border-radius: 10px; padding: 14px 14px 12px; margin-bottom: 10px; }
+  .card{ background: var(--paper-raised); border: 1px solid var(--rule); border-radius: 3px; padding: 14px 14px 12px; margin-bottom: 12px; box-shadow: var(--card-shadow); }
   .card-top{ display:flex; justify-content:space-between; align-items:flex-start; gap:10px; }
-  .card-model{ font-family: Georgia, serif; font-size: 15px; }
-  .card-ref{ color: var(--steel-dim); font-size: 11px; margin-top:2px; }
-  .card-price{ text-align:right; flex-shrink:0; }
-  .flag{ display:inline-block; font-size: 9px; letter-spacing:1px; text-transform:uppercase; color: var(--brass-dim); border:1px solid var(--brass-dim); padding: 1px 6px; border-radius:20px; margin-bottom: 5px; }
-  .price-new{ font-size: clamp(13px, 4vw, 17px); font-weight:600; color: var(--brass); line-height:1.25; white-space:nowrap; }
-  .price-new-label{ font-size: 9px; color: var(--steel-dim); text-transform:uppercase; letter-spacing:0.5px; }
-  .price-used{ font-size: clamp(11px, 3.2vw, 12.5px); color: var(--steel); margin-top:4px; white-space:nowrap; }
-  .price-used-label{ font-size: 9px; color: var(--steel-dim); text-transform:uppercase; letter-spacing:0.5px; }
-  .price-date{ font-size: 10px; color: var(--steel-dim); margin-top:4px; }
-  .card-note{ font-size: 12.5px; color: var(--text-dim); margin-top:8px; line-height:1.5; }
-  .card-actions{ margin-top:10px; }
-  .card-actions a{ font-size: 11.5px; color: var(--steel); text-decoration:none; }
+  .card-model{ font-size: 16px; font-weight:400; line-height:1.3; }
+  .card-ref{ color: var(--ink-faint); font-size: 10.5px; margin-top:3px; font-family: -apple-system, sans-serif; letter-spacing:0.3px; }
 
-  .empty{ text-align:center; color: var(--steel-dim); font-size:12.5px; padding: 24px 10px; border: 1px dashed var(--line); border-radius:10px; }
-  .footer-note{ text-align:center; font-size: 11px; color: var(--steel-dim); padding: 24px 20px 10px; }
+  .price-row{ display:flex; align-items:baseline; gap:10px; margin-top:11px; flex-wrap:wrap; font-family: -apple-system, sans-serif; }
+  .price-block{ display:flex; align-items:baseline; gap:5px; }
+  .price-label{ font-size: 9.5px; color: var(--ink-faint); text-transform:uppercase; letter-spacing:0.6px; }
+  .price-new-val{ font-size: clamp(15px, 4.4vw, 19px); font-weight:700; color: var(--copper-deep); }
+  .price-used-val{ font-size: clamp(12px, 3.6vw, 14px); color: var(--sage); font-weight:600; }
+  .price-unknown{ color: var(--ink-faint); font-style: italic; font-weight:400; }
+  .price-date{ font-size: 9.5px; color: var(--ink-faint); margin-top:4px; font-family: -apple-system, sans-serif; }
+  .flag{ display:inline-block; font-size: 8.5px; letter-spacing:1px; text-transform:uppercase; color: var(--copper-deep); border:1px solid var(--copper-deep); padding: 1px 6px; border-radius:20px; margin-left:8px; font-family: -apple-system, sans-serif; vertical-align:middle; }
 
-  #toast{
-    position:fixed; bottom:20px; left:50%; transform:translateX(-50%);
-    background: var(--brass); color:#14100a; font-size:12.5px; font-weight:600;
-    padding:9px 16px; border-radius:8px; opacity:0; pointer-events:none;
-    transition: opacity .2s;
-  }
+  .specs{ display:grid; grid-template-columns: 1fr 1fr; gap: 6px 14px; margin-top: 12px; padding-top: 11px; border-top: 1px dashed var(--rule); font-family: -apple-system, sans-serif; }
+  .spec{ font-size: 11.5px; color: var(--ink-soft); }
+  .spec b{ display:block; font-size: 9px; text-transform:uppercase; letter-spacing:0.5px; color: var(--ink-faint); font-weight:600; margin-bottom:1px; }
+
+  .card-note{ font-size: 12.5px; color: var(--ink-soft); margin-top:10px; line-height:1.55; font-family: -apple-system, sans-serif; }
+
+  .variants-toggle{ margin-top: 10px; font-size: 11.5px; color: var(--copper-deep); background:none; border:none; padding:0; cursor:pointer; font-weight:600; font-family: -apple-system, sans-serif; letter-spacing:0.2px; }
+  .variants-list{ display:none; margin-top:8px; padding: 9px 11px; background: var(--paper); border-left: 2px solid var(--copper); font-family: -apple-system, sans-serif; }
+  .variants-list.open{ display:block; }
+  .variants-list span{ display:inline-block; font-size: 11px; color: var(--ink-soft); background: var(--paper-raised); border:1px solid var(--rule); padding:3px 8px; border-radius:20px; margin: 2px 4px 2px 0; }
+
+  .card-actions{ margin-top:10px; font-family: -apple-system, sans-serif; }
+  .card-actions a{ font-size: 11.5px; color: var(--ink-soft); text-decoration: underline; text-decoration-color: var(--rule); }
+
+  .trend-card{ background: var(--paper-raised); border: 1px solid var(--rule); border-radius: 3px; padding: 13px 14px; margin-bottom: 12px; box-shadow: var(--card-shadow); }
+  .trend-top{ display:flex; justify-content:space-between; gap:10px; }
+  .trend-brand{ font-size: 10px; text-transform:uppercase; letter-spacing:1px; color: var(--copper-deep); font-weight:700; font-family: -apple-system, sans-serif; }
+  .trend-model{ font-size: 16px; margin-top:2px; }
+  .trend-price{ font-size: 11px; color: var(--sage); font-weight:600; text-align:right; white-space:nowrap; font-family: -apple-system, sans-serif; }
+  .trend-note{ font-size: 12.5px; color: var(--ink-soft); margin-top:8px; line-height:1.55; font-family: -apple-system, sans-serif; }
+  .trend-date{ font-size: 10px; color: var(--ink-faint); margin-top:8px; font-family: -apple-system, sans-serif; }
+
+  .empty{ text-align:center; color: var(--ink-faint); font-size:12.5px; padding: 24px 10px; border: 1px dashed var(--rule); font-family: -apple-system, sans-serif; }
+  .footer-note{ text-align:center; font-size: 10.5px; color: var(--ink-faint); padding: 24px 20px 10px; font-family: -apple-system, sans-serif; }
+
+  #toast{ position:fixed; bottom:20px; left:50%; transform:translateX(-50%); background: var(--ink); color: var(--paper); font-size:12px; font-weight:600; padding:9px 16px; border-radius:3px; opacity:0; pointer-events:none; transition: opacity .2s; font-family: -apple-system, sans-serif; }
   #toast.show{ opacity:1; }
 </style>
 </head>
@@ -108,7 +110,7 @@
 <header>
   <div class="eyebrow">Suivi personnel</div>
   <h1>Répertoire Horloger</h1>
-  <div class="tagline">Prix et nouveautés pour les marques suivies. Les données proviennent d'un fichier distant mis à jour à la demande.</div>
+  <div class="tagline">Prix et nouveautés pour les marques suivies — mis à jour à la demande, sans scraping automatique.</div>
   <div class="header-actions">
     <button class="hbtn" id="btn-reload">↻ Recharger les données</button>
     <button class="hbtn" id="btn-claude">✎ Demander à Claude</button>
@@ -118,7 +120,7 @@
 
 <nav class="tabs" id="tabs"></nav>
 <main id="main"></main>
-<div class="footer-note">Répertoire personnel — actualisation manuelle via Claude, aucun scraping automatique en arrière-plan.</div>
+<div class="footer-note">Répertoire personnel — actualisation manuelle via Claude.</div>
 <div id="toast"></div>
 
 <script>
@@ -143,7 +145,7 @@ async function loadData(forceFresh){
   } catch(e){
     const cached = localStorage.getItem('watch-tracker:cache');
     if (cached){ DATA = JSON.parse(cached); return false; }
-    DATA = { updated: null, brands: {} };
+    DATA = { updated: null, brands: {}, trending: [] };
     return false;
   }
 }
@@ -164,6 +166,12 @@ function renderTabs(){
   newsBtn.textContent = 'Nouveautés';
   newsBtn.onclick = () => { activeBrand = 'news'; render(); };
   tabs.appendChild(newsBtn);
+
+  const trendBtn = document.createElement('button');
+  trendBtn.className = 'tab-btn' + (activeBrand === 'trending' ? ' active' : '');
+  trendBtn.textContent = 'À la mode';
+  trendBtn.onclick = () => { activeBrand = 'trending'; render(); };
+  tabs.appendChild(trendBtn);
 }
 
 function escapeHtml(s){ return String(s==null?'':s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
@@ -178,25 +186,65 @@ function allNewsSorted(){
   return all.sort((a,b) => (b.date||'').localeCompare(a.date||''));
 }
 
-function watchCard(w){
+function priceNewDisplay(w){
+  if (!w.priceNew || w.priceNew === '—' || /préciser|vérifier/i.test(w.priceNew)) return '<span class="price-unknown">inconnu</span>';
+  return escapeHtml(w.priceNew);
+}
+
+function watchCard(w, idx){
   const div = document.createElement('div');
   div.className = 'card';
+  const hasUsed = w.priceUsed && w.priceUsed !== '—';
+  const hasVariants = w.variants && w.variants.length > 0;
+  const vid = 'variants-' + idx;
+
+  const specsHtml = `
+    <div class="specs">
+      ${w.movement ? `<div class="spec"><b>Mouvement</b>${escapeHtml(w.movement)}</div>` : ''}
+      ${w.diameter ? `<div class="spec"><b>Diamètre</b>${escapeHtml(w.diameter)}</div>` : ''}
+      ${w.bracelet ? `<div class="spec"><b>Bracelet</b>${escapeHtml(w.bracelet)}</div>` : ''}
+      ${w.releaseYear ? `<div class="spec"><b>Année</b>${escapeHtml(w.releaseYear)}</div>` : ''}
+    </div>`;
+
   div.innerHTML = `
     <div class="card-top">
       <div>
-        <div class="card-model">${escapeHtml(w.model)}</div>
+        <div class="card-model">${escapeHtml(w.model)}${w.estimated ? '<span class="flag">estimation</span>' : ''}</div>
         <div class="card-ref mono">${escapeHtml(w.reference || '—')}</div>
       </div>
-      <div class="card-price">
-        ${w.estimated ? '<div class="flag">estimation</div>' : ''}
-        <div class="price-new-label">Neuf</div>
-        <div class="price-new mono">${escapeHtml(w.priceNew || '—')}</div>
-        ${w.priceUsed && w.priceUsed !== '—' ? `<div class="price-used-label">Occasion</div><div class="price-used mono">${escapeHtml(w.priceUsed)}</div>` : ''}
-        <div class="price-date">${escapeHtml(w.priceDate || '')}</div>
-      </div>
     </div>
+    <div class="price-row">
+      <div class="price-block">
+        <span class="price-label">Neuf</span>
+        <span class="price-new-val mono">${priceNewDisplay(w)}</span>
+      </div>
+      ${hasUsed ? `<div class="price-block"><span class="price-label">Occasion</span><span class="price-used-val mono">${escapeHtml(w.priceUsed)}</span></div>` : ''}
+    </div>
+    <div class="price-date">${escapeHtml(w.priceDate || '')}</div>
+    ${specsHtml}
     ${w.note ? `<div class="card-note">${escapeHtml(w.note)}</div>` : ''}
+    ${hasVariants ? `
+      <button class="variants-toggle" data-toggle="${vid}">Voir + les variantes (${w.variants.length})</button>
+      <div class="variants-list" id="${vid}">${w.variants.map(v => `<span>${escapeHtml(v)}</span>`).join('')}</div>
+    ` : ''}
     ${w.link ? `<div class="card-actions"><a href="${escapeHtml(w.link)}" target="_blank" rel="noopener">Voir la source ↗</a></div>` : ''}
+  `;
+  return div;
+}
+
+function trendCard(t){
+  const div = document.createElement('div');
+  div.className = 'trend-card';
+  div.innerHTML = `
+    <div class="trend-top">
+      <div>
+        <div class="trend-brand">${escapeHtml(t.brand)}</div>
+        <div class="trend-model">${escapeHtml(t.model)}</div>
+      </div>
+      ${t.priceRange ? `<div class="trend-price mono">${escapeHtml(t.priceRange)}</div>` : ''}
+    </div>
+    ${t.note ? `<div class="trend-note">${escapeHtml(t.note)}</div>` : ''}
+    <div class="trend-date mono">${escapeHtml(t.date || '')}${t.link ? ` · <a href="${escapeHtml(t.link)}" target="_blank" rel="noopener" style="color:var(--ink-soft)">source ↗</a>` : ''}</div>
   `;
   return div;
 }
@@ -207,6 +255,21 @@ function render(){
   main.innerHTML = "";
   const syncLine = document.getElementById('sync-line');
   syncLine.textContent = DATA.updated ? `Données du ${DATA.updated}` : '';
+
+  if (activeBrand === 'trending'){
+    const panel = document.createElement('div');
+    panel.className = 'panel';
+    panel.innerHTML = `<div class="section-title"><h2>À la mode en ce moment</h2></div>
+      <div style="font-size:12px;color:var(--ink-faint);font-family:-apple-system,sans-serif;margin-bottom:14px;line-height:1.5;">Sélection pour découvrir d'autres marques et modèles très demandés — indépendamment de ta liste suivie.</div>`;
+    const trending = (DATA.trending || []).slice().sort((a,b) => (b.date||'').localeCompare(a.date||''));
+    if (trending.length === 0){
+      panel.innerHTML += `<div class="empty">Rien pour l'instant.</div>`;
+    } else {
+      trending.forEach(t => panel.appendChild(trendCard(t)));
+    }
+    main.appendChild(panel);
+    return;
+  }
 
   if (activeBrand === 'news'){
     const panel = document.createElement('div');
@@ -219,8 +282,7 @@ function render(){
       all.forEach(n => {
         const item = document.createElement('div');
         item.className = 'news-item';
-        item.style.marginBottom = '14px';
-        item.innerHTML = `<div class="news-date mono">${escapeHtml(n.date)} · ${escapeHtml(n.brand)}</div><div class="news-text">${escapeHtml(n.text)}</div>`;
+        item.innerHTML = `<div class="news-date">${escapeHtml(n.date)} · ${escapeHtml(n.brand)}</div><div class="news-text">${escapeHtml(n.text)}</div>`;
         panel.appendChild(item);
       });
     }
@@ -232,17 +294,17 @@ function render(){
   if (!brandData) return;
   const panel = document.createElement('div');
   panel.className = 'panel';
-  panel.innerHTML = `<div class="section-title"><h2>${escapeHtml(brandData.label)}</h2><span class="count mono">${(brandData.watches||[]).length} suivie${(brandData.watches||[]).length>1?'s':''}</span></div>`;
+  panel.innerHTML = `<div class="section-title"><h2>${escapeHtml(brandData.label)}</h2><span class="count">${(brandData.watches||[]).length} suivie${(brandData.watches||[]).length>1?'s':''}</span></div>`;
 
   const news = (brandData.news||[]).slice().sort((a,b) => (b.date||'').localeCompare(a.date||''));
   const newsBox = document.createElement('div');
   newsBox.className = 'brand-news';
   let newsHtml = `<div class="eyebrow">Actus ${escapeHtml(brandData.label)}</div>`;
   if (news.length === 0){
-    newsHtml += `<div class="news-text" style="padding-bottom:10px;">Rien pour l'instant.</div>`;
+    newsHtml += `<div class="news-text">Rien pour l'instant.</div>`;
   } else {
     news.forEach(n => {
-      newsHtml += `<div class="news-item"><div class="news-date mono">${escapeHtml(n.date)}</div><div class="news-text">${escapeHtml(n.text)}</div></div>`;
+      newsHtml += `<div class="news-item"><div class="news-date">${escapeHtml(n.date)}</div><div class="news-text">${escapeHtml(n.text)}</div></div>`;
     });
   }
   newsBox.innerHTML = newsHtml;
@@ -252,9 +314,16 @@ function render(){
   if (watches.length === 0){
     panel.innerHTML += `<div class="empty">Aucune montre suivie pour cette marque pour l'instant.</div>`;
   } else {
-    watches.forEach(w => panel.appendChild(watchCard(w)));
+    watches.forEach((w, i) => panel.appendChild(watchCard(w, activeBrand + '-' + i)));
   }
   main.appendChild(panel);
+
+  panel.querySelectorAll('[data-toggle]').forEach(btn => {
+    btn.onclick = () => {
+      const el = document.getElementById(btn.getAttribute('data-toggle'));
+      el.classList.toggle('open');
+    };
+  });
 }
 
 document.getElementById('btn-reload').onclick = async () => {
@@ -265,7 +334,7 @@ document.getElementById('btn-reload').onclick = async () => {
 };
 
 document.getElementById('btn-claude').onclick = () => {
-  const prompt = "Actualise le répertoire horloger : recherche les dernières actualités et vérifie les prix (neuf + fourchette occasion) pour Omega, Tissot, LIP et Orient sur les modèles déjà suivis dans data.json du repo Lapepite792/repertoire-horloger, puis mets à jour ce fichier directement (nouveautés en premier, dates au format AAAA-MM-JJ).";
+  const prompt = "Actualise le répertoire horloger : recherche les dernières actualités, vérifie les prix (neuf + fourchette occasion) et les caractéristiques (mouvement, diamètre, bracelet, année) pour Omega, Tissot, LIP et Orient sur les modèles déjà suivis dans data.json du repo Lapepite792/repertoire-horloger, actualise aussi l'onglet tendances, puis mets à jour ce fichier directement (nouveautés en premier, dates au format AAAA-MM-JJ).";
   navigator.clipboard.writeText(prompt).then(() => {
     toast('Prompt copié — colle-le à Claude');
   }).catch(() => {

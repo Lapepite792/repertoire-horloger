@@ -1,0 +1,9 @@
+{
+  "name": "Répertoire Horloger",
+  "short_name": "Horloger",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#10141a",
+  "theme_color": "#10141a",
+  "icons": []
+}

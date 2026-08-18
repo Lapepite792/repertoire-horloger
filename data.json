@@ -18,9 +18,18 @@
           "link": "https://www.omegawatches.com",
           "note": "Boutique officielle, verre hésalite (vs saphir sur les versions Sapphire Sandwich).",
           "estimated": true,
-          "variants": ["Verre saphir (Sapphire Sandwich)", "Cadran blanc", "Bracelet cuir marron", "Version or Moonshine"],
+          "variants": [
+            "Verre saphir (Sapphire Sandwich)",
+            "Cadran blanc",
+            "Bracelet cuir marron",
+            "Version or Moonshine"
+          ],
           "promos": [
-            { "site": "Chrono24 (marketplace, vendeurs vérifiés)", "price": "≈ 6 750 – 7 400 €", "link": "https://www.chrono24.fr" }
+            {
+              "site": "Chrono24 (marketplace, vendeurs vérifiés)",
+              "price": "≈ 6 750 – 7 400 €",
+              "link": "https://www.chrono24.fr"
+            }
           ]
         },
         {
@@ -37,7 +46,10 @@
           "link": "https://www.omegawatches.com",
           "note": "Cadran noir, sous-compteurs blancs (inverse du panda classique), lunette céramique noire.",
           "estimated": true,
-          "variants": ["Acier", "Or Moonshine gold"]
+          "variants": [
+            "Acier",
+            "Or Moonshine gold"
+          ]
         },
         {
           "id": "omega-speedmaster-milano-cortina",
@@ -57,9 +69,20 @@
         }
       ],
       "news": [
-        { "date": "2026-05-21", "text": "Omega lance la Speedmaster Moonwatch « Reverse Panda » (cadran noir, sous-compteurs blancs), en acier et en version Moonshine gold." },
-        { "date": "2026-03-17", "text": "Omega dévoile deux Speedmaster Moonwatch Professional « Black & White » à cadran inversé (acier ~10 200 €, or Moonshine ~48 200 €)." },
-        { "date": "2026-02-14", "text": "Speedmaster 38mm « Milano Cortina 2026 » lancée en lien avec les Jeux Olympiques d'hiver, cadran bleu ciel façon piste enneigée." }
+        {
+          "date": "2026-05-21",
+          "text": "Omega lance la Speedmaster Moonwatch « Reverse Panda » (cadran noir, sous-compteurs blancs), en acier et en version Moonshine gold.",
+          "link": "https://www.luxurybazaar.com/grey-market/omega-2026-watch-releases/"
+        },
+        {
+          "date": "2026-03-17",
+          "text": "Omega dévoile deux Speedmaster Moonwatch Professional « Black & White » à cadran inversé (acier ~10 200 €, or Moonshine ~48 200 €)."
+        },
+        {
+          "date": "2026-02-14",
+          "text": "Speedmaster 38mm « Milano Cortina 2026 » lancée en lien avec les Jeux Olympiques d'hiver, cadran bleu ciel façon piste enneigée.",
+          "link": "https://www.luxurybazaar.com/grey-market/omega-2025-releases/"
+        }
       ]
     },
     "tissot": {
@@ -79,7 +102,12 @@
           "link": "https://www.tissotwatches.com",
           "note": "Modèle d'entrée de la gamme PRX.",
           "estimated": true,
-          "variants": ["35mm (unisexe)", "40mm", "Plusieurs coloris de cadran", "Titane"]
+          "variants": [
+            "35mm (unisexe)",
+            "40mm",
+            "Plusieurs coloris de cadran",
+            "Titane"
+          ]
         },
         {
           "id": "tissot-prx-automatic",
@@ -95,16 +123,36 @@
           "link": "https://www.tissotwatches.com",
           "note": "Fond saphir, balancier Nivachron anti-magnétique.",
           "estimated": true,
-          "variants": ["35mm", "Damascus Steel 38mm", "Titane"],
+          "variants": [
+            "35mm",
+            "Damascus Steel 38mm",
+            "Titane"
+          ],
           "promos": [
-            { "site": "Jomashop (revendeur grey-market établi)", "price": "≈ 500 – 570 €", "link": "https://www.jomashop.com" },
-            { "site": "Watchmaxx (revendeur grey-market établi)", "price": "≈ 530 €", "link": "https://www.watchmaxx.com" }
+            {
+              "site": "Jomashop (revendeur grey-market établi)",
+              "price": "≈ 500 – 570 €",
+              "link": "https://www.jomashop.com"
+            },
+            {
+              "site": "Watchmaxx (revendeur grey-market établi)",
+              "price": "≈ 530 €",
+              "link": "https://www.watchmaxx.com"
+            }
           ]
         }
       ],
       "news": [
-        { "date": "2026-04-09", "text": "Tissot étend l'univers PRX avec de nouvelles finitions et coloris, ainsi qu'une collaboration cyclisme Tour de France (PR 100)." },
-        { "date": "2026-03-16", "text": "Nouveau Tissot Visodate présenté — relecture d'un classique de la marque." }
+        {
+          "date": "2026-04-09",
+          "text": "Tissot étend l'univers PRX avec de nouvelles finitions et coloris, ainsi qu'une collaboration cyclisme Tour de France (PR 100).",
+          "link": "https://www.tissotwatches.com/en-us/magazine-news-tissot-prx-extensions.html"
+        },
+        {
+          "date": "2026-03-16",
+          "text": "Nouveau Tissot Visodate présenté — relecture d'un classique de la marque.",
+          "link": "https://the-gadgeteer.com/2026/05/25/best-tissot-watches-2026/"
+        }
       ]
     },
     "lip": {
@@ -128,7 +176,11 @@
         }
       ],
       "news": [
-        { "date": "2026-06-24", "text": "Soldes d'été LIP jusqu'à -50% (24 juin – 21 juillet 2026, dans la limite des stocks)." }
+        {
+          "date": "2026-06-24",
+          "text": "Soldes d'été LIP jusqu'à -50% (24 juin – 21 juillet 2026, dans la limite des stocks).",
+          "link": "https://lip.fr/en/215-seasonal-sale"
+        }
       ]
     },
     "orient": {
@@ -148,7 +200,10 @@
           "link": "https://www.orientwatch.com",
           "note": "Première Bambino sans affichage de date, design symétrique.",
           "estimated": true,
-          "variants": ["4 coloris", "Édition limitée"]
+          "variants": [
+            "4 coloris",
+            "Édition limitée"
+          ]
         },
         {
           "id": "orient-bambino-date-classic",
@@ -164,11 +219,19 @@
           "link": "https://www.orientwatch.com",
           "note": "Nouveaux cadrans dégradés en 2026. Version acier (340€) ou dorée (370€).",
           "estimated": true,
-          "variants": ["Acier", "Doré", "Cadrans dégradés"]
+          "variants": [
+            "Acier",
+            "Doré",
+            "Cadrans dégradés"
+          ]
         }
       ],
       "news": [
-        { "date": "2026-02-16", "text": "Orient dévoile sa première Bambino sans date (38mm) et de nouveaux coloris/cadrans dégradés pour les modèles à date, dès 340 €." }
+        {
+          "date": "2026-02-16",
+          "text": "Orient dévoile sa première Bambino sans date (38mm) et de nouveaux coloris/cadrans dégradés pour les modèles à date, dès 340 €.",
+          "link": "https://monochrome-watches.com/introducing-orient-bambino-38-no-date-and-new-colours-2026-bambino-classic-date-specs-price/"
+        }
       ]
     }
   },

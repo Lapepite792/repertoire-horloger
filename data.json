@@ -351,44 +351,100 @@
   },
   "trending": [
     {
-      "brand": "Cartier",
-      "model": "Santos",
-      "note": "Devenue la montre préférée de la génération Z, forte visibilité culturelle et succès international croissant.",
-      "priceRange": "≈ 7 500 – 9 500 € (neuf)",
-      "link": "https://www.cartier.com",
-      "date": "2026-04-27"
+      "brand": "Anoma",
+      "model": "A1 / A1 Optical",
+      "note": "Micro-marque qui casse les codes : boîtier triangulaire, design industriel moderne plutôt que vintage. Cadran Optical à illusions optiques. L'une des marques les plus commentées de 2026.",
+      "priceRange": "≈ 1 000 – 1 500 €",
+      "link": "https://smallsecondswatchreviews.com/blogs/news/top-watch-microbrands-to-watch-2026",
+      "date": "2026-01-21"
     },
     {
-      "brand": "Patek Philippe",
-      "model": "Nautilus",
-      "note": "Toujours l'une des montres les plus recherchées au monde, délais d'attente en boutique de plusieurs années.",
-      "priceRange": "Forte prime sur le marché secondaire",
-      "link": "https://www.patek.com",
-      "date": "2026-04-27"
+      "brand": "Baltic",
+      "model": "MR01 / Aquascaphe",
+      "note": "Micro-marque française au style néo-vintage très abouti : chiffres Breguet dorés, verre hésalite bombé, petite seconde décalée. Rapport qualité-prix référence du segment.",
+      "priceRange": "≈ 500 – 800 €",
+      "link": "https://authenticwrist.com/guides/best-microbrands-2026/",
+      "date": "2026-03-17"
     },
     {
-      "brand": "Audemars Piguet",
-      "model": "Royal Oak",
-      "note": "Référence absolue pour les investisseurs en horlogerie, demande internationale toujours soutenue.",
-      "priceRange": "Forte prime sur le marché secondaire",
-      "link": "https://www.audemarspiguet.com",
-      "date": "2026-04-27"
+      "brand": "Eska",
+      "model": "Amphibian 250",
+      "note": "Maison suisse de 1918 tombée dans l'oubli, relancée en 2024 par deux Français. Plongeuse inspirée des années 60 façon Fifty Fathoms : 40mm, cornes courtes, cadran sandwich.",
+      "priceRange": "≈ 900 – 1 900 €",
+      "link": "https://lepetitpoussoir.fr/chroniques/selections/micro-marques-horlogeres-qui-montent-2026/",
+      "date": "2026-03-29"
     },
     {
-      "brand": "Omega",
-      "model": "Speedmaster (vintage \"Pre-Moon\")",
-      "note": "Regain d'intérêt porté par le nouveau projet de retour de la NASA sur la Lune en 2027 ; segment vintage 1960-1970 avec rendements observés de 8-12%/an.",
-      "priceRange": "Variable selon état/année",
-      "link": "https://www.omegawatches.com",
-      "date": "2026-03-05"
+      "brand": "anOrdain",
+      "model": "Model 1 (Green Fumé)",
+      "note": "Atelier écossais de Glasgow qui a ressuscité l'art du cadran en émail. Chaque pièce est fabriquée main, inspirée des paysages écossais. Mouvement suisse.",
+      "priceRange": "≈ 1 000 – 2 500 €",
+      "link": "https://microbrandwatchworld.com/reviews/the-complete-microbrands-list/",
+      "date": "2026-06-30"
     },
     {
-      "brand": "Seiko",
-      "model": "5 Sports x HUF (édition limitée)",
-      "note": "Collaboration streetwear très suivie par les collectionneurs d'éditions limitées accessibles.",
-      "priceRange": "≈ 250 – 350 €",
-      "link": "https://www.seikowatches.com",
-      "date": "2026-07-03"
+      "brand": "Furlan Marri",
+      "model": "Chronographes meca-quartz",
+      "note": "Leader du chronographe abordable en 2026. Finitions bien au-dessus de leur prix, esthétique chronographe vintage, évolution récente vers le mécanique.",
+      "priceRange": "≈ 500 – 1 500 €",
+      "link": "https://rotatewatches.com/blogs/blog/best-microbrand-watches",
+      "date": "2026-07-25"
+    },
+    {
+      "brand": "Lorca",
+      "model": "n° 2 Chronographe",
+      "note": "Fondée en 2022 par un musicien new-yorkais. Néo-vintage naturel dans la veine de Serica, lunette cannelée remarquable, mouvements Sellita et Soprod.",
+      "priceRange": "≈ 1 500 – 2 500 €",
+      "link": "https://lepetitpoussoir.fr/chroniques/selections/micro-marques-horlogeres-qui-montent-2026/",
+      "date": "2026-03-29"
+    },
+    {
+      "brand": "Heron",
+      "model": "Mirabel GMT",
+      "note": "Micro-marque montréalaise. GMT à contre-courant : pas de look tool watch mais des codes de montre habillée — aiguilles bleuies, boîtier en C, cadran secteur émaillé, couronne cabochon.",
+      "priceRange": "≈ 700 – 1 200 €",
+      "link": "https://teddybaldassarre.com/en-int/blogs/watches/microbrand-watches-complete-guide",
+      "date": "2026-07-09"
+    },
+    {
+      "brand": "Atelier Wen",
+      "model": "Inflection \"Yuan\"",
+      "note": "Marque qui assume ses origines chinoises comme identité créative. Cadran en émail grand feu bleu, finitions haut de gamme à prix contenu.",
+      "priceRange": "≈ 1 200 – 2 000 €",
+      "link": "https://thehourmarkers.com/articles/top-5-microbrands-in-june-2026",
+      "date": "2026-06-30"
+    },
+    {
+      "brand": "Zelos",
+      "model": "Gamme matériaux exotiques",
+      "note": "Réputation bâtie sur des matériaux rares : cadrans en météorite, boîtiers en bronze, combinaisons de couleurs inédites. Prises de risque assumées.",
+      "priceRange": "≈ 500 – 1 200 €",
+      "link": "https://rotatewatches.com/blogs/blog/best-microbrand-watches",
+      "date": "2026-07-25"
+    },
+    {
+      "brand": "Vulcain",
+      "model": "Cricket 2026",
+      "note": "Réédition de la légendaire montre-réveil mécanique, boîtier titane 39mm, limitée à 100 exemplaires numérotés.",
+      "priceRange": "à vérifier",
+      "link": "https://www.chronotempus.com/guide/petite-marque-artisan/",
+      "date": "2026-01-12"
+    },
+    {
+      "brand": "Circula",
+      "model": "Gamme tool watches",
+      "note": "Micro-marque allemande active depuis plus de 60 ans. Techniques traditionnelles, Super-LumiNova suisse, excellent rapport qualité-prix sans esbroufe marketing.",
+      "priceRange": "≈ 400 – 900 €",
+      "link": "https://www.hypeandstyle.fr/en/best-watch-microbrands/",
+      "date": "2026-02-10"
+    },
+    {
+      "brand": "RZE",
+      "model": "UTD-8000",
+      "note": "Fer de lance du \"digital revival\" 2026 : montre numérique haut de gamme tout titane, verre saphir, étanchéité 100m+. Rien à voir avec les digitales jetables.",
+      "priceRange": "≈ 300 – 500 €",
+      "link": "https://smallsecondswatchreviews.com/blogs/news/top-watch-microbrands-to-watch-2026",
+      "date": "2026-01-21"
     }
   ]
 }

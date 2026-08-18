@@ -98,6 +98,27 @@
   .trend-note{ font-size: 12.5px; color: var(--ink-soft); margin-top:8px; line-height:1.55; font-family: -apple-system, sans-serif; }
   .trend-date{ font-size: 10px; color: var(--ink-faint); margin-top:8px; font-family: -apple-system, sans-serif; }
 
+  .promos{ margin-top:11px; padding-top:10px; border-top: 1px dashed var(--rule); font-family: -apple-system, sans-serif; }
+  .promos-label{ font-size: 9.5px; text-transform:uppercase; letter-spacing:0.6px; color: var(--ink-faint); margin-bottom:5px; }
+  .promo-row{ display:flex; justify-content:space-between; align-items:baseline; font-size:12px; padding:2px 0; }
+  .promo-row a{ color: var(--ink); text-decoration: underline; text-decoration-color: var(--rule); }
+  .promo-price{ color: var(--copper-deep); font-weight:600; }
+  .promos-disclaimer{ font-size: 10px; color: var(--ink-faint); font-style: italic; margin-top:4px; }
+
+  .add-form{ background: var(--paper-raised); border: 1px solid var(--rule); border-radius:3px; padding: 16px; font-family: -apple-system, sans-serif; }
+  .add-form label{ display:block; font-size: 10.5px; text-transform:uppercase; letter-spacing:0.5px; color: var(--ink-faint); margin: 12px 0 4px; }
+  .add-form label:first-child{ margin-top:0; }
+  .add-form input, .add-form select, .add-form textarea{
+    width:100%; background: var(--paper); border:1px solid var(--rule); color: var(--ink);
+    padding:9px 10px; font-size:13px; font-family: -apple-system, sans-serif; border-radius:2px;
+  }
+  .add-form textarea{ min-height:50px; resize:vertical; }
+  .add-form .btn-submit{
+    margin-top:16px; width:100%; background: var(--ink); color: var(--paper); border:none;
+    padding:11px; font-size:13px; font-weight:600; cursor:pointer; letter-spacing:0.3px;
+  }
+  .add-list-item{ font-size:12.5px; color: var(--ink-soft); padding:8px 0; border-bottom:1px dashed var(--rule); font-family:-apple-system,sans-serif; display:flex; justify-content:space-between; }
+
   .empty{ text-align:center; color: var(--ink-faint); font-size:12.5px; padding: 24px 10px; border: 1px dashed var(--rule); font-family: -apple-system, sans-serif; }
   .footer-note{ text-align:center; font-size: 10.5px; color: var(--ink-faint); padding: 24px 20px 10px; font-family: -apple-system, sans-serif; }
 
@@ -137,8 +158,7 @@ function toast(msg){
 
 async function loadData(forceFresh){
   try {
-    const url = forceFresh ? DATA_URL + '?t=' + Date.now() : DATA_URL;
-    const res = await fetch(url, { cache: forceFresh ? 'no-store' : 'default' });
+    const res = await fetch(DATA_URL + '?t=' + Date.now(), { cache: 'no-store' });
     DATA = await res.json();
     localStorage.setItem('watch-tracker:cache', JSON.stringify(DATA));
     return true;
@@ -150,9 +170,25 @@ async function loadData(forceFresh){
   }
 }
 
+// ---------- Ajouts personnels (stockés en local, jamais écrasés par une actualisation) ----------
+function loadCustom(){
+  try { return JSON.parse(localStorage.getItem('watch-tracker:custom') || '{}'); }
+  catch(e){ return {}; }
+}
+function saveCustom(custom){
+  localStorage.setItem('watch-tracker:custom', JSON.stringify(custom));
+}
+
 function renderTabs(){
   const tabs = document.getElementById('tabs');
   tabs.innerHTML = "";
+
+  const trendBtn = document.createElement('button');
+  trendBtn.className = 'tab-btn' + (activeBrand === 'trending' ? ' active' : '');
+  trendBtn.textContent = 'À la mode';
+  trendBtn.onclick = () => { activeBrand = 'trending'; render(); };
+  tabs.appendChild(trendBtn);
+
   BRAND_ORDER.forEach(key => {
     if (!DATA.brands[key]) return;
     const btn = document.createElement('button');
@@ -161,17 +197,18 @@ function renderTabs(){
     btn.onclick = () => { activeBrand = key; render(); };
     tabs.appendChild(btn);
   });
+
   const newsBtn = document.createElement('button');
   newsBtn.className = 'tab-btn' + (activeBrand === 'news' ? ' active' : '');
   newsBtn.textContent = 'Nouveautés';
   newsBtn.onclick = () => { activeBrand = 'news'; render(); };
   tabs.appendChild(newsBtn);
 
-  const trendBtn = document.createElement('button');
-  trendBtn.className = 'tab-btn' + (activeBrand === 'trending' ? ' active' : '');
-  trendBtn.textContent = 'À la mode';
-  trendBtn.onclick = () => { activeBrand = 'trending'; render(); };
-  tabs.appendChild(trendBtn);
+  const addBtn = document.createElement('button');
+  addBtn.className = 'tab-btn' + (activeBrand === 'add' ? ' active' : '');
+  addBtn.textContent = '+ Rajouter';
+  addBtn.onclick = () => { activeBrand = 'add'; render(); };
+  tabs.appendChild(addBtn);
 }
 
 function escapeHtml(s){ return String(s==null?'':s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
@@ -209,7 +246,7 @@ function watchCard(w, idx){
   div.innerHTML = `
     <div class="card-top">
       <div>
-        <div class="card-model">${escapeHtml(w.model)}${w.estimated ? '<span class="flag">estimation</span>' : ''}</div>
+        <div class="card-model">${escapeHtml(w.model)}${w.estimated ? '<span class="flag">estimation</span>' : ''}${w.perso ? '<span class="flag" style="border-color:var(--sage);color:var(--sage);">perso</span>' : ''}</div>
         <div class="card-ref mono">${escapeHtml(w.reference || '—')}</div>
       </div>
     </div>
@@ -223,6 +260,14 @@ function watchCard(w, idx){
     <div class="price-date">${escapeHtml(w.priceDate || '')}</div>
     ${specsHtml}
     ${w.note ? `<div class="card-note">${escapeHtml(w.note)}</div>` : ''}
+    ${w.promos && w.promos.length ? `
+      <div class="promos">
+        <div class="promos-label">Bons plans repérés (sites tiers)</div>
+        ${w.promos.map(p => `<div class="promo-row"><a href="${escapeHtml(p.link)}" target="_blank" rel="noopener">${escapeHtml(p.site)}</a><span class="promo-price mono">${escapeHtml(p.price)}</span></div>`).join('')}
+        <div class="promos-disclaimer">Sites non officiels — vérifie toujours le vendeur (avis, ancienneté, retours) avant d'acheter.</div>
+      </div>
+    ` : ''}
+    ${w.perso ? `<button class="variants-toggle" data-remove-custom="${w.brand}|${w.id}" style="color:var(--copper-deep);">✕ Retirer cette entrée perso</button>` : ''}
     ${hasVariants ? `
       <button class="variants-toggle" data-toggle="${vid}">Voir + les variantes (${w.variants.length})</button>
       <div class="variants-list" id="${vid}">${w.variants.map(v => `<span>${escapeHtml(v)}</span>`).join('')}</div>
@@ -271,6 +316,102 @@ function render(){
     return;
   }
 
+  if (activeBrand === 'add'){
+    const panel = document.createElement('div');
+    panel.className = 'panel';
+    panel.innerHTML = `<div class="section-title"><h2>Rajouter une montre</h2></div>
+      <div style="font-size:12px;color:var(--ink-faint);font-family:-apple-system,sans-serif;margin-bottom:12px;line-height:1.5;">Ajout local (visible seulement sur cet appareil) — apparaît dans l'onglet de la marque choisie, marqué "perso".</div>`;
+
+    const form = document.createElement('div');
+    form.className = 'add-form';
+    const brandOptions = BRAND_ORDER.map(k => `<option value="${k}">${DATA.brands[k] ? DATA.brands[k].label : k}</option>`).join('');
+    form.innerHTML = `
+      <label>Marque</label>
+      <select id="af-brand">${brandOptions}</select>
+      <label>Modèle *</label>
+      <input type="text" id="af-model" placeholder="ex: Seamaster Aqua Terra">
+      <label>Référence</label>
+      <input type="text" id="af-ref" placeholder="ex: 220.10.41.21.03.001">
+      <label>Mouvement</label>
+      <input type="text" id="af-movement" placeholder="ex: Automatique">
+      <label>Diamètre</label>
+      <input type="text" id="af-diameter" placeholder="ex: 41 mm">
+      <label>Bracelet</label>
+      <input type="text" id="af-bracelet" placeholder="ex: Acier">
+      <label>Année de sortie</label>
+      <input type="text" id="af-year" placeholder="ex: 2024">
+      <label>Prix neuf</label>
+      <input type="text" id="af-pricenew" placeholder="ex: 5 200 €">
+      <label>Prix occasion</label>
+      <input type="text" id="af-priceused" placeholder="ex: 3 500 – 4 200 €">
+      <label>Lien</label>
+      <input type="text" id="af-link" placeholder="https://...">
+      <label>Note</label>
+      <textarea id="af-note" placeholder="Détails, contexte, pourquoi tu la suis..."></textarea>
+      <button class="btn-submit" id="af-submit">Ajouter</button>
+    `;
+    panel.appendChild(form);
+
+    const custom = loadCustom();
+    const allCustom = [];
+    Object.keys(custom).forEach(b => (custom[b]||[]).forEach(w => allCustom.push({...w, brand: b})));
+    if (allCustom.length){
+      const listTitle = document.createElement('div');
+      listTitle.className = 'section-title';
+      listTitle.style.marginTop = '20px';
+      listTitle.innerHTML = `<h2>Tes ajouts perso</h2>`;
+      panel.appendChild(listTitle);
+      allCustom.forEach(w => {
+        const row = document.createElement('div');
+        row.className = 'add-list-item';
+        row.innerHTML = `<span>${escapeHtml(w.model)} — ${escapeHtml(DATA.brands[w.brand] ? DATA.brands[w.brand].label : w.brand)}</span><button data-remove-custom="${w.brand}|${w.id}" style="background:none;border:none;color:var(--copper-deep);cursor:pointer;font-size:12px;">✕</button>`;
+        panel.appendChild(row);
+      });
+    }
+
+    main.appendChild(panel);
+
+    document.getElementById('af-submit').onclick = () => {
+      const model = document.getElementById('af-model').value.trim();
+      if (!model){ toast('Le modèle est requis'); return; }
+      const brand = document.getElementById('af-brand').value;
+      const entry = {
+        id: 'perso-' + Date.now(),
+        perso: true,
+        model,
+        reference: document.getElementById('af-ref').value.trim(),
+        movement: document.getElementById('af-movement').value.trim(),
+        diameter: document.getElementById('af-diameter').value.trim(),
+        bracelet: document.getElementById('af-bracelet').value.trim(),
+        releaseYear: document.getElementById('af-year').value.trim(),
+        priceNew: document.getElementById('af-pricenew').value.trim() || 'inconnu',
+        priceUsed: document.getElementById('af-priceused').value.trim(),
+        priceDate: new Date().toLocaleDateString('fr-FR', {month:'long', year:'numeric'}),
+        link: document.getElementById('af-link').value.trim(),
+        note: document.getElementById('af-note').value.trim(),
+        variants: []
+      };
+      const c = loadCustom();
+      if (!c[brand]) c[brand] = [];
+      c[brand].push(entry);
+      saveCustom(c);
+      toast('Montre ajoutée');
+      activeBrand = brand;
+      render();
+    };
+
+    panel.querySelectorAll('[data-remove-custom]').forEach(btn => {
+      btn.onclick = () => {
+        const [brand, id] = btn.getAttribute('data-remove-custom').split('|');
+        const c = loadCustom();
+        c[brand] = (c[brand]||[]).filter(w => w.id !== id);
+        saveCustom(c);
+        render();
+      };
+    });
+    return;
+  }
+
   if (activeBrand === 'news'){
     const panel = document.createElement('div');
     panel.className = 'panel';
@@ -310,7 +451,9 @@ function render(){
   newsBox.innerHTML = newsHtml;
   panel.appendChild(newsBox);
 
-  const watches = brandData.watches || [];
+  const custom = loadCustom();
+  const personalWatches = (custom[activeBrand] || []).map(w => ({...w, brand: activeBrand}));
+  const watches = (brandData.watches || []).concat(personalWatches);
   if (watches.length === 0){
     panel.innerHTML += `<div class="empty">Aucune montre suivie pour cette marque pour l'instant.</div>`;
   } else {
@@ -322,6 +465,15 @@ function render(){
     btn.onclick = () => {
       const el = document.getElementById(btn.getAttribute('data-toggle'));
       el.classList.toggle('open');
+    };
+  });
+  panel.querySelectorAll('[data-remove-custom]').forEach(btn => {
+    btn.onclick = () => {
+      const [brand, id] = btn.getAttribute('data-remove-custom').split('|');
+      const c = loadCustom();
+      c[brand] = (c[brand]||[]).filter(w => w.id !== id);
+      saveCustom(c);
+      render();
     };
   });
 }

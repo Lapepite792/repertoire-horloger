@@ -18,7 +18,10 @@
           "link": "https://www.omegawatches.com",
           "note": "Boutique officielle, verre hésalite (vs saphir sur les versions Sapphire Sandwich).",
           "estimated": true,
-          "variants": ["Verre saphir (Sapphire Sandwich)", "Cadran blanc", "Bracelet cuir marron", "Version or Moonshine"]
+          "variants": ["Verre saphir (Sapphire Sandwich)", "Cadran blanc", "Bracelet cuir marron", "Version or Moonshine"],
+          "promos": [
+            { "site": "Chrono24 (marketplace, vendeurs vérifiés)", "price": "≈ 6 750 – 7 400 €", "link": "https://www.chrono24.fr" }
+          ]
         },
         {
           "id": "omega-speedmaster-reverse-panda",
@@ -92,7 +95,11 @@
           "link": "https://www.tissotwatches.com",
           "note": "Fond saphir, balancier Nivachron anti-magnétique.",
           "estimated": true,
-          "variants": ["35mm", "Damascus Steel 38mm", "Titane"]
+          "variants": ["35mm", "Damascus Steel 38mm", "Titane"],
+          "promos": [
+            { "site": "Jomashop (revendeur grey-market établi)", "price": "≈ 500 – 570 €", "link": "https://www.jomashop.com" },
+            { "site": "Watchmaxx (revendeur grey-market établi)", "price": "≈ 530 €", "link": "https://www.watchmaxx.com" }
+          ]
         }
       ],
       "news": [

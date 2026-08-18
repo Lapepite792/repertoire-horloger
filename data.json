@@ -8,34 +8,49 @@
           "id": "omega-speedmaster-moonwatch-hesalite",
           "model": "Speedmaster Professional Moonwatch Hésalite",
           "reference": "310.30.42.50.01.001",
+          "movement": "Manuel (chronographe)",
+          "diameter": "42 mm",
+          "bracelet": "Acier ou cuir",
+          "releaseYear": "1969 (génération actuelle depuis 2021)",
           "priceNew": "8 500 – 8 800 €",
           "priceUsed": "4 500 – 8 500 €",
           "priceDate": "août 2026",
           "link": "https://www.omegawatches.com",
-          "note": "Boutique officielle, acier/hésalite 42mm. Marché de l'occasion large selon état/complétude.",
-          "estimated": true
+          "note": "Boutique officielle, verre hésalite (vs saphir sur les versions Sapphire Sandwich).",
+          "estimated": true,
+          "variants": ["Verre saphir (Sapphire Sandwich)", "Cadran blanc", "Bracelet cuir marron", "Version or Moonshine"]
         },
         {
           "id": "omega-speedmaster-reverse-panda",
           "model": "Speedmaster Moonwatch \"Reverse Panda\"",
           "reference": "310.60.42.50.01.002",
-          "priceNew": "à préciser (acier + version Moonshine gold)",
+          "movement": "Manuel (chronographe)",
+          "diameter": "42 mm",
+          "bracelet": "Acier, bracelet à ajustement confort",
+          "releaseYear": "2026",
+          "priceNew": "inconnu",
           "priceUsed": "—",
           "priceDate": "mai 2026",
           "link": "https://www.omegawatches.com",
-          "note": "Cadran noir + sous-compteurs blancs (inverse du panda classique), 42mm, bracelet à ajustement confort.",
-          "estimated": true
+          "note": "Cadran noir, sous-compteurs blancs (inverse du panda classique), lunette céramique noire.",
+          "estimated": true,
+          "variants": ["Acier", "Or Moonshine gold"]
         },
         {
           "id": "omega-speedmaster-milano-cortina",
-          "model": "Speedmaster 38mm Milano Cortina 2026",
+          "model": "Speedmaster 38 Milano Cortina 2026",
           "reference": "522.30.38.50.04.001",
-          "priceNew": "à préciser",
+          "movement": "Quartz",
+          "diameter": "38 mm",
+          "bracelet": "Acier",
+          "releaseYear": "2026",
+          "priceNew": "inconnu",
           "priceUsed": "—",
           "priceDate": "mars 2026",
           "link": "https://www.omegawatches.com",
-          "note": "Édition liée aux JO d'hiver, cadran bleu ciel effet neige.",
-          "estimated": true
+          "note": "Édition liée aux JO d'hiver, lunette céramique bleue, cadran effet neige.",
+          "estimated": true,
+          "variants": []
         }
       ],
       "news": [
@@ -49,25 +64,35 @@
       "watches": [
         {
           "id": "tissot-prx-quartz",
-          "model": "PRX Quartz 35/40mm",
+          "model": "PRX Quartz",
           "reference": "T137.410.11.031.00",
+          "movement": "Quartz",
+          "diameter": "35 mm ou 40 mm",
+          "bracelet": "Acier intégral",
+          "releaseYear": "2021",
           "priceNew": "340 – 400 €",
           "priceUsed": "170 – 260 €",
           "priceDate": "août 2026",
           "link": "https://www.tissotwatches.com",
-          "note": "Modèle d'entrée de la gamme PRX, acier intégral.",
-          "estimated": true
+          "note": "Modèle d'entrée de la gamme PRX.",
+          "estimated": true,
+          "variants": ["35mm (unisexe)", "40mm", "Plusieurs coloris de cadran", "Titane"]
         },
         {
           "id": "tissot-prx-automatic",
           "model": "PRX Powermatic 80",
           "reference": "T137.407.11.041.00",
+          "movement": "Automatique (Powermatic 80, réserve 80h)",
+          "diameter": "40 mm",
+          "bracelet": "Acier intégral",
+          "releaseYear": "2021",
           "priceNew": "600 – 700 €",
           "priceUsed": "370 – 510 €",
           "priceDate": "août 2026",
           "link": "https://www.tissotwatches.com",
-          "note": "Mouvement Powermatic 80, réserve de marche 80h, fond saphir.",
-          "estimated": true
+          "note": "Fond saphir, balancier Nivachron anti-magnétique.",
+          "estimated": true,
+          "variants": ["35mm", "Damascus Steel 38mm", "Titane"]
         }
       ],
       "news": [
@@ -81,13 +106,18 @@
         {
           "id": "lip-himalaya-squelette",
           "model": "Himalaya Squelette Automatique",
-          "reference": "à préciser (bracelet cuir bleu gris)",
+          "reference": "à préciser",
+          "movement": "Automatique (squelette)",
+          "diameter": "≈ 38–40 mm",
+          "bracelet": "Cuir bleu gris",
+          "releaseYear": "1952 (modèle original) / réédition actuelle",
           "priceNew": "428 €",
           "priceUsed": "—",
           "priceDate": "août 2026",
           "link": "https://www.lip.fr",
-          "note": "Mouvement squelette visible, l'une des rares montres squelettes automatiques françaises à ce prix. Modèle historique porté par Charles de Gaulle dans sa version originale.",
-          "estimated": true
+          "note": "Mouvement squelette visible à travers le cadran ajouré. Modèle historique porté par Charles de Gaulle dans sa version d'origine.",
+          "estimated": true,
+          "variants": []
         }
       ],
       "news": [
@@ -99,30 +129,82 @@
       "watches": [
         {
           "id": "orient-bambino-nodate-38",
-          "model": "Bambino 38 sans date (nouveauté)",
+          "model": "Bambino 38 sans date",
           "reference": "F6524",
+          "movement": "Automatique (in-house)",
+          "diameter": "38,4 mm",
+          "bracelet": "Cuir, interchangeable sans outil",
+          "releaseYear": "2026",
           "priceNew": "340 €",
           "priceUsed": "—",
           "priceDate": "février 2026",
           "link": "https://www.orientwatch.com",
-          "note": "Première Bambino sans affichage de date, design symétrique, boîtier 38,4mm, bracelet cuir interchangeable sans outil.",
-          "estimated": true
+          "note": "Première Bambino sans affichage de date, design symétrique.",
+          "estimated": true,
+          "variants": ["4 coloris", "Édition limitée"]
         },
         {
           "id": "orient-bambino-date-classic",
           "model": "Bambino Date Classic",
-          "reference": "F6724 (acier 340€ / doré 370€)",
+          "reference": "F6724",
+          "movement": "Automatique (in-house)",
+          "diameter": "40,5 mm",
+          "bracelet": "Cuir, interchangeable sans outil",
+          "releaseYear": "≈2012 (nouveaux coloris 2026)",
           "priceNew": "340 – 370 €",
           "priceUsed": "150 – 280 €",
           "priceDate": "février 2026",
           "link": "https://www.orientwatch.com",
-          "note": "Boîtier 40,5mm, nouveaux coloris et cadrans dégradés en 2026.",
-          "estimated": true
+          "note": "Nouveaux cadrans dégradés en 2026. Version acier (340€) ou dorée (370€).",
+          "estimated": true,
+          "variants": ["Acier", "Doré", "Cadrans dégradés"]
         }
       ],
       "news": [
         { "date": "2026-02-16", "text": "Orient dévoile sa première Bambino sans date (38mm) et de nouveaux coloris/cadrans dégradés pour les modèles à date, dès 340 €." }
       ]
     }
-  }
+  },
+  "trending": [
+    {
+      "brand": "Cartier",
+      "model": "Santos",
+      "note": "Devenue la montre préférée de la génération Z, forte visibilité culturelle et succès international croissant.",
+      "priceRange": "≈ 7 500 – 9 500 € (neuf)",
+      "link": "https://www.cartier.com",
+      "date": "2026-04-27"
+    },
+    {
+      "brand": "Patek Philippe",
+      "model": "Nautilus",
+      "note": "Toujours l'une des montres les plus recherchées au monde, délais d'attente en boutique de plusieurs années.",
+      "priceRange": "Forte prime sur le marché secondaire",
+      "link": "https://www.patek.com",
+      "date": "2026-04-27"
+    },
+    {
+      "brand": "Audemars Piguet",
+      "model": "Royal Oak",
+      "note": "Référence absolue pour les investisseurs en horlogerie, demande internationale toujours soutenue.",
+      "priceRange": "Forte prime sur le marché secondaire",
+      "link": "https://www.audemarspiguet.com",
+      "date": "2026-04-27"
+    },
+    {
+      "brand": "Omega",
+      "model": "Speedmaster (vintage \"Pre-Moon\")",
+      "note": "Regain d'intérêt porté par le nouveau projet de retour de la NASA sur la Lune en 2027 ; segment vintage 1960-1970 avec rendements observés de 8-12%/an.",
+      "priceRange": "Variable selon état/année",
+      "link": "https://www.omegawatches.com",
+      "date": "2026-03-05"
+    },
+    {
+      "brand": "Seiko",
+      "model": "5 Sports x HUF (édition limitée)",
+      "note": "Collaboration streetwear très suivie par les collectionneurs d'éditions limitées accessibles.",
+      "priceRange": "≈ 250 – 350 €",
+      "link": "https://www.seikowatches.com",
+      "date": "2026-07-03"
+    }
+  ]
 }

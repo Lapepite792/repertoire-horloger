@@ -75,6 +75,7 @@
   .price-new-val{ font-size: clamp(15px, 4.4vw, 19px); font-weight:700; color: var(--copper-deep); }
   .price-used-val{ font-size: clamp(12px, 3.6vw, 14px); color: var(--sage); font-weight:600; }
   .price-unknown{ color: var(--ink-faint); font-style: italic; font-weight:400; }
+  .price-reason{ font-size: 10.5px; color: var(--ink-faint); font-style: italic; font-weight:400; }
   .price-date{ font-size: 9.5px; color: var(--ink-faint); margin-top:4px; font-family: -apple-system, sans-serif; }
   .flag{ display:inline-block; font-size: 8.5px; letter-spacing:1px; text-transform:uppercase; color: var(--copper-deep); border:1px solid var(--copper-deep); padding: 1px 6px; border-radius:20px; margin-left:8px; font-family: -apple-system, sans-serif; vertical-align:middle; }
 
@@ -238,6 +239,13 @@ function renderTabs(){
 
 function escapeHtml(s){ return String(s==null?'':s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 
+function formatDate(iso){
+  if (!iso) return '';
+  const m = String(iso).match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (!m) return iso;
+  return `${m[3]}/${m[2]}/${m[1]}`;
+}
+
 function allNewsSorted(){
   let all = [];
   BRAND_ORDER.forEach(key => {
@@ -249,7 +257,10 @@ function allNewsSorted(){
 }
 
 function priceNewDisplay(w){
-  if (!w.priceNew || w.priceNew === '—' || /préciser|vérifier/i.test(w.priceNew)) return '<span class="price-unknown">inconnu</span>';
+  if (!w.priceNew || w.priceNew === '—' || /préciser|vérifier|inconnu/i.test(w.priceNew)){
+    const reason = w.priceNewReason ? ` <span class="price-reason">(${escapeHtml(w.priceNewReason)})</span>` : '';
+    return '<span class="price-unknown">inconnu</span>' + reason;
+  }
   return escapeHtml(w.priceNew);
 }
 
@@ -328,7 +339,7 @@ function trendCard(t){
       ${t.priceRange ? `<div class="trend-price mono">${escapeHtml(t.priceRange)}</div>` : ''}
     </div>
     ${t.note ? `<div class="trend-note">${escapeHtml(t.note)}</div>` : ''}
-    <div class="trend-date mono">${escapeHtml(t.date || '')}${t.link ? ` · <a href="${escapeHtml(t.link)}" target="_blank" rel="noopener" style="color:var(--ink-soft)">source ↗</a>` : ''}</div>
+    <div class="trend-date mono">${escapeHtml(formatDate(t.date))}${t.link ? ` · <a href="${escapeHtml(t.link)}" target="_blank" rel="noopener" style="color:var(--ink-soft)">source ↗</a>` : ''}</div>
   `;
   return div;
 }
@@ -384,7 +395,9 @@ function render(){
       <label>Année de sortie</label>
       <input type="text" id="af-year" placeholder="ex: 2024">
       <label>Prix neuf</label>
-      <input type="text" id="af-pricenew" placeholder="ex: 5 200 €">
+      <input type="text" id="af-pricenew" placeholder="ex: 5 200 € (laisse vide si inconnu)">
+      <label>Si prix neuf inconnu — pourquoi ?</label>
+      <input type="text" id="af-pricereason" placeholder="ex: modèle discontinué, tarif non publié">
       <label>Prix occasion</label>
       <input type="text" id="af-priceused" placeholder="ex: 3 500 – 4 200 €">
       <label>Lien</label>
@@ -437,6 +450,7 @@ function render(){
         bracelet: document.getElementById('af-bracelet').value.trim(),
         releaseYear: document.getElementById('af-year').value.trim(),
         priceNew: document.getElementById('af-pricenew').value.trim() || 'inconnu',
+        priceNewReason: document.getElementById('af-pricereason').value.trim(),
         priceUsed: document.getElementById('af-priceused').value.trim(),
         priceDate: new Date().toLocaleDateString('fr-FR', {month:'long', year:'numeric'}),
         link: document.getElementById('af-link').value.trim(),
@@ -480,7 +494,7 @@ function render(){
       all.forEach(n => {
         const item = document.createElement('div');
         item.className = 'news-item';
-        item.innerHTML = `<div class="news-date">${escapeHtml(n.date)} · ${escapeHtml(n.brand)}</div><div class="news-text">${escapeHtml(n.text)}</div>${n.link ? `<div class="news-source"><a href="${escapeHtml(n.link)}" target="_blank" rel="noopener">Voir la source ↗</a></div>` : ''}`;
+        item.innerHTML = `<div class="news-date">${escapeHtml(formatDate(n.date))} · ${escapeHtml(n.brand)}</div><div class="news-text">${escapeHtml(n.text)}</div>${n.link ? `<div class="news-source"><a href="${escapeHtml(n.link)}" target="_blank" rel="noopener">Voir la source ↗</a></div>` : ''}`;
         panel.appendChild(item);
       });
     }
@@ -501,7 +515,7 @@ function render(){
     newsHtml += `<div class="news-text">Rien pour l'instant.</div>`;
   } else {
     news.forEach(n => {
-      newsHtml += `<div class="news-item"><div class="news-date">${escapeHtml(n.date)}</div><div class="news-text">${escapeHtml(n.text)}</div>${n.link ? `<div class="news-source"><a href="${escapeHtml(n.link)}" target="_blank" rel="noopener">Voir la source ↗</a></div>` : ''}</div>`;
+      newsHtml += `<div class="news-item"><div class="news-date">${escapeHtml(formatDate(n.date))}</div><div class="news-text">${escapeHtml(n.text)}</div>${n.link ? `<div class="news-source"><a href="${escapeHtml(n.link)}" target="_blank" rel="noopener">Voir la source ↗</a></div>` : ''}</div>`;
     });
   }
   newsBox.innerHTML = newsHtml;
@@ -542,7 +556,7 @@ document.getElementById('btn-reload').onclick = async () => {
 };
 
 document.getElementById('btn-claude').onclick = () => {
-  const prompt = "Actualise le répertoire horloger (repo Lapepite792/repertoire-horloger, fichier data.json) : pour Omega, Tissot, LIP et Orient sur les modèles déjà suivis, recherche 1) les dernières actualités avec leur lien source, 2) les prix neuf + fourchette occasion, 3) les caractéristiques (mouvement, diamètre, bracelet, année), 4) les variantes disponibles classées par tailles/couleurs/matières, 5) des bons plans sur sites tiers fiables (avec lien) pour chaque modèle si possible. Actualise aussi l'onglet tendances. Mets à jour data.json directement (nouveautés triées les plus récentes en premier, dates au format AAAA-MM-JJ).";
+  const prompt = "Actualise le répertoire horloger (repo Lapepite792/repertoire-horloger, fichier data.json) : pour Omega, Tissot, LIP et Orient sur les modèles déjà suivis, recherche 1) les dernières actualités avec leur lien source, 2) les prix neuf + fourchette occasion — si un prix neuf est inconnu, renseigne le champ priceNewReason avec la raison (tarif non publié, modèle discontinué, etc.), 3) les caractéristiques (mouvement, diamètre, bracelet, année), 4) les variantes disponibles classées par tailles/couleurs/matières, 5) des bons plans sur sites tiers fiables (avec lien) pour chaque modèle si possible. Actualise aussi l'onglet tendances. Mets à jour data.json directement (nouveautés triées les plus récentes en premier, dates stockées au format AAAA-MM-JJ).";
   navigator.clipboard.writeText(prompt).then(() => {
     toast('Prompt copié — colle-le à Claude');
   }).catch(() => {

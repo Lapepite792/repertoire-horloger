@@ -18,12 +18,19 @@
           "link": "https://www.omegawatches.com",
           "note": "Boutique officielle, verre hésalite (vs saphir sur les versions Sapphire Sandwich).",
           "estimated": true,
-          "variants": [
-            "Verre saphir (Sapphire Sandwich)",
-            "Cadran blanc",
-            "Bracelet cuir marron",
-            "Version or Moonshine"
-          ],
+          "variants": {
+            "tailles": [
+              "42mm"
+            ],
+            "couleurs": [
+              "Cadran noir",
+              "Cadran blanc"
+            ],
+            "matieres": [
+              "Acier + verre hésalite",
+              "Acier + verre saphir (Sapphire Sandwich)"
+            ]
+          },
           "promos": [
             {
               "site": "Chrono24 (marketplace, vendeurs vérifiés)",
@@ -46,10 +53,19 @@
           "link": "https://www.omegawatches.com",
           "note": "Cadran noir, sous-compteurs blancs (inverse du panda classique), lunette céramique noire.",
           "estimated": true,
-          "variants": [
-            "Acier",
-            "Or Moonshine gold"
-          ]
+          "variants": {
+            "tailles": [
+              "42mm"
+            ],
+            "couleurs": [
+              "Cadran noir / compteurs blancs"
+            ],
+            "matieres": [
+              "Acier",
+              "Or Moonshine gold"
+            ]
+          },
+          "promos": []
         },
         {
           "id": "omega-speedmaster-milano-cortina",
@@ -65,7 +81,18 @@
           "link": "https://www.omegawatches.com",
           "note": "Édition liée aux JO d'hiver, lunette céramique bleue, cadran effet neige.",
           "estimated": true,
-          "variants": []
+          "variants": {
+            "tailles": [
+              "38mm"
+            ],
+            "couleurs": [
+              "Cadran bleu ciel effet neige"
+            ],
+            "matieres": [
+              "Acier + lunette céramique bleue"
+            ]
+          },
+          "promos": []
         }
       ],
       "news": [
@@ -102,11 +129,27 @@
           "link": "https://www.tissotwatches.com",
           "note": "Modèle d'entrée de la gamme PRX.",
           "estimated": true,
-          "variants": [
-            "35mm (unisexe)",
-            "40mm",
-            "Plusieurs coloris de cadran",
-            "Titane"
+          "variants": {
+            "tailles": [
+              "35mm",
+              "40mm"
+            ],
+            "couleurs": [
+              "Noir",
+              "Bleu",
+              "Vert",
+              "Blanc"
+            ],
+            "matieres": [
+              "Acier"
+            ]
+          },
+          "promos": [
+            {
+              "site": "Jomashop (revendeur grey-market établi)",
+              "price": "≈ 210 – 300 €",
+              "link": "https://www.jomashop.com"
+            }
           ]
         },
         {
@@ -123,20 +166,31 @@
           "link": "https://www.tissotwatches.com",
           "note": "Fond saphir, balancier Nivachron anti-magnétique.",
           "estimated": true,
-          "variants": [
-            "35mm",
-            "Damascus Steel 38mm",
-            "Titane"
-          ],
+          "variants": {
+            "tailles": [
+              "35mm",
+              "40mm"
+            ],
+            "couleurs": [
+              "Noir",
+              "Bleu",
+              "Vert"
+            ],
+            "matieres": [
+              "Acier",
+              "Damascus Steel (édition 38mm)",
+              "Titane"
+            ]
+          },
           "promos": [
             {
               "site": "Jomashop (revendeur grey-market établi)",
-              "price": "≈ 500 – 570 €",
+              "price": "≈ 490 – 570 €",
               "link": "https://www.jomashop.com"
             },
             {
               "site": "Watchmaxx (revendeur grey-market établi)",
-              "price": "≈ 530 €",
+              "price": "≈ 530 – 570 €",
               "link": "https://www.watchmaxx.com"
             }
           ]
@@ -172,7 +226,25 @@
           "link": "https://www.lip.fr",
           "note": "Mouvement squelette visible à travers le cadran ajouré. Modèle historique porté par Charles de Gaulle dans sa version d'origine.",
           "estimated": true,
-          "variants": []
+          "variants": {
+            "tailles": [
+              "40mm"
+            ],
+            "couleurs": [
+              "Cadran squelette argenté"
+            ],
+            "matieres": [
+              "Acier",
+              "Cuir bleu gris"
+            ]
+          },
+          "promos": [
+            {
+              "site": "Chrono24 (marketplace, vendeurs vérifiés)",
+              "price": "≈ 295 – 520 € (occasion)",
+              "link": "https://www.chrono24.fr"
+            }
+          ]
         }
       ],
       "news": [
@@ -200,9 +272,25 @@
           "link": "https://www.orientwatch.com",
           "note": "Première Bambino sans affichage de date, design symétrique.",
           "estimated": true,
-          "variants": [
-            "4 coloris",
-            "Édition limitée"
+          "variants": {
+            "tailles": [
+              "38,4mm"
+            ],
+            "couleurs": [
+              "4 coloris",
+              "Édition limitée"
+            ],
+            "matieres": [
+              "Acier",
+              "Cuir interchangeable"
+            ]
+          },
+          "promos": [
+            {
+              "site": "Chrono24 (marketplace, vendeurs vérifiés)",
+              "price": "≈ 135 – 250 € (occasion)",
+              "link": "https://www.chrono24.fr"
+            }
           ]
         },
         {
@@ -219,10 +307,28 @@
           "link": "https://www.orientwatch.com",
           "note": "Nouveaux cadrans dégradés en 2026. Version acier (340€) ou dorée (370€).",
           "estimated": true,
-          "variants": [
-            "Acier",
-            "Doré",
-            "Cadrans dégradés"
+          "variants": {
+            "tailles": [
+              "40,5mm"
+            ],
+            "couleurs": [
+              "Cadrans dégradés",
+              "Noir",
+              "Blanc",
+              "Bleu"
+            ],
+            "matieres": [
+              "Acier",
+              "Doré",
+              "Cuir interchangeable"
+            ]
+          },
+          "promos": [
+            {
+              "site": "Chrono24 (marketplace, vendeurs vérifiés)",
+              "price": "≈ 150 – 280 € (occasion)",
+              "link": "https://www.chrono24.fr"
+            }
           ]
         }
       ],

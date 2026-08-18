@@ -90,6 +90,9 @@
   .variants-list{ display:none; margin-top:8px; padding: 9px 11px; background: var(--paper); border-left: 2px solid var(--copper); font-family: -apple-system, sans-serif; }
   .variants-list.open{ display:block; }
   .variants-list span{ display:inline-block; font-size: 11px; color: var(--ink-soft); background: var(--paper-raised); border:1px solid var(--rule); padding:3px 8px; border-radius:20px; margin: 2px 4px 2px 0; }
+  .variant-group{ margin-bottom:8px; }
+  .variant-group:last-child{ margin-bottom:0; }
+  .variant-group b{ display:block; font-size:9px; text-transform:uppercase; letter-spacing:0.5px; color: var(--ink-faint); font-weight:600; margin-bottom:4px; }
 
   .trend-card{ background: var(--paper-raised); border: 1px solid var(--rule); border-radius: 3px; padding: 13px 14px; margin-bottom: 12px; box-shadow: var(--card-shadow); }
   .trend-top{ display:flex; justify-content:space-between; gap:10px; }
@@ -179,6 +182,18 @@ function loadCustom(){
 function saveCustom(custom){
   localStorage.setItem('watch-tracker:custom', JSON.stringify(custom));
 }
+function loadCustomBrandLabels(){
+  try { return JSON.parse(localStorage.getItem('watch-tracker:custom-brand-labels') || '{}'); }
+  catch(e){ return {}; }
+}
+function saveCustomBrandLabels(labels){
+  localStorage.setItem('watch-tracker:custom-brand-labels', JSON.stringify(labels));
+}
+function brandLabel(key){
+  if (DATA.brands[key]) return DATA.brands[key].label;
+  const labels = loadCustomBrandLabels();
+  return labels[key] || key;
+}
 
 function renderTabs(){
   const tabs = document.getElementById('tabs');
@@ -195,6 +210,15 @@ function renderTabs(){
     const btn = document.createElement('button');
     btn.className = 'tab-btn' + (key === activeBrand ? ' active' : '');
     btn.textContent = DATA.brands[key].label;
+    btn.onclick = () => { activeBrand = key; render(); };
+    tabs.appendChild(btn);
+  });
+
+  const custom = loadCustom();
+  Object.keys(custom).filter(k => !BRAND_ORDER.includes(k) && (custom[k]||[]).length > 0).forEach(key => {
+    const btn = document.createElement('button');
+    btn.className = 'tab-btn' + (key === activeBrand ? ' active' : '');
+    btn.textContent = brandLabel(key);
     btn.onclick = () => { activeBrand = key; render(); };
     tabs.appendChild(btn);
   });
@@ -233,8 +257,22 @@ function watchCard(w, idx){
   const div = document.createElement('div');
   div.className = 'card';
   const hasUsed = w.priceUsed && w.priceUsed !== '—';
-  const hasVariants = w.variants && w.variants.length > 0;
+  const v = w.variants;
+  const hasVariants = v && (Array.isArray(v) ? v.length > 0 : ((v.tailles||[]).length + (v.couleurs||[]).length + (v.matieres||[]).length) > 0);
   const vid = 'variants-' + idx;
+
+  function variantsGroupsHtml(){
+    if (Array.isArray(v)) return v.map(x => `<span>${escapeHtml(x)}</span>`).join('');
+    let html = '';
+    if (v.tailles && v.tailles.length) html += `<div class="variant-group"><b>Tailles</b>${v.tailles.map(x=>`<span>${escapeHtml(x)}</span>`).join('')}</div>`;
+    if (v.couleurs && v.couleurs.length) html += `<div class="variant-group"><b>Couleurs</b>${v.couleurs.map(x=>`<span>${escapeHtml(x)}</span>`).join('')}</div>`;
+    if (v.matieres && v.matieres.length) html += `<div class="variant-group"><b>Matières</b>${v.matieres.map(x=>`<span>${escapeHtml(x)}</span>`).join('')}</div>`;
+    return html;
+  }
+  function variantsCount(){
+    if (Array.isArray(v)) return v.length;
+    return (v.tailles||[]).length + (v.couleurs||[]).length + (v.matieres||[]).length;
+  }
 
   const specsHtml = `
     <div class="specs">
@@ -271,9 +309,9 @@ function watchCard(w, idx){
     ${w.perso ? `<button class="variants-toggle" data-remove-custom="${w.brand}|${w.id}" style="color:var(--copper-deep) !important;">✕ Retirer cette entrée perso</button>` : ''}
     <div class="card-actions">
       ${w.link ? `<a href="${escapeHtml(w.link)}" target="_blank" rel="noopener">Voir la source ↗</a>` : ''}
-      ${hasVariants ? `<button class="variants-toggle" data-toggle="${vid}">Voir les variantes (${w.variants.length})</button>` : ''}
+      ${hasVariants ? `<button class="variants-toggle" data-toggle="${vid}">Voir les variantes (${variantsCount()})</button>` : ''}
     </div>
-    ${hasVariants ? `<div class="variants-list" id="${vid}">${w.variants.map(v => `<span>${escapeHtml(v)}</span>`).join('')}</div>` : ''}
+    ${hasVariants ? `<div class="variants-list" id="${vid}">${variantsGroupsHtml()}</div>` : ''}
   `;
   return div;
 }
@@ -325,10 +363,14 @@ function render(){
 
     const form = document.createElement('div');
     form.className = 'add-form';
-    const brandOptions = BRAND_ORDER.map(k => `<option value="${k}">${DATA.brands[k] ? DATA.brands[k].label : k}</option>`).join('');
+    const brandOptions = BRAND_ORDER.filter(k => DATA.brands[k]).map(k => `<option value="${k}">${DATA.brands[k].label}</option>`).join('');
+    const custom0 = loadCustom();
+    const customBrandKeys = Object.keys(custom0).filter(k => !BRAND_ORDER.includes(k));
+    const customBrandOptions = customBrandKeys.map(k => `<option value="${k}">${escapeHtml(k)}</option>`).join('');
     form.innerHTML = `
       <label>Marque</label>
-      <select id="af-brand">${brandOptions}</select>
+      <select id="af-brand">${brandOptions}${customBrandOptions}<option value="__new__">+ Nouvelle marque…</option></select>
+      <input type="text" id="af-brand-new" placeholder="Nom de la nouvelle marque" style="display:none; margin-top:6px;">
       <label>Modèle *</label>
       <input type="text" id="af-model" placeholder="ex: Seamaster Aqua Terra">
       <label>Référence</label>
@@ -372,10 +414,19 @@ function render(){
 
     main.appendChild(panel);
 
+    document.getElementById('af-brand').onchange = (e) => {
+      document.getElementById('af-brand-new').style.display = e.target.value === '__new__' ? 'block' : 'none';
+    };
+
     document.getElementById('af-submit').onclick = () => {
       const model = document.getElementById('af-model').value.trim();
       if (!model){ toast('Le modèle est requis'); return; }
-      const brand = document.getElementById('af-brand').value;
+      let brand = document.getElementById('af-brand').value;
+      if (brand === '__new__'){
+        const newName = document.getElementById('af-brand-new').value.trim();
+        if (!newName){ toast('Indique le nom de la nouvelle marque'); return; }
+        brand = newName.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'');
+      }
       const entry = {
         id: 'perso-' + Date.now(),
         perso: true,
@@ -396,6 +447,11 @@ function render(){
       if (!c[brand]) c[brand] = [];
       c[brand].push(entry);
       saveCustom(c);
+      if (document.getElementById('af-brand').value === '__new__'){
+        const labels = loadCustomBrandLabels();
+        labels[brand] = document.getElementById('af-brand-new').value.trim();
+        saveCustomBrandLabels(labels);
+      }
       toast('Montre ajoutée');
       activeBrand = brand;
       render();
@@ -432,8 +488,7 @@ function render(){
     return;
   }
 
-  const brandData = DATA.brands[activeBrand];
-  if (!brandData) return;
+  const brandData = DATA.brands[activeBrand] || { label: brandLabel(activeBrand), watches: [], news: [] };
   const panel = document.createElement('div');
   panel.className = 'panel';
   panel.innerHTML = `<div class="section-title"><h2>${escapeHtml(brandData.label)}</h2><span class="count">${(brandData.watches||[]).length} suivie${(brandData.watches||[]).length>1?'s':''}</span></div>`;

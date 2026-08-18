@@ -61,6 +61,8 @@
   .news-item{ padding: 2px 0 2px 0; margin-bottom: 11px; font-family: -apple-system, sans-serif; }
   .news-date{ font-size: 10px; color: var(--copper-deep); letter-spacing:0.5px; font-weight:600; }
   .news-text{ font-size: 12.5px; color: var(--ink-soft); margin-top: 3px; line-height:1.5; }
+  .news-source{ font-size: 11px; margin-top:4px; }
+  .news-source a{ color: var(--ink-soft); text-decoration: underline; text-decoration-color: var(--rule); }
 
   .card{ background: var(--paper-raised); border: 1px solid var(--rule); border-radius: 3px; padding: 14px 14px 12px; margin-bottom: 12px; box-shadow: var(--card-shadow); }
   .card-top{ display:flex; justify-content:space-between; align-items:flex-start; gap:10px; }
@@ -82,13 +84,12 @@
 
   .card-note{ font-size: 12.5px; color: var(--ink-soft); margin-top:10px; line-height:1.55; font-family: -apple-system, sans-serif; }
 
-  .variants-toggle{ margin-top: 10px; font-size: 11.5px; color: var(--copper-deep); background:none; border:none; padding:0; cursor:pointer; font-weight:600; font-family: -apple-system, sans-serif; letter-spacing:0.2px; }
+  .card-actions{ margin-top:10px; font-family: -apple-system, sans-serif; display:flex; gap:14px; align-items:center; }
+  .card-actions a, .card-actions .variants-toggle{ font-size: 11.5px; color: var(--ink-soft); text-decoration: underline; text-decoration-color: var(--rule); }
+  .variants-toggle{ background:none; border:none; padding:0; cursor:pointer; font-weight:600; color: var(--copper-deep) !important; font-family: -apple-system, sans-serif; letter-spacing:0.2px; }
   .variants-list{ display:none; margin-top:8px; padding: 9px 11px; background: var(--paper); border-left: 2px solid var(--copper); font-family: -apple-system, sans-serif; }
   .variants-list.open{ display:block; }
   .variants-list span{ display:inline-block; font-size: 11px; color: var(--ink-soft); background: var(--paper-raised); border:1px solid var(--rule); padding:3px 8px; border-radius:20px; margin: 2px 4px 2px 0; }
-
-  .card-actions{ margin-top:10px; font-family: -apple-system, sans-serif; }
-  .card-actions a{ font-size: 11.5px; color: var(--ink-soft); text-decoration: underline; text-decoration-color: var(--rule); }
 
   .trend-card{ background: var(--paper-raised); border: 1px solid var(--rule); border-radius: 3px; padding: 13px 14px; margin-bottom: 12px; box-shadow: var(--card-shadow); }
   .trend-top{ display:flex; justify-content:space-between; gap:10px; }
@@ -267,12 +268,12 @@ function watchCard(w, idx){
         <div class="promos-disclaimer">Sites non officiels — vérifie toujours le vendeur (avis, ancienneté, retours) avant d'acheter.</div>
       </div>
     ` : ''}
-    ${w.perso ? `<button class="variants-toggle" data-remove-custom="${w.brand}|${w.id}" style="color:var(--copper-deep);">✕ Retirer cette entrée perso</button>` : ''}
-    ${hasVariants ? `
-      <button class="variants-toggle" data-toggle="${vid}">Voir + les variantes (${w.variants.length})</button>
-      <div class="variants-list" id="${vid}">${w.variants.map(v => `<span>${escapeHtml(v)}</span>`).join('')}</div>
-    ` : ''}
-    ${w.link ? `<div class="card-actions"><a href="${escapeHtml(w.link)}" target="_blank" rel="noopener">Voir la source ↗</a></div>` : ''}
+    ${w.perso ? `<button class="variants-toggle" data-remove-custom="${w.brand}|${w.id}" style="color:var(--copper-deep) !important;">✕ Retirer cette entrée perso</button>` : ''}
+    <div class="card-actions">
+      ${w.link ? `<a href="${escapeHtml(w.link)}" target="_blank" rel="noopener">Voir la source ↗</a>` : ''}
+      ${hasVariants ? `<button class="variants-toggle" data-toggle="${vid}">Voir les variantes (${w.variants.length})</button>` : ''}
+    </div>
+    ${hasVariants ? `<div class="variants-list" id="${vid}">${w.variants.map(v => `<span>${escapeHtml(v)}</span>`).join('')}</div>` : ''}
   `;
   return div;
 }
@@ -423,7 +424,7 @@ function render(){
       all.forEach(n => {
         const item = document.createElement('div');
         item.className = 'news-item';
-        item.innerHTML = `<div class="news-date">${escapeHtml(n.date)} · ${escapeHtml(n.brand)}</div><div class="news-text">${escapeHtml(n.text)}</div>`;
+        item.innerHTML = `<div class="news-date">${escapeHtml(n.date)} · ${escapeHtml(n.brand)}</div><div class="news-text">${escapeHtml(n.text)}</div>${n.link ? `<div class="news-source"><a href="${escapeHtml(n.link)}" target="_blank" rel="noopener">Voir la source ↗</a></div>` : ''}`;
         panel.appendChild(item);
       });
     }
@@ -445,7 +446,7 @@ function render(){
     newsHtml += `<div class="news-text">Rien pour l'instant.</div>`;
   } else {
     news.forEach(n => {
-      newsHtml += `<div class="news-item"><div class="news-date">${escapeHtml(n.date)}</div><div class="news-text">${escapeHtml(n.text)}</div></div>`;
+      newsHtml += `<div class="news-item"><div class="news-date">${escapeHtml(n.date)}</div><div class="news-text">${escapeHtml(n.text)}</div>${n.link ? `<div class="news-source"><a href="${escapeHtml(n.link)}" target="_blank" rel="noopener">Voir la source ↗</a></div>` : ''}</div>`;
     });
   }
   newsBox.innerHTML = newsHtml;

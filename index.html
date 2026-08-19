@@ -239,11 +239,25 @@ function renderTabs(){
 
 function escapeHtml(s){ return String(s==null?'':s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 
-function formatDate(iso){
-  if (!iso) return '';
-  const m = String(iso).match(/^(\d{4})-(\d{2})-(\d{2})$/);
-  if (!m) return iso;
-  return `${m[3]}/${m[2]}/${m[1]}`;
+function formatDate(d){
+  if (!d) return '';
+  const s = String(d);
+  let m = s.match(/^(\d{2})-(\d{2})-(\d{4})$/);
+  if (m) return `${m[1]}/${m[2]}/${m[3]}`;
+  m = s.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (m) return `${m[3]}/${m[2]}/${m[1]}`;
+  return s;
+}
+
+// Clé de tri comparable quel que soit le format stocké (jj-mm-aaaa ou aaaa-mm-jj)
+function dateKey(d){
+  if (!d) return '';
+  const s = String(d);
+  let m = s.match(/^(\d{2})-(\d{2})-(\d{4})$/);
+  if (m) return `${m[3]}${m[2]}${m[1]}`;
+  m = s.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (m) return `${m[1]}${m[2]}${m[3]}`;
+  return s;
 }
 
 function allNewsSorted(){
@@ -253,7 +267,7 @@ function allNewsSorted(){
     if (!b) return;
     (b.news||[]).forEach(n => all.push({ ...n, brand: b.label }));
   });
-  return all.sort((a,b) => (b.date||'').localeCompare(a.date||''));
+  return all.sort((a,b) => dateKey(b.date).localeCompare(dateKey(a.date)));
 }
 
 function priceNewDisplay(w){
@@ -356,7 +370,7 @@ function render(){
     panel.className = 'panel';
     panel.innerHTML = `<div class="section-title"><h2>À la mode en ce moment</h2></div>
       <div style="font-size:12px;color:var(--ink-faint);font-family:-apple-system,sans-serif;margin-bottom:14px;line-height:1.5;">Micro-marques, indépendants et maisons méconnues qui font parler d'elles — pour découvrir autre chose que les grands noms.</div>`;
-    const trending = (DATA.trending || []).slice().sort((a,b) => (b.date||'').localeCompare(a.date||''));
+    const trending = (DATA.trending || []).slice().sort((a,b) => dateKey(b.date).localeCompare(dateKey(a.date)));
     if (trending.length === 0){
       panel.innerHTML += `<div class="empty">Rien pour l'instant.</div>`;
     } else {
@@ -507,7 +521,7 @@ function render(){
   panel.className = 'panel';
   panel.innerHTML = `<div class="section-title"><h2>${escapeHtml(brandData.label)}</h2><span class="count">${(brandData.watches||[]).length} suivie${(brandData.watches||[]).length>1?'s':''}</span></div>`;
 
-  const news = (brandData.news||[]).slice().sort((a,b) => (b.date||'').localeCompare(a.date||''));
+  const news = (brandData.news||[]).slice().sort((a,b) => dateKey(b.date).localeCompare(dateKey(a.date)));
   const newsBox = document.createElement('div');
   newsBox.className = 'brand-news';
   let newsHtml = `<div class="eyebrow">Actus ${escapeHtml(brandData.label)}</div>`;
@@ -556,7 +570,7 @@ document.getElementById('btn-reload').onclick = async () => {
 };
 
 document.getElementById('btn-claude').onclick = () => {
-  const prompt = "Actualise le répertoire horloger (repo Lapepite792/repertoire-horloger, fichier data.json) : pour Omega, Tissot, LIP et Orient sur les modèles déjà suivis, recherche 1) les dernières actualités avec leur lien source, 2) les prix neuf + fourchette occasion — si un prix neuf est inconnu, renseigne le champ priceNewReason avec la raison (tarif non publié, modèle discontinué, etc.), 3) les caractéristiques (mouvement, diamètre, bracelet, année), 4) les variantes disponibles classées par tailles/couleurs/matières, 5) des bons plans sur sites tiers fiables (avec lien) pour chaque modèle si possible. Actualise aussi l'onglet tendances — il doit servir à DÉCOUVRIR : privilégie les micro-marques, marques indépendantes et maisons méconnues ou relancées (pas Rolex/Patek/AP/Cartier ni les grandes maisons déjà connues de tous). Mets à jour data.json directement (nouveautés triées les plus récentes en premier, dates stockées au format AAAA-MM-JJ).";
+  const prompt = "Actualise le répertoire horloger (repo Lapepite792/repertoire-horloger, fichier data.json) : pour Omega, Tissot, LIP et Orient sur les modèles déjà suivis, recherche 1) les dernières actualités avec leur lien source, 2) les prix neuf + fourchette occasion — si un prix neuf est inconnu, renseigne le champ priceNewReason avec la raison (tarif non publié, modèle discontinué, etc.), 3) les caractéristiques (mouvement, diamètre, bracelet, année), 4) les variantes disponibles classées par tailles/couleurs/matières, 5) des bons plans sur sites tiers fiables (avec lien) pour chaque modèle si possible. Actualise aussi l'onglet tendances — il doit servir à DÉCOUVRIR : privilégie les micro-marques, marques indépendantes et maisons méconnues ou relancées (pas Rolex/Patek/AP/Cartier ni les grandes maisons déjà connues de tous). Mets à jour data.json directement (nouveautés triées les plus récentes en premier, dates stockées au format JJ-MM-AAAA).";
   navigator.clipboard.writeText(prompt).then(() => {
     toast('Prompt copié — colle-le à Claude');
   }).catch(() => {

@@ -329,6 +329,14 @@
     border-bottom:1px solid var(--dial-edge);
   }
 
+  .load-error{
+    background: var(--dial-light); border:1px solid var(--dial-edge);
+    border-left:3px solid var(--chrono); border-radius:3px; padding:18px 18px 4px;
+  }
+  .load-error p{ font-size:12.5px; color: var(--ink-soft); line-height:1.65; margin:0 0 12px; }
+  .load-error code{ font-family: var(--data); font-size:11.5px; background: var(--dial); padding:1px 5px; border-radius:2px; }
+  .load-error a{ color: var(--blued); }
+
   .empty{
     text-align:center; color: var(--ink-faint); font-size:12px;
     padding:28px 14px; border:1px dashed var(--dial-edge); border-radius:3px;
@@ -586,7 +594,20 @@ function render(){
   const main = document.getElementById('main');
   main.innerHTML = "";
   const syncLine = document.getElementById('sync-line');
-  syncLine.textContent = DATA.updated ? `Données du ${DATA.updated}` : '';
+  syncLine.textContent = DATA.updated ? `Données du ${formatDate(DATA.updated)}` : 'Données indisponibles';
+
+  // Aucune donnée chargée : expliquer quoi faire plutôt que d'afficher une page vide
+  if (!DATA.brands || Object.keys(DATA.brands).length === 0){
+    const isLocal = location.protocol === 'file:';
+    main.innerHTML = `<div class="load-error">
+      <div class="eyebrow">Données non chargées</div>
+      <p>${isLocal
+        ? "La page est ouverte depuis un fichier local, elle ne peut donc pas lire <code>data.json</code>."
+        : "Le fichier <code>data.json</code> n'a pas pu être récupéré."}</p>
+      <p>Ouvre le répertoire depuis <a href="https://lapepite792.github.io/repertoire-horloger/">lapepite792.github.io/repertoire-horloger</a>, ou place <code>data.json</code> dans le même dossier que cette page.</p>
+    </div>`;
+    return;
+  }
 
   if (activeBrand === 'trending'){
     const panel = document.createElement('div');

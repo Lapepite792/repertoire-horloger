@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-18",
+  "updated": "19-08-2026",
   "brands": {
     "omega": {
       "label": "Omega",
@@ -72,43 +72,58 @@
           "id": "omega-speedmaster-milano-cortina",
           "model": "Speedmaster 38 Milano Cortina 2026",
           "reference": "522.30.38.50.04.001",
-          "movement": "Quartz",
-          "diameter": "38 mm",
-          "bracelet": "Acier",
+          "movement": "Automatique (Calibre 3330, COSC, chrono roue à colonnes, 52h)",
+          "diameter": "38 mm (14,7 mm ép.)",
+          "bracelet": "Acier poli",
           "releaseYear": "2026",
-          "priceNew": "inconnu",
+          "priceNew": "≈ 6 300 € (6 800 $)",
           "priceUsed": "—",
-          "priceDate": "mars 2026",
+          "priceDate": "août 2026",
           "link": "https://www.omegawatches.com",
-          "note": "Édition liée aux JO d'hiver, lunette céramique bleue, cadran effet neige.",
+          "note": "Non limitée. Lunette céramique bleue, cadran blanc verni givré bleu, sous-compteurs azurage façon piste de ski.",
           "estimated": true,
           "variants": {
             "tailles": [
               "38mm"
             ],
             "couleurs": [
-              "Cadran bleu ciel effet neige"
+              "Cadran blanc givré bleu"
             ],
             "matieres": [
-              "Acier + lunette céramique bleue"
+              "Acier + céramique bleue"
             ]
           },
-          "promos": [],
-          "priceNewReason": "édition olympique, tarif non publié"
+          "promos": [
+            {
+              "site": "Chrono24 (marketplace, vendeurs vérifiés)",
+              "price": "à surveiller (modèle récent)",
+              "link": "https://www.chrono24.fr"
+            }
+          ]
         }
       ],
       "news": [
         {
-          "date": "2026-05-21",
+          "date": "08-07-2026",
+          "text": "Omega ajoute discrètement au catalogue une Speedmaster Moonwatch en Moonshine gold à cadran vert, sans annonce officielle — clin d'œil probable à la victoire de Rory McIlroy au Masters.",
+          "link": "https://www.gearpatrol.com/watches/omega-speedmaster-masters-green/"
+        },
+        {
+          "date": "21-05-2026",
+          "text": "Première Seamaster Diver 300M Chronograph de la lignée James Bond, liée au jeu vidéo 007 First Light (réf. 210.32.44.51.01.002).",
+          "link": "https://www.luxurybazaar.com/grey-market/omega-2026-watch-releases/"
+        },
+        {
+          "date": "21-05-2026",
           "text": "Omega lance la Speedmaster Moonwatch « Reverse Panda » (cadran noir, sous-compteurs blancs), en acier et en version Moonshine gold.",
           "link": "https://www.luxurybazaar.com/grey-market/omega-2026-watch-releases/"
         },
         {
-          "date": "2026-03-17",
+          "date": "17-03-2026",
           "text": "Omega dévoile deux Speedmaster Moonwatch Professional « Black & White » à cadran inversé (acier ~10 200 €, or Moonshine ~48 200 €)."
         },
         {
-          "date": "2026-02-14",
+          "date": "14-02-2026",
           "text": "Speedmaster 38mm « Milano Cortina 2026 » lancée en lien avec les Jeux Olympiques d'hiver, cadran bleu ciel façon piste enneigée.",
           "link": "https://www.luxurybazaar.com/grey-market/omega-2025-releases/"
         }
@@ -200,12 +215,27 @@
       ],
       "news": [
         {
-          "date": "2026-04-09",
+          "date": "05-08-2026",
+          "text": "La PRX arrive en 38 mm dans deux matériaux inédits pour la collection : titane et acier de Damas, avec mouvement Powermatic 80. Cadrans bleu classique et gris taupe à index dorés.",
+          "link": "https://www.welovewatches.fr/tissot-prx-38-mm-3-nouveaux-modeles-2-materiaux-1-taille-ideale.html"
+        },
+        {
+          "date": "04-07-2026",
+          "text": "Tissot dévoile la PR 100 Tour de France 2026 (boîte PVD noir sablé 40 mm, deux bracelets interchangeables) et la PR 100 Édition Cyclisme.",
+          "link": "https://topvelo.fr/montre-tissot-pr-100-tour-de-france-2026/"
+        },
+        {
+          "date": "09-04-2026",
           "text": "Tissot étend l'univers PRX avec de nouvelles finitions et coloris, ainsi qu'une collaboration cyclisme Tour de France (PR 100).",
           "link": "https://www.tissotwatches.com/en-us/magazine-news-tissot-prx-extensions.html"
         },
         {
-          "date": "2026-03-16",
+          "date": "16-03-2026",
+          "text": "Cinq nouvelles T-Race, dont la T-Race MotoGP Automatic Chronograph en édition limitée à 2026 pièces gravées individuellement.",
+          "link": "https://www.tissotwatches.com/en-us/magazine-news-t-race-2026.html"
+        },
+        {
+          "date": "16-03-2026",
           "text": "Nouveau Tissot Visodate présenté — relecture d'un classique de la marque.",
           "link": "https://the-gadgeteer.com/2026/05/25/best-tissot-watches-2026/"
         }
@@ -252,7 +282,7 @@
       ],
       "news": [
         {
-          "date": "2026-06-24",
+          "date": "24-06-2026",
           "text": "Soldes d'été LIP jusqu'à -50% (24 juin – 21 juillet 2026, dans la limite des stocks).",
           "link": "https://lip.fr/en/215-seasonal-sale"
         }
@@ -337,12 +367,12 @@
       ],
       "news": [
         {
-          "date": "2026-08-15",
+          "date": "15-08-2026",
           "text": "Orient dévoile dix nouvelles montres Stretto pour 2026, réparties sur deux gammes, avec mouvement manufacture.",
           "link": "https://www.welovewatches.fr/actu"
         },
         {
-          "date": "2026-02-16",
+          "date": "16-02-2026",
           "text": "Orient dévoile sa première Bambino sans date (38mm) et de nouveaux coloris/cadrans dégradés pour les modèles à date, dès 340 €.",
           "link": "https://monochrome-watches.com/introducing-orient-bambino-38-no-date-and-new-colours-2026-bambino-classic-date-specs-price/"
         }
@@ -351,68 +381,12 @@
   },
   "trending": [
     {
-      "brand": "Anoma",
-      "model": "A1 / A1 Optical",
-      "note": "Micro-marque qui casse les codes : boîtier triangulaire, design industriel moderne plutôt que vintage. Cadran Optical à illusions optiques. L'une des marques les plus commentées de 2026.",
-      "priceRange": "≈ 1 000 – 1 500 €",
-      "link": "https://smallsecondswatchreviews.com/blogs/news/top-watch-microbrands-to-watch-2026",
-      "date": "2026-01-21"
-    },
-    {
-      "brand": "Baltic",
-      "model": "MR01 / Aquascaphe",
-      "note": "Micro-marque française au style néo-vintage très abouti : chiffres Breguet dorés, verre hésalite bombé, petite seconde décalée. Rapport qualité-prix référence du segment.",
-      "priceRange": "≈ 500 – 800 €",
-      "link": "https://authenticwrist.com/guides/best-microbrands-2026/",
-      "date": "2026-03-17"
-    },
-    {
-      "brand": "Eska",
-      "model": "Amphibian 250",
-      "note": "Maison suisse de 1918 tombée dans l'oubli, relancée en 2024 par deux Français. Plongeuse inspirée des années 60 façon Fifty Fathoms : 40mm, cornes courtes, cadran sandwich.",
-      "priceRange": "≈ 900 – 1 900 €",
-      "link": "https://lepetitpoussoir.fr/chroniques/selections/micro-marques-horlogeres-qui-montent-2026/",
-      "date": "2026-03-29"
-    },
-    {
-      "brand": "anOrdain",
-      "model": "Model 1 (Green Fumé)",
-      "note": "Atelier écossais de Glasgow qui a ressuscité l'art du cadran en émail. Chaque pièce est fabriquée main, inspirée des paysages écossais. Mouvement suisse.",
-      "priceRange": "≈ 1 000 – 2 500 €",
-      "link": "https://microbrandwatchworld.com/reviews/the-complete-microbrands-list/",
-      "date": "2026-06-30"
-    },
-    {
       "brand": "Furlan Marri",
       "model": "Chronographes meca-quartz",
       "note": "Leader du chronographe abordable en 2026. Finitions bien au-dessus de leur prix, esthétique chronographe vintage, évolution récente vers le mécanique.",
       "priceRange": "≈ 500 – 1 500 €",
       "link": "https://rotatewatches.com/blogs/blog/best-microbrand-watches",
-      "date": "2026-07-25"
-    },
-    {
-      "brand": "Lorca",
-      "model": "n° 2 Chronographe",
-      "note": "Fondée en 2022 par un musicien new-yorkais. Néo-vintage naturel dans la veine de Serica, lunette cannelée remarquable, mouvements Sellita et Soprod.",
-      "priceRange": "≈ 1 500 – 2 500 €",
-      "link": "https://lepetitpoussoir.fr/chroniques/selections/micro-marques-horlogeres-qui-montent-2026/",
-      "date": "2026-03-29"
-    },
-    {
-      "brand": "Heron",
-      "model": "Mirabel GMT",
-      "note": "Micro-marque montréalaise. GMT à contre-courant : pas de look tool watch mais des codes de montre habillée — aiguilles bleuies, boîtier en C, cadran secteur émaillé, couronne cabochon.",
-      "priceRange": "≈ 700 – 1 200 €",
-      "link": "https://teddybaldassarre.com/en-int/blogs/watches/microbrand-watches-complete-guide",
-      "date": "2026-07-09"
-    },
-    {
-      "brand": "Atelier Wen",
-      "model": "Inflection \"Yuan\"",
-      "note": "Marque qui assume ses origines chinoises comme identité créative. Cadran en émail grand feu bleu, finitions haut de gamme à prix contenu.",
-      "priceRange": "≈ 1 200 – 2 000 €",
-      "link": "https://thehourmarkers.com/articles/top-5-microbrands-in-june-2026",
-      "date": "2026-06-30"
+      "date": "25-07-2026"
     },
     {
       "brand": "Zelos",
@@ -420,15 +394,55 @@
       "note": "Réputation bâtie sur des matériaux rares : cadrans en météorite, boîtiers en bronze, combinaisons de couleurs inédites. Prises de risque assumées.",
       "priceRange": "≈ 500 – 1 200 €",
       "link": "https://rotatewatches.com/blogs/blog/best-microbrand-watches",
-      "date": "2026-07-25"
+      "date": "25-07-2026"
     },
     {
-      "brand": "Vulcain",
-      "model": "Cricket 2026",
-      "note": "Réédition de la légendaire montre-réveil mécanique, boîtier titane 39mm, limitée à 100 exemplaires numérotés.",
-      "priceRange": "à vérifier",
-      "link": "https://www.chronotempus.com/guide/petite-marque-artisan/",
-      "date": "2026-01-12"
+      "brand": "Heron",
+      "model": "Mirabel GMT",
+      "note": "Micro-marque montréalaise. GMT à contre-courant : pas de look tool watch mais des codes de montre habillée — aiguilles bleuies, boîtier en C, cadran secteur émaillé, couronne cabochon.",
+      "priceRange": "≈ 700 – 1 200 €",
+      "link": "https://teddybaldassarre.com/en-int/blogs/watches/microbrand-watches-complete-guide",
+      "date": "09-07-2026"
+    },
+    {
+      "brand": "anOrdain",
+      "model": "Model 1 (Green Fumé)",
+      "note": "Atelier écossais de Glasgow qui a ressuscité l'art du cadran en émail. Chaque pièce est fabriquée main, inspirée des paysages écossais. Mouvement suisse.",
+      "priceRange": "≈ 1 000 – 2 500 €",
+      "link": "https://microbrandwatchworld.com/reviews/the-complete-microbrands-list/",
+      "date": "30-06-2026"
+    },
+    {
+      "brand": "Atelier Wen",
+      "model": "Inflection \"Yuan\"",
+      "note": "Marque qui assume ses origines chinoises comme identité créative. Cadran en émail grand feu bleu, finitions haut de gamme à prix contenu.",
+      "priceRange": "≈ 1 200 – 2 000 €",
+      "link": "https://thehourmarkers.com/articles/top-5-microbrands-in-june-2026",
+      "date": "30-06-2026"
+    },
+    {
+      "brand": "Eska",
+      "model": "Amphibian 250",
+      "note": "Maison suisse de 1918 tombée dans l'oubli, relancée en 2024 par deux Français. Plongeuse inspirée des années 60 façon Fifty Fathoms : 40mm, cornes courtes, cadran sandwich.",
+      "priceRange": "≈ 900 – 1 900 €",
+      "link": "https://lepetitpoussoir.fr/chroniques/selections/micro-marques-horlogeres-qui-montent-2026/",
+      "date": "29-03-2026"
+    },
+    {
+      "brand": "Lorca",
+      "model": "n° 2 Chronographe",
+      "note": "Fondée en 2022 par un musicien new-yorkais. Néo-vintage naturel dans la veine de Serica, lunette cannelée remarquable, mouvements Sellita et Soprod.",
+      "priceRange": "≈ 1 500 – 2 500 €",
+      "link": "https://lepetitpoussoir.fr/chroniques/selections/micro-marques-horlogeres-qui-montent-2026/",
+      "date": "29-03-2026"
+    },
+    {
+      "brand": "Baltic",
+      "model": "MR01 / Aquascaphe",
+      "note": "Micro-marque française au style néo-vintage très abouti : chiffres Breguet dorés, verre hésalite bombé, petite seconde décalée. Rapport qualité-prix référence du segment.",
+      "priceRange": "≈ 500 – 800 €",
+      "link": "https://authenticwrist.com/guides/best-microbrands-2026/",
+      "date": "17-03-2026"
     },
     {
       "brand": "Circula",
@@ -436,7 +450,15 @@
       "note": "Micro-marque allemande active depuis plus de 60 ans. Techniques traditionnelles, Super-LumiNova suisse, excellent rapport qualité-prix sans esbroufe marketing.",
       "priceRange": "≈ 400 – 900 €",
       "link": "https://www.hypeandstyle.fr/en/best-watch-microbrands/",
-      "date": "2026-02-10"
+      "date": "10-02-2026"
+    },
+    {
+      "brand": "Anoma",
+      "model": "A1 / A1 Optical",
+      "note": "Micro-marque qui casse les codes : boîtier triangulaire, design industriel moderne plutôt que vintage. Cadran Optical à illusions optiques. L'une des marques les plus commentées de 2026.",
+      "priceRange": "≈ 1 000 – 1 500 €",
+      "link": "https://smallsecondswatchreviews.com/blogs/news/top-watch-microbrands-to-watch-2026",
+      "date": "21-01-2026"
     },
     {
       "brand": "RZE",
@@ -444,7 +466,15 @@
       "note": "Fer de lance du \"digital revival\" 2026 : montre numérique haut de gamme tout titane, verre saphir, étanchéité 100m+. Rien à voir avec les digitales jetables.",
       "priceRange": "≈ 300 – 500 €",
       "link": "https://smallsecondswatchreviews.com/blogs/news/top-watch-microbrands-to-watch-2026",
-      "date": "2026-01-21"
+      "date": "21-01-2026"
+    },
+    {
+      "brand": "Vulcain",
+      "model": "Cricket 2026",
+      "note": "Réédition de la légendaire montre-réveil mécanique, boîtier titane 39mm, limitée à 100 exemplaires numérotés.",
+      "priceRange": "à vérifier",
+      "link": "https://www.chronotempus.com/guide/petite-marque-artisan/",
+      "date": "12-01-2026"
     }
   ]
 }

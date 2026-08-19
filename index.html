@@ -5,144 +5,367 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Répertoire Horloger</title>
 <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#efe9dc">
+<meta name="theme-color" content="#d6dbdf">
 <style>
+  /* ————————————————————————————————————————————————
+     Palette : cadran argenté soleillé + aiguilles bleuies
+     (le bleuissage thermique des aiguilles, vrai geste horloger)
+     ———————————————————————————————————————————————— */
   :root{
-    --paper: #efe9dc;
-    --paper-raised: #f7f3ea;
-    --ink: #26241f;
-    --ink-soft: #5a564a;
-    --ink-faint: #928c7a;
-    --rule: #cfc6ac;
-    --copper: #9a5b32;
-    --copper-deep: #7a4726;
-    --sage: #5f7259;
-    --card-shadow: 0 1px 0 rgba(38,36,31,0.06);
+    --dial:        #d6dbdf;
+    --dial-light:  #edf0f2;
+    --dial-edge:   #bcc5cc;
+    --ink:         #161c21;
+    --ink-soft:    #4c565f;
+    --ink-faint:   #8d99a3;
+    --blued:       #2b4a8f;
+    --blued-deep:  #1b3266;
+    --chrono:      #a1372b;
+    --lume:        #cbd6c4;
+
+    --display: ui-sans-serif, "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+    --body: ui-sans-serif, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --data: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, monospace;
   }
-  *{ box-sizing: border-box; }
+
+  *{ box-sizing:border-box; }
   html,body{ margin:0; padding:0; }
   body{
     background:
-      repeating-linear-gradient(0deg, rgba(38,36,31,0.015) 0px, rgba(38,36,31,0.015) 1px, transparent 1px, transparent 34px),
-      var(--paper);
+      radial-gradient(120% 80% at 50% -10%, #f2f5f6 0%, transparent 60%),
+      conic-gradient(from 0deg at 50% 22%,
+        rgba(255,255,255,.55) 0deg, rgba(255,255,255,0) 18deg,
+        rgba(255,255,255,.45) 40deg, rgba(255,255,255,0) 62deg,
+        rgba(255,255,255,.55) 84deg, rgba(255,255,255,0) 106deg,
+        rgba(255,255,255,.45) 128deg, rgba(255,255,255,0) 150deg,
+        rgba(255,255,255,.55) 172deg, rgba(255,255,255,0) 194deg,
+        rgba(255,255,255,.45) 216deg, rgba(255,255,255,0) 238deg,
+        rgba(255,255,255,.55) 260deg, rgba(255,255,255,0) 282deg,
+        rgba(255,255,255,.45) 304deg, rgba(255,255,255,0) 326deg,
+        rgba(255,255,255,.55) 348deg, rgba(255,255,255,0) 360deg),
+      var(--dial);
     color: var(--ink);
-    font-family: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
-    min-height: 100vh;
-    padding-bottom: 50px;
+    font-family: var(--body);
+    min-height:100vh;
+    padding-bottom:56px;
+    -webkit-font-smoothing: antialiased;
   }
-  .mono{ font-family: 'JetBrains Mono', 'Courier New', monospace; }
-  .sans{ font-family: -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; }
+  .mono{ font-family: var(--data); font-variant-numeric: tabular-nums; }
 
-  header{ padding: 26px 20px 18px; border-bottom: 2px solid var(--ink); }
-  .eyebrow{ text-transform: uppercase; letter-spacing: 3px; font-size: 10px; color: var(--copper); font-weight: 600; margin-bottom: 6px; font-family: -apple-system, 'Segoe UI', sans-serif; }
-  h1{ font-size: 27px; font-weight: 400; letter-spacing: 0.3px; margin: 0 0 5px; font-style: italic; }
-  .tagline{ color: var(--ink-soft); font-size: 12.5px; max-width: 480px; line-height: 1.55; font-family: -apple-system, 'Segoe UI', sans-serif; }
+  /* ——— Signature : le chemin de fer (minute track) ——— */
+  .railroad{
+    height:9px;
+    background:
+      repeating-linear-gradient(90deg, var(--ink-faint) 0 1px, transparent 1px 5px);
+    opacity:.55;
+    position:relative;
+  }
+  .railroad::after{
+    content:""; position:absolute; inset:0;
+    background: repeating-linear-gradient(90deg, var(--ink) 0 1.5px, transparent 1.5px 25px);
+    opacity:.9;
+  }
 
-  .header-actions{ display:flex; gap:8px; margin-top:14px; flex-wrap:wrap; font-family: -apple-system, 'Segoe UI', sans-serif; }
-  .hbtn{ background: var(--paper-raised); border:1px solid var(--ink); color: var(--ink); font-size: 11px; padding: 7px 13px; cursor:pointer; letter-spacing:0.2px; }
-  .hbtn:active{ background: var(--ink); color: var(--paper); }
-  .sync-line{ font-size: 10px; color: var(--ink-faint); margin-top: 9px; font-family: -apple-system, sans-serif; letter-spacing:0.3px; }
+  /* ——— En-tête ——— */
+  header{ padding:30px 20px 0; }
+  .maker{
+    font-family: var(--display);
+    font-size:9.5px; letter-spacing:.34em; text-transform:uppercase;
+    color: var(--blued); font-weight:600; margin-bottom:14px;
+  }
+  h1{
+    font-family: var(--display);
+    font-size: clamp(19px, 5.4vw, 25px);
+    font-weight:600; letter-spacing:.2em; text-transform:uppercase;
+    margin:0; line-height:1.25;
+  }
+  h1 span{ display:block; color: var(--ink-faint); font-weight:400; letter-spacing:.3em; font-size:.52em; margin-top:7px; }
+  .tagline{
+    color: var(--ink-soft); font-size:12.5px; line-height:1.6;
+    max-width:460px; margin:14px 0 0;
+  }
+  .header-actions{ display:flex; gap:8px; margin:16px 0 14px; flex-wrap:wrap; }
+  .hbtn{
+    background: var(--dial-light); border:1px solid var(--ink); color: var(--ink);
+    font-family: var(--display); font-size:9.5px; letter-spacing:.16em; text-transform:uppercase;
+    font-weight:600; padding:9px 14px; cursor:pointer; border-radius:2px;
+    transition: background .15s, color .15s;
+  }
+  .hbtn:hover{ background: var(--ink); color: var(--dial-light); }
+  .hbtn:focus-visible{ outline:2px solid var(--blued); outline-offset:2px; }
+  .sync-line{
+    font-size:10px; letter-spacing:.1em; color: var(--ink-faint);
+    text-transform:uppercase; padding:0 20px 14px;
+  }
 
-  nav.tabs{ display:flex; gap:2px; padding: 0 20px; overflow-x:auto; border-bottom: 1px solid var(--rule); background: var(--paper-raised); }
+  /* ——— Onglets : index appliqués ——— */
+  nav.tabs{
+    display:flex; gap:0; padding:0 14px; overflow-x:auto;
+    border-bottom:1px solid var(--ink);
+    scrollbar-width:none;
+  }
   nav.tabs::-webkit-scrollbar{ display:none; }
-  .tab-btn{ background:none; border:none; color: var(--ink-soft); font-family: Georgia, serif; font-style: italic; font-size: 14.5px; padding: 12px 13px; cursor:pointer; white-space:nowrap; border-bottom: 3px solid transparent; }
-  .tab-btn.active{ color: var(--copper-deep); border-bottom-color: var(--copper-deep); font-style: normal; font-weight:600; }
+  .tab-btn{
+    position:relative; background:none; border:none; cursor:pointer;
+    font-family: var(--display); font-size:10.5px; letter-spacing:.13em;
+    text-transform:uppercase; font-weight:600; color: var(--ink-faint);
+    padding:15px 13px 13px; white-space:nowrap;
+    transition: color .15s;
+  }
+  .tab-btn:hover{ color: var(--ink-soft); }
+  .tab-btn.active{ color: var(--blued-deep); }
+  .tab-btn.active::before{
+    content:""; position:absolute; left:50%; top:5px; transform:translateX(-50%);
+    width:16px; height:4px; background: var(--blued);
+    clip-path: polygon(14% 0, 86% 0, 100% 100%, 0 100%);
+  }
+  .tab-btn:focus-visible{ outline:2px solid var(--blued); outline-offset:-3px; }
 
-  main{ padding: 18px 16px 0; max-width: 640px; margin: 0 auto; }
-  .panel{ animation: fade .2s ease; }
-  @keyframes fade{ from{opacity:0;} to{opacity:1;} }
+  main{ padding:20px 16px 0; max-width:660px; margin:0 auto; }
+  .panel{ animation: settle .28s cubic-bezier(.22,.8,.3,1); }
+  @keyframes settle{ from{ opacity:0; transform:translateY(5px);} to{ opacity:1; transform:none;} }
+  @media (prefers-reduced-motion: reduce){ .panel{ animation:none; } }
 
-  .section-title{ display:flex; align-items:baseline; justify-content:space-between; margin: 16px 0 10px; }
-  .section-title h2{ font-size: 17px; font-weight:400; font-style:italic; margin:0; }
-  .section-title .count{ color: var(--ink-faint); font-size: 11px; font-family: -apple-system, sans-serif; }
+  .section-title{ display:flex; align-items:baseline; justify-content:space-between; gap:12px; margin:6px 0 14px; }
+  .section-title h2{
+    font-family: var(--display); font-size:14px; font-weight:600;
+    letter-spacing:.18em; text-transform:uppercase; margin:0;
+  }
+  .section-title .count{
+    font-family: var(--data); font-size:10px; color: var(--ink-faint);
+    letter-spacing:.08em; white-space:nowrap;
+  }
+  .lede{ font-size:12.5px; color: var(--ink-soft); line-height:1.6; margin:-6px 0 16px; }
 
-  .brand-news{ border-top: 1px solid var(--ink); border-bottom: 1px solid var(--rule); padding: 10px 0 6px; margin-bottom: 18px; }
-  .brand-news .eyebrow{ margin-bottom:8px; }
-  .news-item{ padding: 2px 0 2px 0; margin-bottom: 11px; font-family: -apple-system, sans-serif; }
-  .news-date{ font-size: 10px; color: var(--copper-deep); letter-spacing:0.5px; font-weight:600; }
-  .news-text{ font-size: 12.5px; color: var(--ink-soft); margin-top: 3px; line-height:1.5; }
-  .news-source{ font-size: 11px; margin-top:4px; }
-  .news-source a{ color: var(--ink-soft); text-decoration: underline; text-decoration-color: var(--rule); }
+  /* ——— Actus ——— */
+  .brand-news{
+    border-top:1.5px solid var(--ink); padding:14px 0 4px; margin-bottom:20px;
+  }
+  .eyebrow{
+    font-family: var(--display); font-size:9px; letter-spacing:.26em;
+    text-transform:uppercase; color: var(--blued); font-weight:600; margin-bottom:12px;
+  }
+  .news-item{ display:grid; grid-template-columns:auto 1fr; gap:0 14px; margin-bottom:14px; }
+  .news-date{
+    font-family: var(--data); font-size:10px; color: var(--ink-faint);
+    letter-spacing:.04em; padding-top:2px; white-space:nowrap;
+    border-right:1px solid var(--dial-edge); padding-right:14px; margin-right:-14px;
+  }
+  .news-text{ font-size:12.5px; color: var(--ink-soft); line-height:1.6; }
+  .news-source{ grid-column:2; font-size:11px; margin-top:5px; }
+  .news-source a{ color: var(--blued); text-decoration:none; border-bottom:1px solid rgba(43,74,143,.3); }
+  .news-source a:hover{ border-bottom-color: var(--blued); }
 
-  .card{ background: var(--paper-raised); border: 1px solid var(--rule); border-radius: 3px; padding: 14px 14px 12px; margin-bottom: 12px; box-shadow: var(--card-shadow); }
-  .card-top{ display:flex; justify-content:space-between; align-items:flex-start; gap:10px; }
-  .card-model{ font-size: 16px; font-weight:400; line-height:1.3; }
-  .card-ref{ color: var(--ink-faint); font-size: 10.5px; margin-top:3px; font-family: -apple-system, sans-serif; letter-spacing:0.3px; }
+  /* ——— Fiches montres ——— */
+  .card{
+    background: var(--dial-light);
+    border:1px solid var(--dial-edge);
+    border-radius:3px; padding:0 0 14px; margin-bottom:14px;
+    box-shadow: 0 1px 2px rgba(22,28,33,.05);
+  }
+  .card-top{ display:flex; justify-content:space-between; align-items:flex-start; gap:10px; padding:15px 16px 0; }
+  .card-model{ font-size:16.5px; font-weight:600; letter-spacing:-.01em; line-height:1.3; }
+  .card-ref{
+    font-family: var(--data); font-size:10px; color: var(--ink-faint);
+    letter-spacing:.06em; margin-top:4px;
+  }
+  .flag{
+    display:inline-block; font-family: var(--display); font-size:8px;
+    letter-spacing:.14em; text-transform:uppercase; font-weight:600;
+    color: var(--ink-faint); border:1px solid var(--dial-edge);
+    padding:2px 7px; border-radius:2px; margin-left:8px; vertical-align:middle;
+  }
 
-  .price-row{ display:flex; align-items:baseline; gap:10px; margin-top:11px; flex-wrap:wrap; font-family: -apple-system, sans-serif; }
-  .price-block{ display:flex; align-items:baseline; gap:5px; }
-  .price-label{ font-size: 9.5px; color: var(--ink-faint); text-transform:uppercase; letter-spacing:0.6px; }
-  .price-new-val{ font-size: clamp(15px, 4.4vw, 19px); font-weight:700; color: var(--copper-deep); }
-  .price-used-val{ font-size: clamp(12px, 3.6vw, 14px); color: var(--sage); font-weight:600; }
-  .price-unknown{ color: var(--ink-faint); font-style: italic; font-weight:400; }
-  .price-reason{ font-size: 10.5px; color: var(--ink-faint); font-style: italic; font-weight:400; }
-  .price-date{ font-size: 9.5px; color: var(--ink-faint); margin-top:4px; font-family: -apple-system, sans-serif; }
-  .flag{ display:inline-block; font-size: 8.5px; letter-spacing:1px; text-transform:uppercase; color: var(--copper-deep); border:1px solid var(--copper-deep); padding: 1px 6px; border-radius:20px; margin-left:8px; font-family: -apple-system, sans-serif; vertical-align:middle; }
+  /* le prix : lecture d'instrument */
+  .price-row{
+    display:flex; align-items:stretch; gap:0; margin:14px 16px 0;
+    border-top:1px solid var(--dial-edge); border-bottom:1px solid var(--dial-edge);
+  }
+  .price-block{ padding:11px 16px 11px 0; }
+  .price-block + .price-block{ padding-left:16px; border-left:1px solid var(--dial-edge); }
+  .price-label{
+    display:block; font-family: var(--display); font-size:8.5px;
+    letter-spacing:.2em; text-transform:uppercase; color: var(--ink-faint);
+    margin-bottom:4px;
+  }
+  .price-new-val{
+    font-family: var(--data); font-variant-numeric: tabular-nums;
+    font-size: clamp(15px, 4.6vw, 19px); font-weight:600; color: var(--blued-deep);
+    line-height:1.1; display:block;
+  }
+  .price-used-val{
+    font-family: var(--data); font-variant-numeric: tabular-nums;
+    font-size: clamp(12.5px, 3.6vw, 14.5px); font-weight:500; color: var(--ink-soft);
+    line-height:1.1; display:block;
+  }
+  .price-unknown{ color: var(--ink-faint); font-style:italic; font-weight:400; }
+  .price-reason{ font-family: var(--body); font-size:10.5px; color: var(--ink-faint); font-style:italic; }
+  .price-date{
+    font-family: var(--data); font-size:9.5px; color: var(--ink-faint);
+    letter-spacing:.06em; margin:7px 16px 0;
+  }
 
-  .specs{ display:grid; grid-template-columns: 1fr 1fr; gap: 6px 14px; margin-top: 12px; padding-top: 11px; border-top: 1px dashed var(--rule); font-family: -apple-system, sans-serif; }
-  .spec{ font-size: 11.5px; color: var(--ink-soft); }
-  .spec b{ display:block; font-size: 9px; text-transform:uppercase; letter-spacing:0.5px; color: var(--ink-faint); font-weight:600; margin-bottom:1px; }
+  /* fiche technique */
+  .specs{
+    display:grid; grid-template-columns:repeat(2, minmax(0,1fr));
+    gap:0; margin:14px 16px 0;
+    border-top:1px solid var(--dial-edge);
+  }
+  .spec{
+    font-size:12px; color: var(--ink); padding:10px 12px 10px 0;
+    border-bottom:1px solid var(--dial-edge);
+  }
+  .spec:nth-child(odd){ border-right:1px solid var(--dial-edge); }
+  .spec:nth-child(even){ padding-left:12px; }
+  .spec b{
+    display:block; font-family: var(--display); font-size:8px;
+    letter-spacing:.18em; text-transform:uppercase; color: var(--ink-faint);
+    font-weight:600; margin-bottom:3px;
+  }
 
-  .card-note{ font-size: 12.5px; color: var(--ink-soft); margin-top:10px; line-height:1.55; font-family: -apple-system, sans-serif; }
+  .card-note{ font-size:12.5px; color: var(--ink-soft); line-height:1.65; margin:13px 16px 0; }
 
-  .card-actions{ margin-top:10px; font-family: -apple-system, sans-serif; display:flex; gap:14px; align-items:center; }
-  .card-actions a, .card-actions .variants-toggle{ font-size: 11.5px; color: var(--ink-soft); text-decoration: underline; text-decoration-color: var(--rule); }
-  .variants-toggle{ background:none; border:none; padding:0; cursor:pointer; font-weight:600; color: var(--copper-deep) !important; font-family: -apple-system, sans-serif; letter-spacing:0.2px; }
-  .variants-list{ display:none; margin-top:8px; padding: 9px 11px; background: var(--paper); border-left: 2px solid var(--copper); font-family: -apple-system, sans-serif; }
+  /* bons plans */
+  .promos{ margin:14px 16px 0; padding-top:12px; border-top:1px solid var(--dial-edge); }
+  .promos-label{
+    font-family: var(--display); font-size:8.5px; letter-spacing:.2em;
+    text-transform:uppercase; color: var(--ink-faint); margin-bottom:8px;
+  }
+  .promo-row{
+    display:flex; justify-content:space-between; align-items:baseline; gap:12px;
+    font-size:12px; padding:5px 0; border-bottom:1px dotted var(--dial-edge);
+  }
+  .promo-row:last-of-type{ border-bottom:none; }
+  .promo-row a{ color: var(--ink); text-decoration:none; border-bottom:1px solid var(--dial-edge); }
+  .promo-row a:hover{ border-bottom-color: var(--blued); color: var(--blued); }
+  .promo-price{ color: var(--blued-deep); font-weight:600; white-space:nowrap; }
+  .promos-disclaimer{ font-size:10px; color: var(--ink-faint); font-style:italic; margin-top:8px; line-height:1.5; }
+
+  /* actions + variantes */
+  .card-actions{ display:flex; gap:16px; align-items:center; flex-wrap:wrap; margin:14px 16px 0; }
+  .card-actions a{
+    font-size:11px; color: var(--ink-soft); text-decoration:none;
+    border-bottom:1px solid var(--dial-edge);
+  }
+  .card-actions a:hover{ color: var(--blued); border-bottom-color: var(--blued); }
+  .variants-toggle{
+    background:none; border:none; padding:0; cursor:pointer;
+    font-family: var(--display); font-size:9px; letter-spacing:.14em;
+    text-transform:uppercase; font-weight:600; color: var(--blued);
+  }
+  .variants-toggle:hover{ color: var(--blued-deep); }
+  .variants-toggle:focus-visible{ outline:2px solid var(--blued); outline-offset:3px; }
+  .variants-list{
+    display:none; margin:12px 16px 0; padding:12px 14px;
+    background: var(--dial); border-left:2px solid var(--blued);
+  }
   .variants-list.open{ display:block; }
-  .variants-list span{ display:inline-block; font-size: 11px; color: var(--ink-soft); background: var(--paper-raised); border:1px solid var(--rule); padding:3px 8px; border-radius:20px; margin: 2px 4px 2px 0; }
-  .variant-group{ margin-bottom:8px; }
+  .variant-group{ margin-bottom:11px; }
   .variant-group:last-child{ margin-bottom:0; }
-  .variant-group b{ display:block; font-size:9px; text-transform:uppercase; letter-spacing:0.5px; color: var(--ink-faint); font-weight:600; margin-bottom:4px; }
+  .variant-group b{
+    display:block; font-family: var(--display); font-size:8px;
+    letter-spacing:.18em; text-transform:uppercase; color: var(--ink-faint);
+    font-weight:600; margin-bottom:6px;
+  }
+  .variants-list span{
+    display:inline-block; font-size:11px; color: var(--ink);
+    background: var(--dial-light); border:1px solid var(--dial-edge);
+    padding:4px 9px; border-radius:2px; margin:0 5px 5px 0;
+  }
 
-  .trend-card{ background: var(--paper-raised); border: 1px solid var(--rule); border-radius: 3px; padding: 13px 14px; margin-bottom: 12px; box-shadow: var(--card-shadow); }
-  .trend-top{ display:flex; justify-content:space-between; gap:10px; }
-  .trend-brand{ font-size: 10px; text-transform:uppercase; letter-spacing:1px; color: var(--copper-deep); font-weight:700; font-family: -apple-system, sans-serif; }
-  .trend-model{ font-size: 16px; margin-top:2px; }
-  .trend-price{ font-size: 11px; color: var(--sage); font-weight:600; text-align:right; white-space:nowrap; font-family: -apple-system, sans-serif; }
-  .trend-note{ font-size: 12.5px; color: var(--ink-soft); margin-top:8px; line-height:1.55; font-family: -apple-system, sans-serif; }
-  .trend-date{ font-size: 10px; color: var(--ink-faint); margin-top:8px; font-family: -apple-system, sans-serif; }
+  /* ——— À la mode ——— */
+  .trend-card{
+    background: var(--dial-light); border:1px solid var(--dial-edge);
+    border-radius:3px; padding:14px 16px; margin-bottom:12px;
+    border-left:3px solid var(--blued);
+  }
+  .trend-top{ display:flex; justify-content:space-between; align-items:flex-start; gap:12px; }
+  .trend-brand{
+    font-family: var(--display); font-size:9px; letter-spacing:.22em;
+    text-transform:uppercase; color: var(--blued); font-weight:600;
+  }
+  .trend-model{ font-size:16px; font-weight:600; margin-top:4px; line-height:1.3; }
+  .trend-price{
+    font-family: var(--data); font-size:11px; color: var(--ink-soft);
+    text-align:right; font-weight:500; flex-shrink:0;
+  }
+  .trend-note{ font-size:12.5px; color: var(--ink-soft); line-height:1.65; margin-top:9px; }
+  .trend-date{
+    font-family: var(--data); font-size:9.5px; color: var(--ink-faint);
+    margin-top:10px; letter-spacing:.06em;
+  }
+  .trend-date a{ color: var(--ink-soft); }
 
-  .promos{ margin-top:11px; padding-top:10px; border-top: 1px dashed var(--rule); font-family: -apple-system, sans-serif; }
-  .promos-label{ font-size: 9.5px; text-transform:uppercase; letter-spacing:0.6px; color: var(--ink-faint); margin-bottom:5px; }
-  .promo-row{ display:flex; justify-content:space-between; align-items:baseline; font-size:12px; padding:2px 0; }
-  .promo-row a{ color: var(--ink); text-decoration: underline; text-decoration-color: var(--rule); }
-  .promo-price{ color: var(--copper-deep); font-weight:600; }
-  .promos-disclaimer{ font-size: 10px; color: var(--ink-faint); font-style: italic; margin-top:4px; }
-
-  .add-form{ background: var(--paper-raised); border: 1px solid var(--rule); border-radius:3px; padding: 16px; font-family: -apple-system, sans-serif; }
-  .add-form label{ display:block; font-size: 10.5px; text-transform:uppercase; letter-spacing:0.5px; color: var(--ink-faint); margin: 12px 0 4px; }
+  /* ——— Formulaire ——— */
+  .add-form{
+    background: var(--dial-light); border:1px solid var(--dial-edge);
+    border-radius:3px; padding:18px;
+  }
+  .add-form label{
+    display:block; font-family: var(--display); font-size:8.5px;
+    letter-spacing:.18em; text-transform:uppercase; color: var(--ink-faint);
+    font-weight:600; margin:15px 0 5px;
+  }
   .add-form label:first-child{ margin-top:0; }
   .add-form input, .add-form select, .add-form textarea{
-    width:100%; background: var(--paper); border:1px solid var(--rule); color: var(--ink);
-    padding:9px 10px; font-size:13px; font-family: -apple-system, sans-serif; border-radius:2px;
+    width:100%; background: var(--dial); border:1px solid var(--dial-edge);
+    color: var(--ink); padding:10px 11px; font-size:13px;
+    font-family: var(--body); border-radius:2px;
   }
-  .add-form textarea{ min-height:50px; resize:vertical; }
-  .add-form .btn-submit{
-    margin-top:16px; width:100%; background: var(--ink); color: var(--paper); border:none;
-    padding:11px; font-size:13px; font-weight:600; cursor:pointer; letter-spacing:0.3px;
+  .add-form input:focus, .add-form select:focus, .add-form textarea:focus{
+    outline:none; border-color: var(--blued); box-shadow:0 0 0 2px rgba(43,74,143,.14);
   }
-  .add-list-item{ font-size:12.5px; color: var(--ink-soft); padding:8px 0; border-bottom:1px dashed var(--rule); font-family:-apple-system,sans-serif; display:flex; justify-content:space-between; }
+  .add-form textarea{ min-height:54px; resize:vertical; }
+  .btn-submit{
+    margin-top:20px; width:100%; background: var(--ink); color: var(--dial-light);
+    border:none; padding:13px; cursor:pointer;
+    font-family: var(--display); font-size:10px; letter-spacing:.2em;
+    text-transform:uppercase; font-weight:600; border-radius:2px;
+  }
+  .btn-submit:hover{ background: var(--blued-deep); }
+  .add-list-item{
+    display:flex; justify-content:space-between; align-items:center; gap:12px;
+    font-size:12.5px; color: var(--ink-soft); padding:11px 0;
+    border-bottom:1px solid var(--dial-edge);
+  }
 
-  .empty{ text-align:center; color: var(--ink-faint); font-size:12.5px; padding: 24px 10px; border: 1px dashed var(--rule); font-family: -apple-system, sans-serif; }
-  .footer-note{ text-align:center; font-size: 10.5px; color: var(--ink-faint); padding: 24px 20px 10px; font-family: -apple-system, sans-serif; }
+  .empty{
+    text-align:center; color: var(--ink-faint); font-size:12px;
+    padding:28px 14px; border:1px dashed var(--dial-edge); border-radius:3px;
+    font-family: var(--display); letter-spacing:.1em; text-transform:uppercase;
+  }
+  .footer-note{
+    text-align:center; font-size:9.5px; color: var(--ink-faint);
+    padding:32px 20px 12px; letter-spacing:.12em; text-transform:uppercase;
+    font-family: var(--display);
+  }
 
-  #toast{ position:fixed; bottom:20px; left:50%; transform:translateX(-50%); background: var(--ink); color: var(--paper); font-size:12px; font-weight:600; padding:9px 16px; border-radius:3px; opacity:0; pointer-events:none; transition: opacity .2s; font-family: -apple-system, sans-serif; }
-  #toast.show{ opacity:1; }
+  #toast{
+    position:fixed; bottom:22px; left:50%; transform:translateX(-50%) translateY(6px);
+    background: var(--ink); color: var(--dial-light);
+    font-family: var(--display); font-size:10px; letter-spacing:.16em;
+    text-transform:uppercase; font-weight:600;
+    padding:11px 20px; border-radius:2px; opacity:0; pointer-events:none;
+    transition: opacity .2s, transform .2s;
+  }
+  #toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+
+  ::selection{ background: var(--blued); color:#fff; }
 </style>
 </head>
 <body>
 
 <header>
-  <div class="eyebrow">Suivi personnel</div>
-  <h1>Répertoire Horloger</h1>
-  <div class="tagline">Prix et nouveautés pour les marques suivies — mis à jour à la demande, sans scraping automatique.</div>
+  <div class="maker">Besançon · Le Locle · Akita</div>
+  <h1>Répertoire Horloger<span>Suivi personnel</span></h1>
+  <p class="tagline">Prix relevés, caractéristiques et nouveautés pour les marques suivies. Mis à jour à la demande.</p>
   <div class="header-actions">
-    <button class="hbtn" id="btn-reload">↻ Recharger les données</button>
-    <button class="hbtn" id="btn-claude">✎ Demander à Claude</button>
+    <button class="hbtn" id="btn-reload">↻ Recharger</button>
+    <button class="hbtn" id="btn-claude">Demander à Claude</button>
   </div>
-  <div class="sync-line mono" id="sync-line"></div>
 </header>
+<div class="railroad"></div>
+<div class="sync-line mono" id="sync-line"></div>
 
 <nav class="tabs" id="tabs"></nav>
 <main id="main"></main>
@@ -310,7 +533,7 @@ function watchCard(w, idx){
   div.innerHTML = `
     <div class="card-top">
       <div>
-        <div class="card-model">${escapeHtml(w.model)}${w.estimated ? '<span class="flag">estimation</span>' : ''}${w.perso ? '<span class="flag" style="border-color:var(--sage);color:var(--sage);">perso</span>' : ''}</div>
+        <div class="card-model">${escapeHtml(w.model)}${w.estimated ? '<span class="flag">estimation</span>' : ''}${w.perso ? '<span class="flag" style="border-color:var(--blued);color:var(--blued);">perso</span>' : ''}</div>
         <div class="card-ref mono">${escapeHtml(w.reference || '—')}</div>
       </div>
     </div>
@@ -331,7 +554,7 @@ function watchCard(w, idx){
         <div class="promos-disclaimer">Sites non officiels — vérifie toujours le vendeur (avis, ancienneté, retours) avant d'acheter.</div>
       </div>
     ` : ''}
-    ${w.perso ? `<button class="variants-toggle" data-remove-custom="${w.brand}|${w.id}" style="color:var(--copper-deep) !important;">✕ Retirer cette entrée perso</button>` : ''}
+    ${w.perso ? `<button class="variants-toggle" data-remove-custom="${w.brand}|${w.id}" style="color:var(--chrono) !important;">✕ Retirer cette entrée perso</button>` : ''}
     <div class="card-actions">
       ${w.link ? `<a href="${escapeHtml(w.link)}" target="_blank" rel="noopener">Voir la source ↗</a>` : ''}
       ${hasVariants ? `<button class="variants-toggle" data-toggle="${vid}">Voir les variantes (${variantsCount()})</button>` : ''}
@@ -369,7 +592,7 @@ function render(){
     const panel = document.createElement('div');
     panel.className = 'panel';
     panel.innerHTML = `<div class="section-title"><h2>À la mode en ce moment</h2></div>
-      <div style="font-size:12px;color:var(--ink-faint);font-family:-apple-system,sans-serif;margin-bottom:14px;line-height:1.5;">Micro-marques, indépendants et maisons méconnues qui font parler d'elles — pour découvrir autre chose que les grands noms.</div>`;
+      <div class="lede">Micro-marques, indépendants et maisons méconnues qui font parler d'elles — pour découvrir autre chose que les grands noms.</div>`;
     const trending = (DATA.trending || []).slice().sort((a,b) => dateKey(b.date).localeCompare(dateKey(a.date)));
     if (trending.length === 0){
       panel.innerHTML += `<div class="empty">Rien pour l'instant.</div>`;
@@ -434,7 +657,7 @@ function render(){
       allCustom.forEach(w => {
         const row = document.createElement('div');
         row.className = 'add-list-item';
-        row.innerHTML = `<span>${escapeHtml(w.model)} — ${escapeHtml(DATA.brands[w.brand] ? DATA.brands[w.brand].label : w.brand)}</span><button data-remove-custom="${w.brand}|${w.id}" style="background:none;border:none;color:var(--copper-deep);cursor:pointer;font-size:12px;">✕</button>`;
+        row.innerHTML = `<span>${escapeHtml(w.model)} — ${escapeHtml(DATA.brands[w.brand] ? DATA.brands[w.brand].label : w.brand)}</span><button data-remove-custom="${w.brand}|${w.id}" style="background:none;border:none;color:var(--chrono);cursor:pointer;font-size:12px;">✕</button>`;
         panel.appendChild(row);
       });
     }

@@ -477,6 +477,12 @@ function renderTabs(){
   trendBtn.onclick = () => { activeBrand = 'trending'; render(); };
   tabs.appendChild(trendBtn);
 
+  const newsBtn = document.createElement('button');
+  newsBtn.className = 'tab-btn' + (activeBrand === 'news' ? ' active' : '');
+  newsBtn.textContent = 'Radar';
+  newsBtn.onclick = () => { activeBrand = 'news'; render(); };
+  tabs.appendChild(newsBtn);
+
   BRAND_ORDER.forEach(key => {
     if (!DATA.brands[key]) return;
     const btn = document.createElement('button');
@@ -494,12 +500,6 @@ function renderTabs(){
     btn.onclick = () => { activeBrand = key; render(); };
     tabs.appendChild(btn);
   });
-
-  const newsBtn = document.createElement('button');
-  newsBtn.className = 'tab-btn' + (activeBrand === 'news' ? ' active' : '');
-  newsBtn.textContent = 'Radar';
-  newsBtn.onclick = () => { activeBrand = 'news'; render(); };
-  tabs.appendChild(newsBtn);
 
   const addBtn = document.createElement('button');
   addBtn.className = 'tab-btn' + (activeBrand === 'add' ? ' active' : '');

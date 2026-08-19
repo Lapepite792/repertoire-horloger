@@ -329,6 +329,45 @@
     border-bottom:1px solid var(--dial-edge);
   }
 
+  .radar-filter{ display:flex; gap:6px; margin:0 0 20px; flex-wrap:wrap; }
+  .filter-btn{
+    background:none; border:1px solid var(--dial-edge); color: var(--ink-faint);
+    font-family: var(--display); font-size:8.5px; letter-spacing:.16em;
+    text-transform:uppercase; font-weight:600; padding:7px 12px;
+    cursor:pointer; border-radius:2px; transition:.15s;
+  }
+  .filter-btn:hover{ color: var(--ink); border-color: var(--ink-faint); }
+  .filter-btn.on{ background: var(--blued); border-color: var(--blued); color:#fff; }
+  .filter-btn:focus-visible{ outline:2px solid var(--blued); outline-offset:2px; }
+
+  .release{
+    display:grid; grid-template-columns:auto 1fr; gap:0 16px;
+    padding:16px 0; border-bottom:1px solid var(--dial-edge);
+  }
+  .release:first-of-type{ border-top:1.5px solid var(--ink); }
+  .release-date{
+    font-size:10px; color: var(--ink-faint); letter-spacing:.04em;
+    padding-top:3px; white-space:nowrap;
+  }
+  .release-head{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .release-brand{
+    font-family: var(--display); font-size:9.5px; letter-spacing:.2em;
+    text-transform:uppercase; font-weight:600; color: var(--blued);
+  }
+  .release-tag{
+    font-family: var(--display); font-size:7.5px; letter-spacing:.14em;
+    text-transform:uppercase; font-weight:600; color: var(--ink-faint);
+    border:1px solid var(--dial-edge); padding:2px 6px; border-radius:2px;
+  }
+  .release-model{ font-size:15px; font-weight:600; margin:4px 0 6px; line-height:1.3; }
+  .release-foot{ display:flex; align-items:baseline; gap:14px; margin-top:8px; flex-wrap:wrap; }
+  .release-price{ font-size:11.5px; font-weight:600; color: var(--ink-soft); }
+  .release-foot a{
+    font-size:11px; color: var(--blued); text-decoration:none;
+    border-bottom:1px solid rgba(43,74,143,.3);
+  }
+  .release-foot a:hover{ border-bottom-color: var(--blued); }
+
   .load-error{
     background: var(--dial-light); border:1px solid var(--dial-edge);
     border-left:3px solid var(--chrono); border-radius:3px; padding:18px 18px 4px;
@@ -385,6 +424,7 @@ const DATA_URL = 'data.json';
 const BRAND_ORDER = ["omega", "tissot", "lip", "orient"];
 let DATA = null;
 let activeBrand = "omega";
+let newsFilter = 'all';
 
 function toast(msg){
   const t = document.getElementById('toast');
@@ -457,7 +497,7 @@ function renderTabs(){
 
   const newsBtn = document.createElement('button');
   newsBtn.className = 'tab-btn' + (activeBrand === 'news' ? ' active' : '');
-  newsBtn.textContent = 'Nouveautés';
+  newsBtn.textContent = 'Radar';
   newsBtn.onclick = () => { activeBrand = 'news'; render(); };
   tabs.appendChild(newsBtn);
 
@@ -493,10 +533,13 @@ function dateKey(d){
 
 function allNewsSorted(){
   let all = [];
+  // sorties toutes marques (le radar)
+  (DATA.releases || []).forEach(r => all.push({ ...r, tracked:false }));
+  // actus des marques suivies, repérées comme telles
   BRAND_ORDER.forEach(key => {
     const b = DATA.brands[key];
     if (!b) return;
-    (b.news||[]).forEach(n => all.push({ ...n, brand: b.label }));
+    (b.news||[]).forEach(n => all.push({ ...n, brand: b.label, tracked:true }));
   });
   return all.sort((a,b) => dateKey(b.date).localeCompare(dateKey(a.date)));
 }
@@ -744,19 +787,47 @@ function render(){
   if (activeBrand === 'news'){
     const panel = document.createElement('div');
     panel.className = 'panel';
-    panel.innerHTML = `<div class="section-title"><h2>Toutes les nouveautés</h2></div>`;
     const all = allNewsSorted();
-    if (all.length === 0){
-      panel.innerHTML += `<div class="empty">Rien pour l'instant.</div>`;
+    const nbBrands = new Set(all.map(n => n.brand)).size;
+    panel.innerHTML = `
+      <div class="section-title"><h2>Radar des sorties</h2><span class="count">${all.length} sorties · ${nbBrands} marques</span></div>
+      <p class="lede">Toutes marques confondues, pas seulement celles que tu suis. Les plus récentes en tête.</p>
+      <div class="radar-filter">
+        <button class="filter-btn${newsFilter==='all'?' on':''}" data-filter="all">Tout</button>
+        <button class="filter-btn${newsFilter==='tracked'?' on':''}" data-filter="tracked">Mes marques</button>
+        <button class="filter-btn${newsFilter==='others'?' on':''}" data-filter="others">À découvrir</button>
+      </div>`;
+
+    const shown = all.filter(n =>
+      newsFilter === 'all' ? true : newsFilter === 'tracked' ? n.tracked : !n.tracked);
+
+    if (shown.length === 0){
+      panel.innerHTML += `<div class="empty">Aucune sortie dans ce filtre</div>`;
     } else {
-      all.forEach(n => {
+      shown.forEach(n => {
         const item = document.createElement('div');
-        item.className = 'news-item';
-        item.innerHTML = `<div class="news-date">${escapeHtml(formatDate(n.date))} · ${escapeHtml(n.brand)}</div><div class="news-text">${escapeHtml(n.text)}</div>${n.link ? `<div class="news-source"><a href="${escapeHtml(n.link)}" target="_blank" rel="noopener">Voir la source ↗</a></div>` : ''}`;
+        item.className = 'release';
+        item.innerHTML = `
+          <div class="release-date mono">${escapeHtml(formatDate(n.date))}</div>
+          <div>
+            <div class="release-head">
+              <span class="release-brand">${escapeHtml(n.brand)}</span>
+              ${n.tracked ? '<span class="release-tag">marque suivie</span>' : ''}
+            </div>
+            ${n.model ? `<div class="release-model">${escapeHtml(n.model)}</div>` : ''}
+            <div class="news-text">${escapeHtml(n.text)}</div>
+            <div class="release-foot">
+              ${n.price ? `<span class="release-price mono">${escapeHtml(n.price)}</span>` : ''}
+              ${n.link ? `<a href="${escapeHtml(n.link)}" target="_blank" rel="noopener">Voir la source ↗</a>` : ''}
+            </div>
+          </div>`;
         panel.appendChild(item);
       });
     }
     main.appendChild(panel);
+    panel.querySelectorAll('[data-filter]').forEach(b => {
+      b.onclick = () => { newsFilter = b.getAttribute('data-filter'); render(); };
+    });
     return;
   }
 
@@ -814,7 +885,7 @@ document.getElementById('btn-reload').onclick = async () => {
 };
 
 document.getElementById('btn-claude').onclick = () => {
-  const prompt = "Actualise le répertoire horloger (repo Lapepite792/repertoire-horloger). Commence par lire source_occasion.json : il liste les sites à utiliser pour les prix d'occasion et les bons plans, avec les règles à suivre. Ensuite, pour Omega, Tissot, LIP et Orient sur les modèles déjà suivis dans data.json, recherche 1) les dernières actualités avec leur lien source, 2) les prix neuf + fourchette occasion en croisant au moins deux sites de source_occasion.json — si un prix neuf est inconnu, renseigne priceNewReason avec la raison, 3) les caractéristiques (mouvement, diamètre, bracelet, année), 4) les variantes classées par tailles/couleurs/matières, 5) des bons plans issus des sites de source_occasion.json (avec lien). Actualise aussi l'onglet tendances — il doit servir à DÉCOUVRIR : privilégie les micro-marques, marques indépendantes et maisons méconnues ou relancées (pas Rolex/Patek/AP/Cartier). Mets à jour data.json directement (nouveautés triées les plus récentes en premier, dates stockées au format JJ-MM-AAAA).";
+  const prompt = "Actualise le répertoire horloger (repo Lapepite792/repertoire-horloger). Commence par lire source_occasion.json : il liste les sites à utiliser pour les prix d'occasion et les bons plans, avec les règles à suivre. Ensuite, pour Omega, Tissot, LIP et Orient sur les modèles déjà suivis dans data.json, recherche 1) les dernières actualités avec leur lien source, 2) les prix neuf + fourchette occasion en croisant au moins deux sites de source_occasion.json — si un prix neuf est inconnu, renseigne priceNewReason avec la raison, 3) les caractéristiques (mouvement, diamètre, bracelet, année), 4) les variantes classées par tailles/couleurs/matières, 5) des bons plans issus des sites de source_occasion.json (avec lien). Alimente le RADAR (tableau `releases` de data.json) avec des sorties de montres TOUTES MARQUES confondues, pas seulement les marques suivies — une entrée par sortie avec date, brand, model, price, text court et link. Actualise aussi l'onglet tendances — il doit servir à DÉCOUVRIR : privilégie les micro-marques, marques indépendantes et maisons méconnues ou relancées (pas Rolex/Patek/AP/Cartier). Mets à jour data.json directement (nouveautés triées les plus récentes en premier, dates stockées au format JJ-MM-AAAA).";
   navigator.clipboard.writeText(prompt).then(() => {
     toast('Prompt copié — colle-le à Claude');
   }).catch(() => {

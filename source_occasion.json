@@ -1,0 +1,27 @@
+{
+  "_description": "Liste des sites à consulter pour établir les prix d'occasion et les bons plans du répertoire horloger. Claude doit lire ce fichier AVANT de renseigner priceUsed et promos dans data.json. Liste fournie et validée par l'utilisateur.",
+  "_updated": "19-08-2026",
+
+  "regles": [
+    "Utiliser uniquement les sites de cette liste pour les prix d'occasion et les bons plans.",
+    "Croiser au moins deux sites avant de fixer une fourchette d'occasion.",
+    "Une fourchette doit refléter l'état 'bon à très bon', hors pièce de collection ou full set exceptionnel.",
+    "Sur Chrono24, ne retenir que les annonces de vendeurs vérifiés.",
+    "Convertir les prix étrangers en euros et arrondir, en signalant l'estimation.",
+    "Ne jamais fixer un prix sur la base d'une annonce isolée."
+  ],
+
+  "sites": [
+    { "nom": "Tempus Shop", "url": "https://tempusshop.com/" },
+    { "nom": "Chrono24", "url": "https://www.chrono24.fr/", "note": "Vérifier le vendeur (professionnel / vendeur vérifié uniquement)." },
+    { "nom": "Chic Time", "url": "https://chic-time.fr" },
+    { "nom": "Lepage", "url": "https://lepage.fr" },
+    { "nom": "Frojo", "url": "https://frojo.fr" },
+    { "nom": "Ocarat", "url": "https://ocarat.com" },
+    { "nom": "Helvecy", "url": "https://helvecy.com" },
+    { "nom": "Cresus", "url": "https://cresus.fr" },
+    { "nom": "Chronext", "url": "https://chronext.fr" },
+    { "nom": "Kronos 360", "url": "https://kronos360.com" },
+    { "nom": "Bucherer", "url": "https://bucherer.com" }
+  ]
+}

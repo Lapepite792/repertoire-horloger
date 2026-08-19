@@ -278,6 +278,54 @@
             }
           ],
           "priceNewReason": "modèle indisponible sur le site officiel"
+        },
+        {
+          "id": "lip-himalaya-coeur-battant-40",
+          "model": "Himalaya 40 mm Cœur Battant",
+          "reference": "671255 / 671558 (selon coloris)",
+          "movement": "Automatique — Miyota 82S5, 21 rubis, 40h de réserve",
+          "diameter": "40 mm (13,6 mm ép.)",
+          "bracelet": "Cuir de vachette 20 mm (bleu nuit façon croco ou camel lisse)",
+          "releaseYear": "1954 (modèle d'origine) — version actuelle automatique",
+          "priceNew": "379 – 429 €",
+          "priceUsed": "à surveiller (peu d'offres)",
+          "priceDate": "août 2026",
+          "link": "https://lip.fr/en/16-himalaya",
+          "note": "Made in France, Besançon. Boîtier acier 316L poli, fond vissé transparent, verre saphir antireflet. Cadran ouvert à 7h pour admirer le \"cœur battant\" du mouvement, petite seconde décentrée. Étanche 50 m. Modèle porté par les vainqueurs de l'Annapurna en 1950.",
+          "estimated": true,
+          "variants": {
+            "tailles": [
+              "40 mm",
+              "33 mm",
+              "29 mm"
+            ],
+            "couleurs": [
+              "Cadran blanc argenté / aiguilles bleues",
+              "Cadran argenté mat / aiguilles argentées"
+            ],
+            "matieres": [
+              "Acier 316L poli",
+              "Cuir bleu nuit façon crocodile",
+              "Cuir camel lisse"
+            ]
+          },
+          "promos": [
+            {
+              "site": "Tempus Shop",
+              "price": "379 € (réf. 671255)",
+              "link": "https://tempusshop.com/products/lip-himalaya-40mm-coeur-battant"
+            },
+            {
+              "site": "Ocarat",
+              "price": "≈ 429 € (réf. 671558)",
+              "link": "https://ocarat.com/himalaya-40-coeur-battant-671558-lip-46729.html"
+            },
+            {
+              "site": "Lepage",
+              "price": "à vérifier (réf. 671255)",
+              "link": "https://www.lepage.fr"
+            }
+          ]
         }
       ],
       "news": [
@@ -361,6 +409,48 @@
               "site": "Chrono24 (marketplace, vendeurs vérifiés)",
               "price": "≈ 150 – 280 € (occasion)",
               "link": "https://www.chrono24.fr"
+            }
+          ]
+        },
+        {
+          "id": "orient-star-re-av0b01s00b",
+          "model": "Orient Star Contemporary Layered Skeleton",
+          "reference": "RE-AV0B01S00B",
+          "movement": "Automatique — calibre in-house F6F44, 50h de réserve, remontage manuel",
+          "diameter": "41 mm (11,5 mm ép.)",
+          "bracelet": "Acier 22 mm, boucle déployante à poussoirs",
+          "releaseYear": "2022",
+          "priceNew": "749 – 949 €",
+          "priceUsed": "à surveiller",
+          "priceDate": "août 2026",
+          "link": "https://global.orientstar-watch.com/products/re-av0b01s",
+          "note": "Cadran double couche inspiré du tissu de costume : couche supérieure à motif chevrons, couche inférieure à motif paisley. Cadran argenté à cœur ouvert, aiguilles bleues luminescentes, indicateur de réserve de marche et petite seconde. Saphir antireflet, fond transparent, étanche 100 m. Assemblée à la main à Akita, Japon.",
+          "estimated": true,
+          "variants": {
+            "tailles": [
+              "41 mm"
+            ],
+            "couleurs": [
+              "Cadran argenté (S00B)",
+              "Cadran vert (RE-AV0B11E)",
+              "Cadran mocha Kohaku (RE-AV0139Y)"
+            ],
+            "matieres": [
+              "Acier",
+              "Bracelet acier",
+              "Bracelet cuir de veau (option)"
+            ]
+          },
+          "promos": [
+            {
+              "site": "Chrono24 (vendeurs vérifiés)",
+              "price": "≈ 700 – 900 €",
+              "link": "https://www.chrono24.fr"
+            },
+            {
+              "site": "Helvecy / Chronext",
+              "price": "à vérifier",
+              "link": "https://chronext.fr"
             }
           ]
         }

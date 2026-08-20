@@ -1,5 +1,5 @@
 {
-  "updated": "19-08-2026",
+  "updated": "20-08-2026",
   "brands": {
     "omega": {
       "label": "Omega",
@@ -13,8 +13,8 @@
           "bracelet": "Acier ou cuir",
           "releaseYear": "1969 (génération actuelle depuis 2021)",
           "priceNew": "8 500 – 8 800 €",
-          "priceUsed": "5 500 – 7 400 €",
-          "priceDate": "août 2026",
+          "priceUsed": "5 200 – 7 400 €",
+          "priceDate": "20 août 2026",
           "link": "https://www.omegawatches.com",
           "note": "Boutique officielle, acier/hésalite 42mm. Occasion : la génération actuelle (310.x, calibre 3861 Master Chronometer) tourne autour de 7 000 €, les générations précédentes (311.x, calibre 1861) descendent vers 5 500-6 500 €.",
           "estimated": true,
@@ -33,19 +33,24 @@
           },
           "promos": [
             {
-              "site": "Cresus (garantie 2 ans, atelier Lyon)",
-              "price": "7 000 € (réf. 310.30.42.50.01.002, 2022)",
-              "link": "https://www.cresus.fr/montres/omega/speedmaster/"
+              "site": "Cresus — génération actuelle (calibre 3861, 2022)",
+              "price": "7 000 €",
+              "link": "https://www.cresus.fr/omega-speedmaster-professional-moonwatch-064135"
             },
             {
-              "site": "Cresus — génération précédente",
-              "price": "5 600 – 6 300 € (réf. 311.x)",
-              "link": "https://www.cresus.fr/montres/omega/speedmaster/"
+              "site": "Cresus — Professional acier",
+              "price": "5 700 €",
+              "link": "https://www.cresus.fr/omega-speedmaster-060650"
             },
             {
-              "site": "Chrono24 (vendeurs vérifiés)",
-              "price": "≈ 6 500 – 7 400 €",
-              "link": "https://www.chrono24.fr"
+              "site": "Cresus — Moonwatch acier",
+              "price": "5 200 €",
+              "link": "https://www.cresus.fr/omega-speedmaster-professional-054202"
+            },
+            {
+              "site": "Chronext (garantie 24 mois, atelier certifié)",
+              "price": "large sélection d'occasion",
+              "link": "https://www.chronext.com/omega/speedmaster-pre-owned"
             }
           ]
         },
@@ -193,48 +198,56 @@
           "bracelet": "Acier intégral",
           "releaseYear": "2021",
           "priceNew": "650 – 775 €",
-          "priceUsed": "410 – 560 €",
-          "priceDate": "août 2026",
+          "priceUsed": "290 – 560 €",
+          "priceDate": "20 août 2026",
           "link": "https://www.tissotwatches.com",
-          "note": "Mouvement Powermatic 80 (ETA), 21 600 alt/h, 23 rubis, spiral Nivachron antimagnétique, 80h de réserve. Boîtier 40 mm × 10,95 mm, saphir antireflet, fond transparent, étanche 100 m, bracelet acier interchangeable à boucle papillon.",
+          "note": "Powermatic 80 (ETA), spiral Nivachron antimagnétique, 80h de réserve. Boîtier tonneau 40 mm × 10,95 mm hérité du design de 1978, bracelet intégré, cadran guilloché, étanche 100 m.",
           "estimated": true,
           "variants": {
             "tailles": [
+              "25 mm (quartz)",
               "35 mm",
-              "38 mm",
-              "40 mm"
+              "40 mm",
+              "42 mm (chronographe)"
             ],
             "couleurs": [
-              "Bleu",
               "Noir",
+              "Bleu",
               "Vert",
+              "Argenté",
               "Ice Blue",
-              "Gris taupe/anthracite",
-              "Aqua"
+              "Gris taupe",
+              "Panda (chrono)"
             ],
             "matieres": [
-              "Acier",
-              "Titane (38 mm)",
-              "Acier de Damas (38 mm)",
+              "Acier brossé",
+              "Titane",
+              "Acier de Damas",
               "Carbone",
-              "Or et acier"
+              "Lunette or rose 18 ct",
+              "Bicolore"
             ]
           },
           "promos": [
+            {
+              "site": "Watchfinder (via La Cote des Montres) — réf. T137.410.11.041.00",
+              "price": "290 €",
+              "link": "https://lacotedesmontres.com/Watchfinder-Tissot-PRX-T137-410-11-041-00-212882-newAd.htm"
+            },
             {
               "site": "Chrono24 (vendeurs vérifiés)",
               "price": "≈ 410 – 560 € (occasion)",
               "link": "https://www.chrono24.fr"
             },
             {
-              "site": "Ocarat",
-              "price": "prix boutique (revendeur officiel)",
-              "link": "https://ocarat.com"
+              "site": "Ocarat (revendeur officiel, neuf)",
+              "price": "prix boutique",
+              "link": "https://ocarat.com/en/tissot-prx-watch/"
             },
             {
-              "site": "Chic Time",
-              "price": "à vérifier",
-              "link": "https://chic-time.fr"
+              "site": "Cresus — édition rare (T931.407.41.291.00, or/acier)",
+              "price": "1 690 €",
+              "link": "https://www.cresus.fr/tissot-powermatic-057065"
             }
           ]
         }
@@ -254,6 +267,11 @@
           "date": "04-07-2026",
           "text": "Tissot dévoile la PR 100 Tour de France 2026 (boîte PVD noir sablé 40 mm, deux bracelets interchangeables) et la PR 100 Édition Cyclisme.",
           "link": "https://topvelo.fr/montre-tissot-pr-100-tour-de-france-2026/"
+        },
+        {
+          "date": "04-06-2026",
+          "text": "La PRX s'étend encore : déclinaison 25 mm à quartz, et le chronographe 42 mm passe au calibre Valjoux A05.H31 avec 60h de réserve et cadran panda.",
+          "link": "https://www.chrono24.com/tissot/prx--mod3031.htm"
         },
         {
           "date": "09-04-2026",
@@ -542,6 +560,30 @@
       "date": "30-06-2026"
     },
     {
+      "brand": "Squale",
+      "model": "Plongeuses historiques",
+      "date": "29-04-2026",
+      "priceRange": "à vérifier",
+      "note": "Fondée en 1959 par Charles von Büren, la marque suisse était d'abord spécialiste des boîtiers de plongée pour Blancpain ou Heuer. Cette expertise de l'ombre lui donne une crédibilité rare auprès des plongeurs pros et de certaines unités militaires.",
+      "link": "https://lepetitpoussoir.fr/chroniques/selections/marques-horlogeres-a-connaitre/"
+    },
+    {
+      "brand": "Praesidus",
+      "model": "Montres à récit historique",
+      "date": "29-04-2026",
+      "priceRange": "200 – 1 000 €",
+      "note": "Chaque montre s'inscrit dans un récit lié à des figures ou événements historiques précis. Approche simple mais efficace, à bon rapport qualité-prix.",
+      "link": "https://lepetitpoussoir.fr/chroniques/selections/marques-horlogeres-a-connaitre/"
+    },
+    {
+      "brand": "BA111OD",
+      "model": "Horlogerie suisse accessible",
+      "date": "29-04-2026",
+      "priceRange": "à vérifier",
+      "note": "Lancée en 2019 par Thomas Baillod, s'appuyant sur une histoire familiale remontant à 1775 mais avec une approche radicalement moderne : distribution communautaire, cadrans ajourés, complications accessibles.",
+      "link": "https://lepetitpoussoir.fr/chroniques/selections/marques-horlogeres-a-connaitre/"
+    },
+    {
       "brand": "Corum",
       "model": "Golden Bridge",
       "note": "Maison historique (70 ans) relancée sous direction suisse, de retour à Watches and Wonders 2026. Mouvement linéaire breveté par l'indépendant Vincent Calabrese. Prix encore accessibles pour le niveau proposé.",
@@ -606,6 +648,38 @@
       "date": "17-03-2026"
     },
     {
+      "brand": "ALTO",
+      "model": "Signature franco-suisse",
+      "date": "16-03-2026",
+      "priceRange": "à vérifier",
+      "note": "Lancée en 2024 par Thibaud Guittard, ancien responsable marketing d'Audemars Piguet France. Maison parisienne au croisement de l'art contemporain et de l'horlogerie indépendante, titane et verre saphir.",
+      "link": "https://www.montres-de-luxe.com/ALTO-une-signature-franco-suisse-entre-art-contemporain-et-horlogerie-independante_a21334.html"
+    },
+    {
+      "brand": "Serica",
+      "model": "Tool watches parisiennes",
+      "date": "17-02-2026",
+      "priceRange": "à vérifier",
+      "note": "Maison parisienne : tool watches à l'élégance française, bracelets signature et ergonomie exemplaire. Une des références du néo-vintage bien exécuté.",
+      "link": "https://www.montres-passion.fr/en/these-micro-brands-are-shaking-up-luxury-watchmaking/"
+    },
+    {
+      "brand": "Fears",
+      "model": "Élégance britannique relancée",
+      "date": "16-02-2026",
+      "priceRange": "à vérifier",
+      "note": "L'une des plus anciennes entreprises familiales d'horlogerie britannique, née à Bristol en 1846. Après des décennies de sommeil, relancée en 2016.",
+      "link": "https://marquedemontre.fr/micro-marques-de-montres/"
+    },
+    {
+      "brand": "Le Forban Sécurité Mer",
+      "model": "Héritage maritime français",
+      "date": "16-02-2026",
+      "priceRange": "à vérifier",
+      "note": "Marque qui s'inscrit dans le sillage des grandes explorations maritimes, dans l'esprit des corsaires d'antan.",
+      "link": "https://marquedemontre.fr/micro-marques-de-montres/"
+    },
+    {
       "brand": "Circula",
       "model": "Gamme tool watches",
       "note": "Micro-marque allemande active depuis plus de 60 ans. Techniques traditionnelles, Super-LumiNova suisse, excellent rapport qualité-prix sans esbroufe marketing.",
@@ -660,6 +734,38 @@
       "priceRange": "à vérifier",
       "link": "https://www.chronotempus.com/guide/petite-marque-artisan/",
       "date": "12-01-2026"
+    },
+    {
+      "brand": "Laventure",
+      "model": "Charme vintage contemporain",
+      "date": "08-01-2026",
+      "priceRange": "à vérifier",
+      "note": "Marque suisse fondée par Clément Gaud, à l'œil aiguisé pour le design horloger. Mélange équilibré de charme vintage et de style contemporain.",
+      "link": "https://www.chrono24.fr/magazine/joyaux-caches-les-meilleures-montres-de-marques-independantes-p_169913/"
+    },
+    {
+      "brand": "Kollokium",
+      "model": "Plateforme créative néo-brutaliste",
+      "date": "07-01-2026",
+      "priceRange": "à vérifier",
+      "note": "Fondée en 2020 par trois figures de l'industrie dont Manuel Emch (ex-CEO de Jaquet Droz et RJ). Imaginaire néo-brutaliste, entre architecture post-industrielle et science-fiction analogique — plus proche d'une installation d'art contemporain que d'un garde-temps classique.",
+      "link": "https://www.masculin.com/montre/875713-voici-les-7-micro-marques-de-montres-que-vous-devez-absolument-suivre-en-2026/"
+    },
+    {
+      "brand": "echo/neutra",
+      "model": "Design italien discret",
+      "date": "07-01-2026",
+      "priceRange": "à vérifier",
+      "note": "Déjà connue des vrais passionnés, la marque devrait continuer à faire parler d'elle cette année.",
+      "link": "https://www.masculin.com/montre/875713-voici-les-7-micro-marques-de-montres-que-vous-devez-absolument-suivre-en-2026/"
+    },
+    {
+      "brand": "CIGA Design",
+      "model": "Boîtiers architecturaux squelettés",
+      "date": "22-09-2025",
+      "priceRange": "300 – 2 000 €",
+      "note": "Venue de Chine, elle s'est imposée en remportant un Red Dot Award et surtout un Grand Prix d'Horlogerie de Genève. Boîtiers architecturaux, cadrans squelettés, vision artistique de l'horlogerie.",
+      "link": "https://lepetitpoussoir.fr/chroniques/5-micro-marques-horlogeres-2025/"
     }
   ],
   "releases": [
@@ -688,6 +794,30 @@
       "link": "https://lepetitpoussoir.fr/chroniques/actualites/nouveautes-horlogeres-juillet-aout-2026/"
     },
     {
+      "date": "13-08-2026",
+      "brand": "Seiko",
+      "model": "5 Sports x Honda Motocompo",
+      "price": "à vérifier",
+      "text": "Collaboration autour de la mini-moto pliable de 1981 : cadran jaune vif, détails rouges, typographie Honda, couronne inspirée du robinet d'essence. Acier traité noir 36,4 mm, calibre 4R36.",
+      "link": "https://lepetitpoussoir.fr/chroniques/actualites/nouveautes-horlogeres-juillet-aout-2026/"
+    },
+    {
+      "date": "13-08-2026",
+      "brand": "TAG Heuer",
+      "model": "Sport automobile japonais",
+      "price": "à vérifier",
+      "text": "La maison replonge dans l'univers du sport auto japonais avec une nouvelle pièce.",
+      "link": "https://lepetitpoussoir.fr/chroniques/actualites/nouveautes-horlogeres-juillet-aout-2026/"
+    },
+    {
+      "date": "30-07-2026",
+      "brand": "Omega",
+      "model": "Seamaster Planet Ocean 600M",
+      "price": "à vérifier",
+      "text": "Évolution en profondeur de la plongeuse dans un segment de plus en plus technique.",
+      "link": "https://lepetitpoussoir.fr/category/montres/"
+    },
+    {
       "date": "16-07-2026",
       "brand": "Casio",
       "model": "MR-G Frogman « Brinicle »",
@@ -702,6 +832,38 @@
       "price": "à vérifier",
       "text": "Maison suisse oubliée, relancée à Paris par l'expert Romain Réa et sa fille après avoir chiné une plongeuse en brocante. Automatique Swiss Made 35,5 mm, 200 m, huit cadrans nommés comme une carte marine.",
       "link": "https://thegoodlife.fr/montres-de-ete-2026/"
+    },
+    {
+      "date": "16-07-2026",
+      "brand": "Breitling",
+      "model": "Chronomat 2026",
+      "price": "à vérifier",
+      "text": "Née dans les années 1980 pour les Frecce Tricolori, la « montre des années 1990 » selon Vogue revient affinée.",
+      "link": "https://thegoodlife.fr/montres-de-ete-2026/"
+    },
+    {
+      "date": "16-07-2026",
+      "brand": "Jaeger-LeCoultre",
+      "model": "Master Control Chronomètre Date or rose",
+      "price": "à vérifier",
+      "text": "Nouvelle collection puisant dans la Master Mariner Chronomètre de 1973 : or rose 38 mm, forme Dauphine du cadran aux maillons, cadran soleillé dégradé bronze.",
+      "link": "https://thegoodlife.fr/montres-de-ete-2026/"
+    },
+    {
+      "date": "16-07-2026",
+      "brand": "Longines",
+      "model": "Conquest Heritage Central Power Reserve",
+      "price": "à vérifier",
+      "text": "Reprend une trouvaille maison de 1959 : la réserve de marche affichée par deux disques rotatifs au centre du cadran.",
+      "link": "https://thegoodlife.fr/montres-de-ete-2026/"
+    },
+    {
+      "date": "15-07-2026",
+      "brand": "MATWatches",
+      "model": "Picobello Chrono",
+      "price": "à vérifier",
+      "text": "Marque française : un chronographe qui rappelle qu'une montre n'a pas besoin d'être compliquée pour être réussie.",
+      "link": "https://lepetitpoussoir.fr/category/montres/"
     },
     {
       "date": "09-07-2026",
@@ -720,6 +882,14 @@
       "link": "https://www.welovewatches.fr/actu"
     },
     {
+      "date": "30-06-2026",
+      "brand": "Pequignet",
+      "model": "Calibre Initial Chronographe",
+      "price": "≈ 6 000 €",
+      "text": "Premier chronographe manufacture de la maison de Morteau, avec un calibre entièrement conçu en France.",
+      "link": "https://www.carrehomme.fr/montres-francaises-2026-le-renouveau-de-lhorlogerie-hexagonale/"
+    },
+    {
       "date": "20-06-2026",
       "brand": "Christopher Ward",
       "model": "GMT calibre maison CW-002",
@@ -736,6 +906,22 @@
       "link": "https://www.welovewatches.fr/actu"
     },
     {
+      "date": "21-04-2026",
+      "brand": "IWC",
+      "model": "Ingenieur Calendrier Perpétuel titane",
+      "price": "à vérifier",
+      "text": "Titane Grade 5, bracelet intégré, cadran gris à motif grille, calibre manufacture 82600 à remontage Pellaton et composants céramique.",
+      "link": "https://www.welovewatches.fr/watches-and-wonders-2026-les-nouveautes-horlogeres-les-plus-marquantes.html"
+    },
+    {
+      "date": "21-04-2026",
+      "brand": "A. Lange & Söhne",
+      "model": "Saxonia Annual Calendar 36 mm",
+      "price": "à vérifier",
+      "text": "Or blanc ou rose, nouveau calibre automatique L207.1, phase de lune ornée de 428 étoiles, index en pyramides.",
+      "link": "https://www.welovewatches.fr/watches-and-wonders-2026-les-nouveautes-horlogeres-les-plus-marquantes.html"
+    },
+    {
       "date": "14-04-2026",
       "brand": "Vacheron Constantin",
       "model": "Overseas Dual Time Cardinal Points",
@@ -750,6 +936,30 @@
       "price": "à vérifier",
       "text": "Rupture technique : certaines fonctions se contrôlent via la lunette, sans couronne — pensé pour être manipulé en combinaison spatiale. Céramique et Ceratanium 44,3 mm, affichage 24h, 120h de réserve.",
       "link": "https://lepetitpoussoir.fr/montres/watches-wonders-2026-les-nouveautes-qui-vont-marquer-lannee/"
+    },
+    {
+      "date": "08-04-2026",
+      "brand": "Konstantin Chaykin",
+      "model": "ThinKing Mystery",
+      "price": "sur demande",
+      "text": "Épaisseur record de 1,65 mm et affichage mystérieux sur disques saphir transparents. Le concept devient achetable : 12 exemplaires.",
+      "link": "https://lepetitpoussoir.fr/chroniques/actualites/nouveautes-horlogeres-7-sorties-marquantes-mars-2026/"
+    },
+    {
+      "date": "08-04-2026",
+      "brand": "Krayon",
+      "model": "Krayon × Pac-Man",
+      "price": "à vérifier",
+      "text": "Collaboration inattendue entre haute horlogerie et culture pop : mise en scène mécanique du cycle du jour.",
+      "link": "https://lepetitpoussoir.fr/chroniques/actualites/nouveautes-horlogeres-7-sorties-marquantes-mars-2026/"
+    },
+    {
+      "date": "31-03-2026",
+      "brand": "Omega",
+      "model": "Constellation Observatory",
+      "price": "à vérifier",
+      "text": "Première montre à deux aiguilles certifiée Master Chronometer, via une nouvelle méthode de test acoustique. Retour aux codes historiques : cadran pie-pan, cornes dog-leg.",
+      "link": "https://lepetitpoussoir.fr/chroniques/actualites/nouveautes-horlogeres-7-sorties-marquantes-mars-2026/"
     },
     {
       "date": "26-03-2026",
@@ -784,11 +994,35 @@
       "link": "https://lepetitpoussoir.fr/category/montres/"
     },
     {
+      "date": "18-02-2026",
+      "brand": "Hautlence",
+      "model": "Kubera Série 1",
+      "price": "à vérifier",
+      "text": "Boîtier acier 36 mm animé par le calibre B60.",
+      "link": "https://passion-horlogere.com/c/actualites-horlogeres/"
+    },
+    {
+      "date": "18-02-2026",
+      "brand": "Schwarz Etienne",
+      "model": "1902 Synergy by Peter Speake",
+      "price": "à vérifier",
+      "text": "Titane 39 mm, calibre MSE 311.00, dans l'esprit de l'horlogerie indépendante.",
+      "link": "https://passion-horlogere.com/c/actualites-horlogeres/"
+    },
+    {
       "date": "20-01-2026",
       "brand": "Tutima",
       "model": "Patria titane (réf. 6612-11)",
       "price": "à vérifier",
       "text": "Présentée à Inhorgenta Munich, elle y a reçu le prix 2026 de la « montre mécanique de l'année ».",
+      "link": "https://www.chrono24.fr/magazine/mon-top-5-des-nouveautes-horlogeres-2026-avant-watches-and-wonders-p_173735/"
+    },
+    {
+      "date": "20-01-2026",
+      "brand": "TAG Heuer",
+      "model": "Carrera Chronograph Seafarer (CBS2016.EB0430)",
+      "price": "à vérifier",
+      "text": "Présentée à la LVMH Watch Week de Milan, dans l'esprit des chronographes Heuer vintage des années 60-70.",
       "link": "https://www.chrono24.fr/magazine/mon-top-5-des-nouveautes-horlogeres-2026-avant-watches-and-wonders-p_173735/"
     }
   ]

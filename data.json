@@ -379,6 +379,11 @@
       ],
       "news": [
         {
+          "date": "20-08-2026",
+          "text": "Le catalogue LIP s'articule toujours autour de ses lignes historiques (Himalaya, Churchill, Général de Gaulle, Nautic-Ski, Mach 2000) ; aucune sortie majeure annoncée depuis les soldes d'été.",
+          "link": "https://lip.fr/fr/195-nouveautes"
+        },
+        {
           "date": "24-06-2026",
           "text": "Soldes d'été LIP jusqu'à -50% (24 juin – 21 juillet 2026, dans la limite des stocks).",
           "link": "https://lip.fr/en/215-seasonal-sale"
@@ -470,10 +475,10 @@
           "bracelet": "Acier 22 mm, boucle déployante à poussoirs",
           "releaseYear": "2022",
           "priceNew": "749 – 949 €",
-          "priceUsed": "à surveiller",
-          "priceDate": "août 2026",
+          "priceUsed": "500 – 700 €",
+          "priceDate": "20 août 2026",
           "link": "https://global.orientstar-watch.com/products/re-av0b01s",
-          "note": "Cadran double couche inspiré du tissu de costume : couche supérieure à motif chevrons, couche inférieure à motif paisley. Cadran argenté à cœur ouvert, aiguilles bleues luminescentes, indicateur de réserve de marche et petite seconde. Saphir antireflet, fond transparent, étanche 100 m. Assemblée à la main à Akita, Japon.",
+          "note": "Cadran double couche inspiré du tissu de costume : couche supérieure à motif chevrons, couche inférieure à motif paisley. Cadran argenté à cœur ouvert, aiguilles bleues luminescentes, indicateur de réserve de marche et petite seconde. Saphir antireflet, fond transparent, étanche 100 m. Assemblée à la main à Akita, Japon. Assemblée à la main à Akita, polissage Zaratsu.",
           "estimated": true,
           "variants": {
             "tailles": [
@@ -494,17 +499,32 @@
             {
               "site": "Chrono24 (vendeurs vérifiés)",
               "price": "≈ 700 – 900 €",
-              "link": "https://www.chrono24.fr"
+              "link": "https://www.chrono24.fr/orient/star--mod2981.htm"
             },
             {
-              "site": "Helvecy / Chronext",
-              "price": "à vérifier",
-              "link": "https://chronext.fr"
+              "site": "Ocarat (revendeur officiel, neuf)",
+              "price": "prix boutique",
+              "link": "https://ocarat.com/orient-star/"
+            },
+            {
+              "site": "eBay — ventes réalisées (Modern Skeleton F6F4)",
+              "price": "≈ 590 € (occasion, bon état)",
+              "link": "https://www.ebay.fr"
             }
           ]
         }
       ],
       "news": [
+        {
+          "date": "19-08-2026",
+          "text": "Orient Star dévoile de nouveaux modèles dont des éditions limitées pour ses 75 ans, une M45 F8 phase de lune à remontage manuel (« lune dérivant dans les nuages ») et des modèles Pair aux cadrans inspirés des aurores boréales.",
+          "link": "https://orient-watch.com/en/"
+        },
+        {
+          "date": "19-08-2026",
+          "text": "Orient étend sa Diver Design Series avec son tout premier modèle GMT et de nouvelles déclinaisons de cadrans.",
+          "link": "https://orient-watch.com/en/"
+        },
         {
           "date": "15-08-2026",
           "text": "Orient dévoile dix nouvelles montres Stretto pour 2026, réparties sur deux gammes, avec mouvement manufacture.",
@@ -514,6 +534,11 @@
           "date": "16-02-2026",
           "text": "Orient dévoile sa première Bambino sans date (38mm) et de nouveaux coloris/cadrans dégradés pour les modèles à date, dès 340 €.",
           "link": "https://monochrome-watches.com/introducing-orient-bambino-38-no-date-and-new-colours-2026-bambino-classic-date-specs-price/"
+        },
+        {
+          "date": "28-01-2026",
+          "text": "Orient Star fête ses 75 ans (fondée en 1951) : collections M inspirées de l'univers — nébuleuses et amas d'étoiles — avec des éditions limitées anniversaire.",
+          "link": "https://orient-watch.com/en/news/detail/20260128184424.html"
         }
       ]
     }
@@ -712,6 +737,22 @@
       "date": "21-01-2026"
     },
     {
+      "brand": "Islander / FTS",
+      "model": "Assemblage & réglage aux USA",
+      "date": "21-01-2026",
+      "priceRange": "à vérifier",
+      "note": "Fer de lance du mouvement « Made in America » chez les micro-marques : assemblage et réglage effectués en Arizona plutôt qu'en sous-traitance asiatique.",
+      "link": "https://smallsecondswatchreviews.com/blogs/news/top-watch-microbrands-to-watch-2026"
+    },
+    {
+      "brand": "SpaceOne",
+      "model": "Jumping Hour (avec Baltic)",
+      "date": "21-01-2026",
+      "priceRange": "à vérifier",
+      "note": "Les collaborations changent de nature en 2026 : plus des échanges de couleurs mais de vrais partenariats d'ingénierie — ici une heure sautante développée avec Baltic.",
+      "link": "https://smallsecondswatchreviews.com/blogs/news/top-watch-microbrands-to-watch-2026"
+    },
+    {
       "brand": "Vulcain",
       "model": "Cricket 2026",
       "note": "Réédition de la légendaire montre-réveil mécanique, boîtier titane 39mm, limitée à 100 exemplaires numérotés.",
@@ -769,6 +810,22 @@
     }
   ],
   "releases": [
+    {
+      "date": "19-08-2026",
+      "brand": "Orient Star",
+      "model": "M45 F8 Mechanical Moon Phase",
+      "price": "à vérifier",
+      "text": "Phase de lune à remontage manuel exprimant la lune dérivant à travers les nuages, dans la collection anniversaire des 75 ans.",
+      "link": "https://orient-watch.com/en/"
+    },
+    {
+      "date": "19-08-2026",
+      "brand": "Orient",
+      "model": "Diver Design Series GMT",
+      "price": "à vérifier",
+      "text": "Premier GMT de la série Diver Design, accompagné de nouvelles variations de cadrans.",
+      "link": "https://orient-watch.com/en/"
+    },
     {
       "date": "13-08-2026",
       "brand": "Studio Underd0g",
@@ -1008,6 +1065,22 @@
       "price": "à vérifier",
       "text": "Titane 39 mm, calibre MSE 311.00, dans l'esprit de l'horlogerie indépendante.",
       "link": "https://passion-horlogere.com/c/actualites-horlogeres/"
+    },
+    {
+      "date": "18-02-2026",
+      "brand": "Louis Vuitton",
+      "model": "Escale 2026",
+      "price": "à vérifier",
+      "text": "Cinq nouveaux modèles annoncés pour la ligne Escale.",
+      "link": "https://fr.webchronos.net/features/150621/"
+    },
+    {
+      "date": "18-02-2026",
+      "brand": "Citizen",
+      "model": "Tsuyosa × seconde/seconde/",
+      "price": "à vérifier",
+      "text": "Collaboration où l'aiguille des minutes traverse littéralement les index. Un nouveau modèle sportif rejoint aussi la collection Tsuyosa.",
+      "link": "https://fr.webchronos.net/features/150621/"
     },
     {
       "date": "20-01-2026",

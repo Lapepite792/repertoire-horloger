@@ -163,7 +163,15 @@
     border-radius:3px; padding:0 0 14px; margin-bottom:14px;
     box-shadow: 0 1px 2px rgba(22,28,33,.05);
   }
-  .card-top{ display:flex; justify-content:space-between; align-items:flex-start; gap:10px; padding:15px 16px 0; }
+  .card-top{ display:flex; align-items:flex-start; gap:14px; padding:15px 16px 0; }
+  .card-titles{ flex:1; min-width:0; }
+  .photo-slot{
+    flex:0 0 74px; width:74px; height:74px; border-radius:2px; overflow:hidden;
+    background: var(--dial); border:1px solid var(--dial-edge);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .photo-slot img{ width:100%; height:100%; object-fit:cover; display:block; }
+  @media (max-width: 380px){ .photo-slot{ flex-basis:58px; width:58px; height:58px; } }
   .card-model{ font-size:16.5px; font-weight:600; letter-spacing:-.01em; line-height:1.3; }
   .card-ref{
     font-family: var(--data); font-size:10px; color: var(--ink-faint);
@@ -552,6 +560,35 @@ function priceNewDisplay(w){
   return escapeHtml(w.priceNew);
 }
 
+// Charge la photo : d'abord l'URL du data.json, sinon img/<id>.jpg|png|webp du repo.
+// Si rien n'existe, le bloc disparaît et la mise en page reste intacte.
+function hydratePhotos(root){
+  root.querySelectorAll('.photo-slot').forEach(slot => {
+    const explicit = slot.getAttribute('data-photo');
+    const id = slot.getAttribute('data-id');
+    const candidates = [];
+    if (explicit) candidates.push(explicit);
+    if (id) ['jpg','jpeg','png','webp'].forEach(ext => candidates.push(`img/${id}.${ext}`));
+    if (!candidates.length){ slot.remove(); return; }
+
+    let i = 0;
+    const tryNext = () => {
+      if (i >= candidates.length){ slot.remove(); return; }
+      const img = new Image();
+      img.onload = () => {
+        slot.innerHTML = '';
+        img.alt = '';
+        img.loading = 'lazy';
+        slot.appendChild(img);
+        slot.classList.add('loaded');
+      };
+      img.onerror = () => { i++; tryNext(); };
+      img.src = candidates[i];
+    };
+    tryNext();
+  });
+}
+
 function watchCard(w, idx){
   const div = document.createElement('div');
   div.className = 'card';
@@ -583,7 +620,8 @@ function watchCard(w, idx){
 
   div.innerHTML = `
     <div class="card-top">
-      <div>
+      <div class="photo-slot" data-photo="${escapeHtml(w.image||'')}" data-id="${escapeHtml(w.id||'')}"></div>
+      <div class="card-titles">
         <div class="card-model">${escapeHtml(w.model)}${w.estimated ? '<span class="flag">estimation</span>' : ''}${w.perso ? '<span class="flag" style="border-color:var(--blued);color:var(--blued);">perso</span>' : ''}</div>
         <div class="card-ref mono">${escapeHtml(w.reference || '—')}</div>
       </div>
@@ -703,6 +741,8 @@ function render(){
       <input type="text" id="af-priceused" placeholder="ex: 3 500 – 4 200 €">
       <label>Lien</label>
       <input type="text" id="af-link" placeholder="https://...">
+      <label>Photo (URL)</label>
+      <input type="text" id="af-image" placeholder="https://... (ou dépose img/&lt;id&gt;.jpg dans le repo)">
       <label>Note</label>
       <textarea id="af-note" placeholder="Détails, contexte, pourquoi tu la suis..."></textarea>
       <button class="btn-submit" id="af-submit">Ajouter</button>
@@ -755,6 +795,7 @@ function render(){
         priceUsed: document.getElementById('af-priceused').value.trim(),
         priceDate: new Date().toLocaleDateString('fr-FR', {month:'long', year:'numeric'}),
         link: document.getElementById('af-link').value.trim(),
+        image: document.getElementById('af-image').value.trim(),
         note: document.getElementById('af-note').value.trim(),
         variants: []
       };
@@ -860,6 +901,8 @@ function render(){
   }
   main.appendChild(panel);
 
+  hydratePhotos(panel);
+
   panel.querySelectorAll('[data-toggle]').forEach(btn => {
     btn.onclick = () => {
       const el = document.getElementById(btn.getAttribute('data-toggle'));
@@ -885,7 +928,7 @@ document.getElementById('btn-reload').onclick = async () => {
 };
 
 document.getElementById('btn-claude').onclick = () => {
-  const prompt = "Actualise le répertoire horloger (repo Lapepite792/repertoire-horloger). Commence par lire source_occasion.json : il liste les sites à utiliser pour les prix d'occasion et les bons plans et promos par les grandes marques, avec les règles à suivre. Ensuite, pour Omega, Tissot, LIP et Orient sur les modèles déjà suivis dans data.json, recherche 1) les dernières actualités avec leur lien source, 2) les prix neuf + fourchette occasion en croisant au moins deux sites de source_occasion.json — si un prix neuf est inconnu, renseigne priceNewReason avec la raison, 3) les caractéristiques (mouvement, diamètre, bracelet, année), 4) les variantes classées par tailles/couleurs/matières, 5) des bons plans issus des sites de source_occasion.json (avec lien). Alimente le RADAR (tableau `releases` de data.json) avec des sorties de montres TOUTES MARQUES confondues, pas seulement les marques suivies — une entrée par sortie avec date, brand, model, price, text court et link. Actualise aussi l'onglet tendances — il doit servir à DÉCOUVRIR : privilégie les micro-marques, marques indépendantes et maisons méconnues ou relancées (pas Rolex/Patek/AP/Cartier). Mets à jour data.json directement (nouveautés triées les plus récentes en premier, dates stockées au format JJ-MM-AAAA).";
+  const prompt = "Actualise le répertoire horloger (repo Lapepite792/repertoire-horloger). Commence par lire source_occasion.json : il liste les sites à utiliser pour les prix d'occasion et les bons plans et promos par les grandes marques, avec les règles à suivre. Ensuite, pour Omega, Tissot, LIP et Orient sur les modèles déjà suivis dans data.json, recherche 1) les dernières actualités avec leur lien source, 2) les prix neuf + fourchette occasion en croisant au moins deux sites de source_occasion.json — si un prix neuf est inconnu, renseigne priceNewReason avec la raison, 3) les caractéristiques (mouvement, diamètre, bracelet, année), 4) les variantes classées par tailles/couleurs/matières, 5) des bons plans issus des sites de source_occasion.json (avec lien), 6) une photo du modèle dans le champ image (URL directe vers un fichier .jpg/.png, de préférence une source libre de droits type Wikimedia Commons). Alimente le RADAR (tableau `releases` de data.json) avec des sorties de montres TOUTES MARQUES confondues, pas seulement les marques suivies — une entrée par sortie avec date, brand, model, price, text court et link. Actualise aussi l'onglet tendances — il doit servir à DÉCOUVRIR : privilégie les micro-marques, marques indépendantes et maisons méconnues ou relancées (pas Rolex/Patek/AP/Cartier). Mets à jour data.json directement (nouveautés triées les plus récentes en premier, dates stockées au format JJ-MM-AAAA).";
   navigator.clipboard.writeText(prompt).then(() => {
     toast('Prompt copié — colle-le à Claude');
   }).catch(() => {

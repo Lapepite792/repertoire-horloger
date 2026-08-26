@@ -1,5 +1,5 @@
 {
-  "updated": "20-08-2026",
+  "updated": "26-08-2026",
   "brands": {
     "omega": {
       "label": "Omega",
@@ -14,7 +14,7 @@
           "releaseYear": "1969 (génération actuelle depuis 2021)",
           "priceNew": "8 500 – 8 800 €",
           "priceUsed": "5 200 – 7 400 €",
-          "priceDate": "20 août 2026",
+          "priceDate": "26 août 2026",
           "link": "https://www.omegawatches.com",
           "note": "Boutique officielle, acier/hésalite 42mm. Occasion : la génération actuelle (310.x, calibre 3861 Master Chronometer) tourne autour de 7 000 €, les générations précédentes (311.x, calibre 1861) descendent vers 5 500-6 500 €.",
           "estimated": true,
@@ -52,7 +52,8 @@
               "price": "large sélection d'occasion",
               "link": "https://www.chronext.com/omega/speedmaster-pre-owned"
             }
-          ]
+          ],
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/OMEGA-Speedmaster-Professional-Front.jpg"
         },
         {
           "id": "omega-speedmaster-reverse-panda",
@@ -81,7 +82,8 @@
             ]
           },
           "promos": [],
-          "priceNewReason": "prix non communiqué par Omega au lancement"
+          "priceNewReason": "prix non communiqué par Omega au lancement",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Dial_of_Omega_Speedmaster_Professional.jpg"
         },
         {
           "id": "omega-speedmaster-milano-cortina",
@@ -95,7 +97,7 @@
           "priceUsed": "—",
           "priceDate": "août 2026",
           "link": "https://www.omegawatches.com",
-          "note": "Non limitée. Lunette céramique bleue, cadran blanc verni givré bleu, sous-compteurs azurage façon piste de ski.",
+          "note": "Non limitée. Lunette céramique bleue, cadran blanc verni givré bleu, sous-compteurs azurage façon piste de ski. La ligne Speedmaster 38 mm a été entièrement redessinée le 25 août 2026 (compteurs ronds, lunette unique « Dot Over Ninety », bracelet cinq maillons, calibres 3330/3332), de 6 400 € à 12 800 €.",
           "estimated": true,
           "variants": {
             "tailles": [
@@ -114,10 +116,26 @@
               "price": "à surveiller (modèle récent)",
               "link": "https://www.chrono24.fr"
             }
-          ]
+          ],
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Omega_speedmaster.jpg"
         }
       ],
       "news": [
+        {
+          "date": "25-08-2026",
+          "text": "Omega redessine entièrement la Speedmaster 38 mm : sept nouvelles références abandonnent les compteurs ovales et la lunette bicolore pour renouer avec le Moonwatch (compteurs ronds, « Dot Over Ninety », bracelet cinq maillons, calibres 3330/3332). De 6 400 € pour la noire sans date à 12 800 € pour la nacre sertie.",
+          "link": "https://luxe.net/omega-speedmaster-38mm-nouvelle-collection-2026/"
+        },
+        {
+          "date": "12-08-2026",
+          "text": "Une MoonSwatch Mission to the Sun « Solar Eclipse » est vendue uniquement le jour de l'éclipse du 12 août 2026 et uniquement en Espagne : bracelet caoutchouc blanc, poussoir noir à 2h, fond de pile nouvelle lune.",
+          "link": "https://www.gearpatrol.com/watches/watches-you-missed-8-16-2026/"
+        },
+        {
+          "date": "09-08-2026",
+          "text": "Retour sur les 69 ans de la Speedmaster : la Moonwatch Professional reste fidèle au boîtier asymétrique 42 mm hésalite et au calibre 3861, désormais épaulée par une version à compteurs blancs et verre saphir antireflet, cadran reproduisant la topographie lunaire.",
+          "link": "https://www.parismatch.be/lifestyle/montres/2026/08/09/speedmaster-omega-la-legende-continue-le-chronographe-des-alunissages-explore-le-cosmos-en-2026-JRMEPQ53W5EVFMJBHTB7VZXE5Q/"
+        },
         {
           "date": "08-07-2026",
           "text": "Omega ajoute discrètement au catalogue une Speedmaster Moonwatch en Moonshine gold à cadran vert, sans annonce officielle — clin d'œil probable à la victoire de Rory McIlroy au Masters.",
@@ -157,7 +175,7 @@
           "releaseYear": "2021",
           "priceNew": "340 – 400 €",
           "priceUsed": "150 – 250 €",
-          "priceDate": "août 2026",
+          "priceDate": "26 août 2026",
           "link": "https://www.tissotwatches.com",
           "note": "Modèle d'entrée de la gamme PRX.",
           "estimated": true,
@@ -187,7 +205,8 @@
               "price": "prix boutique",
               "link": "https://ocarat.com"
             }
-          ]
+          ],
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Tissot_PRX.jpg"
         },
         {
           "id": "tissot-prx-automatic",
@@ -198,10 +217,10 @@
           "bracelet": "Acier intégral",
           "releaseYear": "2021",
           "priceNew": "650 – 775 €",
-          "priceUsed": "290 – 560 €",
-          "priceDate": "20 août 2026",
+          "priceUsed": "400 – 650 €",
+          "priceDate": "26 août 2026",
           "link": "https://www.tissotwatches.com",
-          "note": "Powermatic 80 (ETA), spiral Nivachron antimagnétique, 80h de réserve. Boîtier tonneau 40 mm × 10,95 mm hérité du design de 1978, bracelet intégré, cadran guilloché, étanche 100 m.",
+          "note": "Powermatic 80 (ETA), spiral Nivachron antimagnétique, 80h de réserve. Boîtier tonneau 40 mm × 10,95 mm hérité du design de 1978, bracelet intégré, cadran guilloché, étanche 100 m. Nouveau cadran nacre gaufrée en 40 mm depuis août 2026.",
           "estimated": true,
           "variants": {
             "tailles": [
@@ -217,7 +236,8 @@
               "Argenté",
               "Ice Blue",
               "Gris taupe",
-              "Panda (chrono)"
+              "Panda (chrono)",
+              "Nacre gaufrée (40 mm, 2026)"
             ],
             "matieres": [
               "Acier brossé",
@@ -230,29 +250,40 @@
           },
           "promos": [
             {
-              "site": "Watchfinder (via La Cote des Montres) — réf. T137.410.11.041.00",
-              "price": "290 €",
-              "link": "https://lacotedesmontres.com/Watchfinder-Tissot-PRX-T137-410-11-041-00-212882-newAd.htm"
+              "site": "Chrono24 — sélection occasion (vendeurs vérifiés)",
+              "price": "≈ 400 – 650 € (bon à très bon état)",
+              "link": "https://www.chrono24.fr/tissot/prx-powermatic-80--mod3034.htm"
             },
             {
-              "site": "Chrono24 (vendeurs vérifiés)",
-              "price": "≈ 410 – 560 € (occasion)",
-              "link": "https://www.chrono24.fr"
+              "site": "Chrono24 — annonce référencée T137.407.11.041.00",
+              "price": "≈ 560 € (614 $, très bon état, 2022)",
+              "link": "https://www.chrono24.com/tissot/prx-powermatic-80--id31169779.htm"
+            },
+            {
+              "site": "Cresus — version rare lunette or rose 18 ct (T931.407.41.291.00)",
+              "price": "1 690 €",
+              "link": "https://www.cresus.fr/tissot-powermatic-057065"
             },
             {
               "site": "Ocarat (revendeur officiel, neuf)",
               "price": "prix boutique",
               "link": "https://ocarat.com/en/tissot-prx-watch/"
-            },
-            {
-              "site": "Cresus — édition rare (T931.407.41.291.00, or/acier)",
-              "price": "1 690 €",
-              "link": "https://www.cresus.fr/tissot-powermatic-057065"
             }
-          ]
+          ],
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Tissot_PRX.jpg"
         }
       ],
       "news": [
+        {
+          "date": "23-08-2026",
+          "text": "La PRX 40 mm Powermatic 80 reçoit le cadran nacre à motif gaufré jusque-là réservé à la version automatique 35 mm (≈ 850 $).",
+          "link": "https://www.gearpatrol.com/watches/watches-you-missed-8-23-2026/"
+        },
+        {
+          "date": "18-08-2026",
+          "text": "Tissot place la lune au centre de la collection Désir : six nouvelles Désir Moonphase, boîtier sans cornes de 29,6 mm pour 9,52 mm d'épaisseur, cinq versions acier et une bicolore or rose PVD, étanche 50 m.",
+          "link": "https://www.tissotwatches.com/en-us/magazine.html"
+        },
         {
           "date": "05-08-2026",
           "text": "La PRX arrive en 38 mm dans deux matériaux inédits pour la collection : titane et acier de Damas, avec mouvement Powermatic 80. Cadrans bleu classique et gris taupe à index dorés.",
@@ -269,9 +300,19 @@
           "link": "https://topvelo.fr/montre-tissot-pr-100-tour-de-france-2026/"
         },
         {
+          "date": "15-06-2026",
+          "text": "Nouvelle génération de la Seastar 2000 Professional : boîtier acier ramené à 44 mm (contre 46), saphir bombé, lunette céramique, valve à hélium, étanche 600 m, Powermatic 80 et cinq configurations.",
+          "link": "https://www.ablogtowatch.com/new-release-the-tissot-seastar-2000-professional-is-the-brands-most-capable-dive-watch/"
+        },
+        {
           "date": "04-06-2026",
           "text": "La PRX s'étend encore : déclinaison 25 mm à quartz, et le chronographe 42 mm passe au calibre Valjoux A05.H31 avec 60h de réserve et cadran panda.",
           "link": "https://www.chrono24.com/tissot/prx--mod3031.htm"
+        },
+        {
+          "date": "09-04-2026",
+          "text": "Première collaboration Tissot × Pinarello : boîtier 42 mm usiné dans un bloc de carbone forgé, couronne à 10h inspirée du « forkflap », cadran grainé « asphalte », trotteuse en forme de P Pinarello, Powermatic 80 certifié COSC (≈ 1 355 CHF).",
+          "link": "https://monochrome-watches.com/tissot-x-pinarello-special-edition-carbon-automatic-review-price/"
         },
         {
           "date": "09-04-2026",
@@ -326,7 +367,8 @@
               "link": "https://www.chrono24.fr"
             }
           ],
-          "priceNewReason": "modèle indisponible sur le site officiel"
+          "priceNewReason": "modèle indisponible sur le site officiel",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Montre_LIP.JPG"
         },
         {
           "id": "lip-himalaya-coeur-battant-40",
@@ -374,7 +416,8 @@
               "price": "à vérifier (réf. 671255)",
               "link": "https://www.lepage.fr"
             }
-          ]
+          ],
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Montre_LIP.JPG"
         }
       ],
       "news": [
@@ -384,9 +427,19 @@
           "link": "https://lip.fr/fr/195-nouveautes"
         },
         {
+          "date": "10-07-2026",
+          "text": "Troisième édition du chronographe Rallye Méca-Quartz « Grand Prix de France Historique » : 39 mm acier poli, mouvement méca-quartz Time Module VK64, cadran « ninja » blanc et bleu inspiré des bandes de dégagement du circuit Paul Ricard, 1 906 exemplaires numérotés, 349 €.",
+          "link": "https://www.welovewatches.fr/lip-rallye-chronographe-gpfh-2026-quand-besancon-sinvite-sur-le-circuit-paul-ricard.html"
+        },
+        {
           "date": "24-06-2026",
           "text": "Soldes d'été LIP jusqu'à -50% (24 juin – 21 juillet 2026, dans la limite des stocks).",
           "link": "https://lip.fr/en/215-seasonal-sale"
+        },
+        {
+          "date": "08-05-2026",
+          "text": "LIP confirme son rôle de chronométreur officiel du Grand Prix de France Historique, disputé du 8 au 10 mai 2026 au Castellet devant plus de 106 000 spectateurs, avec plus de 225 voitures dont 60 F1 des années 1970 à 2010.",
+          "link": "https://lip.fr/en/content/24-grand-prix-de-france-historique"
         }
       ]
     },
@@ -426,7 +479,8 @@
               "price": "≈ 135 – 250 € (occasion)",
               "link": "https://www.chrono24.fr"
             }
-          ]
+          ],
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Orientwatch.JPG"
         },
         {
           "id": "orient-bambino-date-classic",
@@ -464,7 +518,8 @@
               "price": "≈ 150 – 280 € (occasion)",
               "link": "https://www.chrono24.fr"
             }
-          ]
+          ],
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Orientwatch.JPG"
         },
         {
           "id": "orient-star-re-av0b01s00b",
@@ -511,10 +566,16 @@
               "price": "≈ 590 € (occasion, bon état)",
               "link": "https://www.ebay.fr"
             }
-          ]
+          ],
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Orientwatch.JPG"
         }
       ],
       "news": [
+        {
+          "date": "19-08-2026",
+          "text": "Orient présente la Classic and Simple Style 36, un modèle compact et unisexe de 36 mm qui complète l'offre Bambino sans date.",
+          "link": "https://orient-watch.com/en/orient/"
+        },
         {
           "date": "19-08-2026",
           "text": "Orient Star dévoile de nouveaux modèles dont des éditions limitées pour ses 75 ans, une M45 F8 phase de lune à remontage manuel (« lune dérivant dans les nuages ») et des modèles Pair aux cadrans inspirés des aurores boréales.",
@@ -531,6 +592,16 @@
           "link": "https://www.welovewatches.fr/actu"
         },
         {
+          "date": "05-08-2026",
+          "text": "Dernier réassort en édition limitée de la Stretto Semi Skeleton (petite seconde et cadran cœur ouvert), proposée en promotion à 420 $ avant retrait définitif du catalogue.",
+          "link": "https://www.gearpatrol.com/watches/orient-stretto-semi-skeleton-final-release/"
+        },
+        {
+          "date": "17-06-2026",
+          "text": "Orient et Orient Star étendent leur garantie constructeur de deux à trois ans.",
+          "link": "https://orient-watch.com/en/news/"
+        },
+        {
           "date": "16-02-2026",
           "text": "Orient dévoile sa première Bambino sans date (38mm) et de nouveaux coloris/cadrans dégradés pour les modèles à date, dès 340 €.",
           "link": "https://monochrome-watches.com/introducing-orient-bambino-38-no-date-and-new-colours-2026-bambino-classic-date-specs-price/"
@@ -541,9 +612,162 @@
           "link": "https://orient-watch.com/en/news/detail/20260128184424.html"
         }
       ]
+    },
+    "festina": {
+      "label": "Festina",
+      "watches": [
+        {
+          "id": "festina-swiss-made-automatic-f22008-2",
+          "model": "Swiss Made Automatic F22008/2 grenat",
+          "reference": "F22008/2",
+          "movement": "Automatique — calibre suisse Soprod P024 Skeleton, 4 Hz, ≈38 h de réserve",
+          "diameter": "42 mm",
+          "bracelet": "Acier inoxydable 316L, boucle déployante",
+          "releaseYear": "2025 (collection Swiss Made Automatic)",
+          "priceNew": "inconnu",
+          "priceNewReason": "tarif public France non publié pour la variante grenat /2 ; la référence sœur F22008/1 (même boîtier 42 mm, même calibre Soprod P024 Skeleton) est affichée 981 $ (≈ 900 €) chez un revendeur agréé, ce qui situe le neuf autour de 850 – 950 €",
+          "priceUsed": "380 – 600 €",
+          "priceDate": "26 août 2026",
+          "link": "https://festina.com/fr-FR/montre/homme/festina-swiss-made/",
+          "note": "Montre homme squelette, cadran ouvert grenat laissant voir la mécanique, verre saphir, boîtier acier inoxydable 316L 42 mm, étanche 10 ATM. Fourchette d'occasion établie en croisant Chrono24 (annonces Swiss Made Automatic entre 405 et 750 €) et le niveau de prix neuf constaté chez les revendeurs agréés (Ocarat, Chic Time). Estimation : peu d'annonces sur la référence grenat exacte, la fourchette couvre la ligne Swiss Made Automatic 40–42 mm.",
+          "estimated": true,
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Festina_watches.JPG",
+          "variants": {
+            "tailles": [
+              "40 mm (F20083/2, F20028)",
+              "42 mm (F22006 / F22008 / F22009 / F22011 / F22013 / F22015)"
+            ],
+            "couleurs": [
+              "Grenat (F22008/2)",
+              "Argenté squelette (F22008/1, F22009/1)",
+              "Bleu (F20083/2)",
+              "Noir (F20028/4)"
+            ],
+            "matieres": [
+              "Acier inoxydable 316L + bracelet acier",
+              "Acier + bracelet cuir",
+              "Acier + bracelet caoutchouc (F22009/1)"
+            ]
+          },
+          "promos": [
+            {
+              "site": "Chrono24 — Festina d'occasion (filtrer vendeurs professionnels)",
+              "price": "≈ 405 – 600 € selon référence Swiss Made Automatic",
+              "link": "https://www.chrono24.fr/festina/acheter-des-montres-d-occasion--used.htm"
+            },
+            {
+              "site": "Chrono24 — Swiss Made Automatic neuves déstockées (F20028/4, F20095/3)",
+              "price": "468 € / 595 €",
+              "link": "https://www.chrono24.fr/festina/prix-des-montres--new.htm"
+            },
+            {
+              "site": "Ocarat — collection Festina Swiss Made (revendeur officiel)",
+              "price": "prix boutique",
+              "link": "https://ocarat.com/en/festina-swiss-made-collection-watch/"
+            },
+            {
+              "site": "Chic Time — collection Festina",
+              "price": "prix boutique / opérations promo régulières",
+              "link": "https://chic-time.fr"
+            }
+          ]
+        }
+      ],
+      "news": [
+        {
+          "date": "26-08-2026",
+          "text": "La ligne Swiss Made Automatic (boîtiers 42 mm, calibre suisse Soprod P024 Skeleton, saphir, 10 ATM) est désormais le haut de gamme du catalogue Festina, avec des cadrans squelettes déclinés en grenat, argenté, bleu et noir, sur acier, cuir ou caoutchouc.",
+          "link": "https://festina.com/fr-FR/montre/homme/festina-swiss-made/"
+        },
+        {
+          "date": "26-08-2026",
+          "text": "Sur le marché de l'occasion, les Festina Swiss Made automatiques se négocient entre 405 et 750 € selon la référence et l'état, un écart important avec le tarif neuf revendeur (≈ 900 €).",
+          "link": "https://www.chrono24.fr/festina/acheter-des-montres-d-occasion--used.htm"
+        }
+      ]
     }
   },
   "trending": [
+    {
+      "brand": "Kiwame Tokyo",
+      "model": "Yane",
+      "note": "Indépendant japonais encore confidentiel. Boîtiers dessinés d'après l'architecture de temples, laque noire ou bordeaux, Miyota régulé — un vrai point d'entrée dans l'indépendant nippon.",
+      "priceRange": "≈ 650 – 750 €",
+      "link": "https://www.gearpatrol.com/watches/watches-you-missed-8-23-2026/",
+      "date": "23-08-2026"
+    },
+    {
+      "brand": "Minase",
+      "model": "Mastercraft J3",
+      "note": "Manufacture d'Akita issue d'un fabricant d'outils de coupe, réputée pour son polissage « sallaz » et ses boîtiers multi-pièces. La J3 rend la marque accessible en descendant sous les 2 500 €.",
+      "priceRange": "≈ 1 800 – 6 000 €",
+      "link": "https://www.gearpatrol.com/watches/watches-you-missed-8-23-2026/",
+      "date": "23-08-2026"
+    },
+    {
+      "brand": "Nodus",
+      "model": "Sector II DIVE",
+      "note": "Micro-marque californienne assemblée à Los Angeles, connue pour son système de réglage de bracelet NodeX et un rapport finition/prix redoutable sur les plongeuses 40 mm.",
+      "priceRange": "≈ 400 – 700 €",
+      "link": "https://www.gearpatrol.com/watches/watches-you-missed-8-23-2026/",
+      "date": "23-08-2026"
+    },
+    {
+      "brand": "Boldr",
+      "model": "Venture",
+      "note": "Micro-marque singapourienne spécialisée dans le titane léger et les montres d'aventure réellement utilisables. Collaborations fréquentes avec les détaillants indépendants.",
+      "priceRange": "≈ 300 – 500 €",
+      "link": "https://www.gearpatrol.com/watches/watches-you-missed-8-23-2026/",
+      "date": "23-08-2026"
+    },
+    {
+      "brand": "Czapek",
+      "model": "Promenade",
+      "note": "Manufacture genevoise fondée en 1845, disparue puis relancée en 2015 par financement participatif. Calibres maison à micro-rotor et cadrans guillochés — de la haute horlogerie hors des grands groupes.",
+      "priceRange": "≈ 20 000 – 45 000 €",
+      "link": "https://www.gearpatrol.com/watches/watches-you-missed-8-23-2026/",
+      "date": "23-08-2026"
+    },
+    {
+      "brand": "Albishorn",
+      "model": "Marinagraph Classic",
+      "note": "Indépendant suisse spécialisé dans le « vintage imaginaire » : des montres qui reconstituent ce qu'une pièce d'époque aurait pu être. Chronographes monopoussoir propriétaires, séries de 99 pièces.",
+      "priceRange": "≈ 3 500 – 5 000 €",
+      "link": "https://www.gearpatrol.com/watches/watches-you-missed-8-16-2026/",
+      "date": "16-08-2026"
+    },
+    {
+      "brand": "Brew Watch Co.",
+      "model": "Retrograph",
+      "note": "Micro-marque new-yorkaise entièrement construite autour de l'imaginaire du café : boîtiers tonneau, compteurs calibrés sur le temps d'extraction d'un espresso, cadrans en pierre naturelle.",
+      "priceRange": "≈ 400 – 800 €",
+      "link": "https://www.gearpatrol.com/watches/watches-you-missed-8-16-2026/",
+      "date": "16-08-2026"
+    },
+    {
+      "brand": "Nivada Grenchen",
+      "model": "Autochron",
+      "note": "Maison suisse historique relancée, devenue une référence du néo-vintage abordable. Les cadrans « Paul Newman » et les Antarctic offrent un vrai style d'époque loin des prix du vintage.",
+      "priceRange": "≈ 800 – 2 200 €",
+      "link": "https://www.gearpatrol.com/watches/watches-you-missed-8-16-2026/",
+      "date": "16-08-2026"
+    },
+    {
+      "brand": "Laps",
+      "model": "Arche",
+      "note": "Marque parisienne à l'approche architecturale et modulaire, qui pense la montre comme un objet de design plutôt que comme un instrument. Production en petites séries.",
+      "priceRange": "≈ 700 – 1 500 €",
+      "link": "https://www.fratellowatches.com/category/watchnews/watch-releases/",
+      "date": "05-08-2026"
+    },
+    {
+      "brand": "Sicura",
+      "model": "Hexa 400",
+      "note": "Marque suisse relancée après 47 ans de sommeil. Le retour d'un nom oublié des années 1970, typique de la vague de résurrections de marques dormantes qui structure 2026.",
+      "priceRange": "à confirmer",
+      "link": "https://www.fratellowatches.com/category/watchnews/watch-releases/",
+      "date": "31-07-2026"
+    },
     {
       "brand": "Furlan Marri",
       "model": "Chronographes meca-quartz",
@@ -811,6 +1035,198 @@
   ],
   "releases": [
     {
+      "date": "26-08-2026",
+      "brand": "Longines",
+      "model": "Master Chronographe Monopoussoir",
+      "price": "à confirmer",
+      "text": "Longines enrichit la collection Master d'un chronographe monopoussoir et d'un Chronograph Moonphase repensé.",
+      "link": "https://luxe.net/longines-master-chrono-monopusher/"
+    },
+    {
+      "date": "25-08-2026",
+      "brand": "Omega",
+      "model": "Speedmaster 38 mm (2e génération)",
+      "price": "6 400 – 12 800 €",
+      "text": "Sept références : compteurs ronds, lunette « Dot Over Ninety », bracelet cinq maillons, calibres 3330 et 3332.",
+      "link": "https://luxe.net/omega-speedmaster-38mm-nouvelle-collection-2026/"
+    },
+    {
+      "date": "23-08-2026",
+      "brand": "Porsche Design",
+      "model": "Chronographe 911 GT3 S/C",
+      "price": "réservé aux propriétaires",
+      "text": "Chronographe que seuls les propriétaires de la 911 GT3 S/C peuvent acquérir.",
+      "link": "https://luxe.net/porsche-design-chronograph-911-gt3-sc/"
+    },
+    {
+      "date": "23-08-2026",
+      "brand": "Blancpain",
+      "model": "Fifty Fathoms Bathyscaphe 70e anniversaire",
+      "price": "≈ 18 300 $",
+      "text": "Recréation d'une référence de 1968 pour les 70 ans du Bathyscaphe, boîtier compact de 37 mm.",
+      "link": "https://www.gearpatrol.com/watches/watches-you-missed-8-23-2026/"
+    },
+    {
+      "date": "23-08-2026",
+      "brand": "Glashütte Original",
+      "model": "Senator Chronograph Navigator",
+      "price": "≈ 16 100 $",
+      "text": "Boîtier acier 41 mm, calibre manufacture 37-24 flyback, Panorama Date, 70 h de réserve, esprit montre de pilote 1940.",
+      "link": "https://www.gearpatrol.com/watches/watches-you-missed-8-23-2026/"
+    },
+    {
+      "date": "23-08-2026",
+      "brand": "Grand Seiko",
+      "model": "SBGA527 Heritage",
+      "price": "≈ 7 600 $",
+      "text": "Boîtier 62GS 40 mm en titane haute intensité, Spring Drive, cadran bleu texturé, 50 pièces vendues à Honolulu.",
+      "link": "https://www.gearpatrol.com/watches/watches-you-missed-8-23-2026/"
+    },
+    {
+      "date": "23-08-2026",
+      "brand": "Czapek",
+      "model": "Promenade Transparencies Aqua Blue",
+      "price": "≈ 40 300 $",
+      "text": "Cadran saphir bleu fumé dévoilant le calibre manufacture SXH7 squeletté à micro-rotor.",
+      "link": "https://www.gearpatrol.com/watches/watches-you-missed-8-23-2026/"
+    },
+    {
+      "date": "23-08-2026",
+      "brand": "Tissot",
+      "model": "PRX 40 mm nacre gaufrée",
+      "price": "≈ 850 $",
+      "text": "Le cadran nacre à motif gaufré descend de la 35 mm vers la 40 mm Powermatic 80 acier.",
+      "link": "https://www.gearpatrol.com/watches/watches-you-missed-8-23-2026/"
+    },
+    {
+      "date": "23-08-2026",
+      "brand": "Norqain",
+      "model": "Independence Skeleton Titanium DLC",
+      "price": "≈ 5 850 $",
+      "text": "Boîtier titane grade 5 revêtu DLC noir, nettement plus léger que la version acier.",
+      "link": "https://www.gearpatrol.com/watches/watches-you-missed-8-23-2026/"
+    },
+    {
+      "date": "23-08-2026",
+      "brand": "Rado",
+      "model": "Captain Cook X European Cricket",
+      "price": "≈ 3 000 $",
+      "text": "Plongeuse bicolore PVD or, cadran bleu et lunette céramique, livrée avec deux bracelets supplémentaires.",
+      "link": "https://www.gearpatrol.com/watches/watches-you-missed-8-23-2026/"
+    },
+    {
+      "date": "23-08-2026",
+      "brand": "Minase",
+      "model": "Mastercraft J3",
+      "price": "≈ 2 050 $",
+      "text": "Boîtier acier 37 mm affiné, Miyota 90S5 ultra-plat, cadran texturé sable en argent, noir ou crème.",
+      "link": "https://www.gearpatrol.com/watches/watches-you-missed-8-23-2026/"
+    },
+    {
+      "date": "23-08-2026",
+      "brand": "Furlan Marri",
+      "model": "Outback Songlines",
+      "price": "≈ 2 750 $",
+      "text": "Boîtier acier 39 mm avec premier bracelet trois rangs de la marque, fond à charnière style officier, La Joux-Perret G100.",
+      "link": "https://www.gearpatrol.com/watches/watches-you-missed-8-23-2026/"
+    },
+    {
+      "date": "23-08-2026",
+      "brand": "Kiwame Tokyo",
+      "model": "Yane (Kuro / Enji)",
+      "price": "≈ 730 $",
+      "text": "Première montre rectangulaire de l'indépendant japonais, profil inspiré des toitures de temples d'Asakusa, Miyota 6T27.",
+      "link": "https://www.gearpatrol.com/watches/watches-you-missed-8-23-2026/"
+    },
+    {
+      "date": "23-08-2026",
+      "brand": "Nodus",
+      "model": "Sector II DIVE Holme & Hadfield",
+      "price": "≈ 650 $",
+      "text": "Cadran saphir suspendant les index, lunette bronze cannelée, insert acier DLC, 40 mm, 75 exemplaires.",
+      "link": "https://www.gearpatrol.com/watches/watches-you-missed-8-23-2026/"
+    },
+    {
+      "date": "23-08-2026",
+      "brand": "Shinola",
+      "model": "Detrola Color Theory Cool",
+      "price": "≈ 495 $",
+      "text": "Cadran à triangles roses et bleus, boîtier 41 mm acier et résine TR90 crème, Ronda Argonite 705.",
+      "link": "https://www.gearpatrol.com/watches/watches-you-missed-8-23-2026/"
+    },
+    {
+      "date": "23-08-2026",
+      "brand": "Timex",
+      "model": "Expedition Pioneer Automatic 41 mm",
+      "price": "429 – 459 $",
+      "text": "La Pioneer GMT devient une montre de terrain heures-date à specs de plongeuse, Miyota 8215.",
+      "link": "https://www.gearpatrol.com/watches/watches-you-missed-8-23-2026/"
+    },
+    {
+      "date": "23-08-2026",
+      "brand": "Timex",
+      "model": "Q Timex Continental Chronograph 36 mm",
+      "price": "≈ 259 $",
+      "text": "Boîtier ramené de 40 à 36 mm, compteurs bicompax étagés, trois coloris dont un bicolore champagne très années 70.",
+      "link": "https://www.gearpatrol.com/watches/watches-you-missed-8-23-2026/"
+    },
+    {
+      "date": "23-08-2026",
+      "brand": "Timex",
+      "model": "Expedition Field Post Titanium Automatic noir",
+      "price": "≈ 429 $",
+      "text": "Titane résistant aux chocs, revêtement IP noir, saphir, automatique japonais, Super-LumiNova.",
+      "link": "https://www.gearpatrol.com/watches/watches-you-missed-8-23-2026/"
+    },
+    {
+      "date": "23-08-2026",
+      "brand": "Timex",
+      "model": "Peanuts x Waterbury Classic 40 mm",
+      "price": "≈ 189 $",
+      "text": "Retour du cadran Snoopy sautant dans les feuilles, cette fois en acier et sur cuir noir certifié LWG.",
+      "link": "https://www.gearpatrol.com/watches/watches-you-missed-8-23-2026/"
+    },
+    {
+      "date": "23-08-2026",
+      "brand": "Timex",
+      "model": "Peanuts x Expedition Acadia 40 mm",
+      "price": "≈ 119 $",
+      "text": "Quartz de terrain en résine mate, cadrans Beagle Scouts camouflage, bracelet silicone à changement rapide, 50 m.",
+      "link": "https://www.gearpatrol.com/watches/watches-you-missed-8-23-2026/"
+    },
+    {
+      "date": "23-08-2026",
+      "brand": "Boldr",
+      "model": "Venture Windup Edition 3",
+      "price": "≈ 429 $",
+      "text": "Titane 38 mm, index lumicast, chiffres surdimensionnés à 15, 45 et 60, Seiko NH35, 200 m, 100 exemplaires.",
+      "link": "https://www.gearpatrol.com/watches/watches-you-missed-8-23-2026/"
+    },
+    {
+      "date": "23-08-2026",
+      "brand": "Citizen",
+      "model": "Eco-Drive One AR5065-54W",
+      "price": "≈ 3 395 $",
+      "text": "3,88 mm d'épaisseur, boîtier acier DLC noir 38 mm, calibre solaire 8826, 250 exemplaires.",
+      "link": "https://www.gearpatrol.com/watches/watches-you-missed-8-23-2026/"
+    },
+    {
+      "date": "23-08-2026",
+      "brand": "Casio",
+      "model": "Edifice EFS-S660D-1A",
+      "price": "à confirmer",
+      "text": "Chronographe solaire en acier de 38,3 mm, saphir antireflet, cadran nid d'abeille, lunette tachymétrique, 100 m.",
+      "link": "https://www.gearpatrol.com/watches/watches-you-missed-8-23-2026/"
+    },
+    {
+      "date": "23-08-2026",
+      "brand": "G-Shock",
+      "model": "Move GBA-950-1A4",
+      "price": "≈ 165 $",
+      "text": "Suivi d'allure, tours automatiques, pas et calories via le GPS du téléphone, compatible Strava, boîtier résine renforcée carbone.",
+      "link": "https://www.gearpatrol.com/watches/watches-you-missed-8-23-2026/"
+    },
+    {
       "date": "19-08-2026",
       "brand": "Orient Star",
       "model": "M45 F8 Mechanical Moon Phase",
@@ -825,6 +1241,134 @@
       "price": "à vérifier",
       "text": "Premier GMT de la série Diver Design, accompagné de nouvelles variations de cadrans.",
       "link": "https://orient-watch.com/en/"
+    },
+    {
+      "date": "16-08-2026",
+      "brand": "Baltic",
+      "model": "Heures du Monde « Horizon Line » Time+Tide",
+      "price": "≈ 1 795 $",
+      "text": "Premier cadran carbone forgé de la marque française, lunette worldtime laquée bleu, mise en vente en ligne pendant 24 h seulement le 22 septembre.",
+      "link": "https://www.gearpatrol.com/watches/watches-you-missed-8-16-2026/"
+    },
+    {
+      "date": "16-08-2026",
+      "brand": "Nivada Grenchen",
+      "model": "Autochron Orange Automatic",
+      "price": "≈ 2 295 $",
+      "text": "La Chronosport à cadran Paul Newman devient Autochron : nouveau rehaut, lunette crantée 120 clics, accents orange.",
+      "link": "https://www.gearpatrol.com/watches/watches-you-missed-8-16-2026/"
+    },
+    {
+      "date": "16-08-2026",
+      "brand": "Seiko",
+      "model": "Presage Classic HCC005 / HCC006",
+      "price": "1 400 – 1 650 $",
+      "text": "Série Craftsmanship inspirée de la Laurel de 1913 : cadran émail ou laque Urushi noire, chiffres Breguet, calibre 6R5H.",
+      "link": "https://www.gearpatrol.com/watches/watches-you-missed-8-16-2026/"
+    },
+    {
+      "date": "16-08-2026",
+      "brand": "Albishorn",
+      "model": "Marinagraph Classic",
+      "price": "≈ 3 950 CHF",
+      "text": "« Vintage imaginaire » de 1958 mêlant skin diver et yacht timer, chronographe monopoussoir propriétaire, 99 exemplaires.",
+      "link": "https://www.gearpatrol.com/watches/watches-you-missed-8-16-2026/"
+    },
+    {
+      "date": "16-08-2026",
+      "brand": "IWC",
+      "model": "Big Pilot Perpetual Calendar ProSet 140 ans Mercedes-Benz",
+      "price": "sur demande",
+      "text": "Nouveau mouvement ProSet réglable en avant comme en arrière, uniquement par la couronne, index en or massif.",
+      "link": "https://www.gearpatrol.com/watches/watches-you-missed-8-16-2026/"
+    },
+    {
+      "date": "16-08-2026",
+      "brand": "Seiko",
+      "model": "Presage x Tradman's Bonsai HCC009J1",
+      "price": "≈ 1 613 $",
+      "text": "Cadran vert profond imitant l'écorce d'un bonsaï au clair de lune, boîtier 38 mm et bracelet sept rangs PVD or, 2 000 exemplaires.",
+      "link": "https://www.gearpatrol.com/watches/watches-you-missed-8-16-2026/"
+    },
+    {
+      "date": "16-08-2026",
+      "brand": "Fears",
+      "model": "Brunswick 40.5 Jump Hour « Ultimus »",
+      "price": "≈ 4 600 $",
+      "text": "Cadran multicouche saphir dégradé et céramique luminescente, dernière version de l'heure sautante Fears, commandes closes le 17 août.",
+      "link": "https://www.gearpatrol.com/watches/watches-you-missed-8-16-2026/"
+    },
+    {
+      "date": "16-08-2026",
+      "brand": "TAG Heuer",
+      "model": "Formula 1 Solargraph 38 mm Dutch Grand Prix",
+      "price": "2 150 – 2 250 $",
+      "text": "Édition orange pour le dernier Grand Prix des Pays-Bas à Zandvoort, 1 500 exemplaires caoutchouc et 1 000 acier.",
+      "link": "https://www.gearpatrol.com/watches/watches-you-missed-8-16-2026/"
+    },
+    {
+      "date": "16-08-2026",
+      "brand": "Seiko",
+      "model": "5 Sports SKX Series « Edo Purple »",
+      "price": "≈ 450 $",
+      "text": "Entrée de gamme du 145e anniversaire, cadran violet soleillé, 100 m, calibre 4R36.",
+      "link": "https://www.gearpatrol.com/watches/watches-you-missed-8-16-2026/"
+    },
+    {
+      "date": "16-08-2026",
+      "brand": "Timex",
+      "model": "Automatic E Line 38 mm",
+      "price": "≈ 379 $",
+      "text": "Nouveau format 38 mm, lunette chanfreinée et bracelet acier intégré très inspirés de la Nautilus, Miyota 8215.",
+      "link": "https://www.gearpatrol.com/watches/watches-you-missed-8-16-2026/"
+    },
+    {
+      "date": "16-08-2026",
+      "brand": "Brew",
+      "model": "Retrograph Stone Blend",
+      "price": "≈ 775 $",
+      "text": "Cadran en piéterzite naturelle évoquant le lait versé dans un cold brew, boîtier tonneau doré 38 mm, Miyota 9015, 250 exemplaires.",
+      "link": "https://www.gearpatrol.com/watches/watches-you-missed-8-16-2026/"
+    },
+    {
+      "date": "16-08-2026",
+      "brand": "Timex",
+      "model": "Peanuts x Marlin Chronograph",
+      "price": "≈ 279 $",
+      "text": "Cadran soleillé aux rayures racing, échelle tachymétrique et damier, Snoopy et Woodstock dans les compteurs.",
+      "link": "https://www.gearpatrol.com/watches/watches-you-missed-8-16-2026/"
+    },
+    {
+      "date": "16-08-2026",
+      "brand": "Timex",
+      "model": "Waterbury Classic 39 mm bracelet acier",
+      "price": "≈ 219 $",
+      "text": "Cadran texturé, aiguilles bleu métallisé, petite seconde à 6h, verre minéral bombé, 50 m.",
+      "link": "https://www.gearpatrol.com/watches/watches-you-missed-8-16-2026/"
+    },
+    {
+      "date": "16-08-2026",
+      "brand": "Timex",
+      "model": "Weekender New England (34 mm et chronographe 40 mm)",
+      "price": "139 – 189 $",
+      "text": "Refonte du profil de boîtier, couronne gravée « We. », bracelets cuir interchangeables en quelques secondes.",
+      "link": "https://www.gearpatrol.com/watches/watches-you-missed-8-16-2026/"
+    },
+    {
+      "date": "16-08-2026",
+      "brand": "Casio",
+      "model": "F-B100W-1A",
+      "price": "à confirmer",
+      "text": "L'ADN de la F-91W passe au Bluetooth avec accéléromètre, podomètre jusqu'à 999 999 pas et bracelet en résine biosourcée.",
+      "link": "https://www.gearpatrol.com/watches/watches-you-missed-8-16-2026/"
+    },
+    {
+      "date": "16-08-2026",
+      "brand": "Casio",
+      "model": "F-91WF",
+      "price": "à confirmer",
+      "text": "La F-91W de 1989 troque sa résine pour un bracelet tissé en PET recyclé, 21 grammes, pile de 7 ans.",
+      "link": "https://www.gearpatrol.com/watches/watches-you-missed-8-16-2026/"
     },
     {
       "date": "13-08-2026",
@@ -867,12 +1411,124 @@
       "link": "https://lepetitpoussoir.fr/chroniques/actualites/nouveautes-horlogeres-juillet-aout-2026/"
     },
     {
+      "date": "10-08-2026",
+      "brand": "Seiko",
+      "model": "Rotocall violet et cinq autres modèles du 145e anniversaire",
+      "price": "à confirmer",
+      "text": "Seiko décline le violet « Edo » sur six nouvelles montres anniversaire.",
+      "link": "https://www.fratellowatches.com/category/watchnews/watch-releases/"
+    },
+    {
+      "date": "06-08-2026",
+      "brand": "BA111OD",
+      "model": "Chapter 7 Skeleton",
+      "price": "à confirmer",
+      "text": "Un squelette intégral à l'allure bien plus coûteuse que son prix réel.",
+      "link": "https://www.fratellowatches.com/category/watchnews/watch-releases/"
+    },
+    {
+      "date": "05-08-2026",
+      "brand": "Norqain",
+      "model": "Freedom GMT Enjoy Life « Holiday » édition limitée",
+      "price": "à confirmer",
+      "text": "GMT festive en série limitée.",
+      "link": "https://www.fratellowatches.com/category/watchnews/watch-releases/"
+    },
+    {
+      "date": "05-08-2026",
+      "brand": "Seiko",
+      "model": "5 Sports x Honda Motocompo édition limitée",
+      "price": "à confirmer",
+      "text": "Hommage au scooter pliable Motocompo de Honda.",
+      "link": "https://www.fratellowatches.com/category/watchnews/watch-releases/"
+    },
+    {
+      "date": "05-08-2026",
+      "brand": "Laps",
+      "model": "Arche",
+      "price": "à confirmer",
+      "text": "La marque parisienne fait le pont entre architecture et horlogerie avec son modèle Arche.",
+      "link": "https://www.fratellowatches.com/category/watchnews/watch-releases/"
+    },
+    {
+      "date": "04-08-2026",
+      "brand": "Roger Dubuis",
+      "model": "Excalibur The Kabuto Legacy",
+      "price": "à confirmer",
+      "text": "Leçon d'histoire japonaise appliquée à l'Excalibur.",
+      "link": "https://www.fratellowatches.com/category/watchnews/watch-releases/"
+    },
+    {
+      "date": "03-08-2026",
+      "brand": "Chronoswiss",
+      "model": "Deux petites secondes à cadran de pierre",
+      "price": "à confirmer",
+      "text": "Chronoswiss revisite son histoire à travers deux nouveautés à cadran minéral.",
+      "link": "https://www.fratellowatches.com/category/watchnews/watch-releases/"
+    },
+    {
+      "date": "01-08-2026",
+      "brand": "H. Moser & Cie.",
+      "model": "Endeavour Cosmic Rain",
+      "price": "à confirmer",
+      "text": "Cadran cosmique pour l'Endeavour.",
+      "link": "https://www.fratellowatches.com/category/watchnews/watch-releases/"
+    },
+    {
+      "date": "31-07-2026",
+      "brand": "Sicura",
+      "model": "Hexa 400",
+      "price": "à confirmer",
+      "text": "Sicura fait son retour après 47 ans d'absence avec l'Hexa 400.",
+      "link": "https://www.fratellowatches.com/category/watchnews/watch-releases/"
+    },
+    {
+      "date": "31-07-2026",
+      "brand": "Hamilton",
+      "model": "Khaki Navy Scuba, nouveaux cadrans et coloris",
+      "price": "à confirmer",
+      "text": "La gamme Khaki Navy Scuba s'étoffe de nouvelles couleurs.",
+      "link": "https://www.fratellowatches.com/category/watchnews/watch-releases/"
+    },
+    {
+      "date": "30-07-2026",
+      "brand": "Nomos",
+      "model": "Tetra 27",
+      "price": "à confirmer",
+      "text": "Format carré resserré pour la Tetra.",
+      "link": "https://www.fratellowatches.com/category/watchnews/watch-releases/"
+    },
+    {
+      "date": "30-07-2026",
+      "brand": "Bianchet",
+      "model": "Rotondo UltraFino or rose",
+      "price": "à confirmer",
+      "text": "Contraste marqué pour l'UltraFino en or rose.",
+      "link": "https://www.fratellowatches.com/category/watchnews/watch-releases/"
+    },
+    {
       "date": "30-07-2026",
       "brand": "Omega",
       "model": "Seamaster Planet Ocean 600M",
       "price": "à vérifier",
       "text": "Évolution en profondeur de la plongeuse dans un segment de plus en plus technique.",
       "link": "https://lepetitpoussoir.fr/category/montres/"
+    },
+    {
+      "date": "29-07-2026",
+      "brand": "CIGA Design",
+      "model": "Hunter Vintage",
+      "price": "à confirmer",
+      "text": "Version plus chaleureuse de la ligne la plus industrielle de CIGA Design.",
+      "link": "https://www.fratellowatches.com/category/watchnews/watch-releases/"
+    },
+    {
+      "date": "28-07-2026",
+      "brand": "IFL Watches x Perrelet",
+      "model": "Weekend GMT Atlas",
+      "price": "à confirmer",
+      "text": "GMT de voyage né de la collaboration IFL Watches et Perrelet.",
+      "link": "https://www.fratellowatches.com/category/watchnews/watch-releases/"
     },
     {
       "date": "16-07-2026",
